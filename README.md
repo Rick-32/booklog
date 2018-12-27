@@ -24,8 +24,8 @@
 
 |Column|Type|Options|
 |------|----|-------|
-|book_id|integer|null: false|
-|user_id|integer|null: false|
+|book_id|references|null: false|
+|user_id|references|null: false|
 
 ### Association
 - belongs_to :user
@@ -38,8 +38,8 @@
 |ISBN|integer|null: false, unique: true|
 |title|string|null: false|
 |price|integer||
-|publish|string||
-|published|integer||
+|publisher|string||
+|published_date|integer||
 |image|string||
 
 ### Association
