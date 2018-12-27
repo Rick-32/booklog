@@ -78,7 +78,7 @@
 |user_id|integer|null: false|
 |reading_status|integer||
 |rate|integer||
-|review|text||
+|content|text||
 |spoiler_alert|boolean|default: false, null: false|
 |registration_date|integer||
 |memo|text||
