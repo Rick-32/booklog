@@ -24,8 +24,8 @@
 
 |Column|Type|Options|
 |------|----|-------|
-|book_id|references|null: false|
-|user_id|references|null: false|
+|book_id|integer|null: false|
+|user_id|integer|null: false|
 
 ### Association
 - belongs_to :user
@@ -47,35 +47,12 @@
 - has_many :books_users
 - has_many :reread_reviews
 
-## commentsテーブル
-
-|Column|Type|Options|
-|------|----|-------|
-|review_id|integer|null: false|
-|user_id|integer|null: false|
-|text|text|null: false|
-
-### Association
-- belongs_to :user
-- belongs_to :review
-
-## favoritesテーブル
-
-|Column|Type|Options|
-|------|----|-------|
-|review_id|integer|null: false|
-|user_id|integer|null: false|
-
-### Association
-- belongs_to :user
-- belongs_to :review
-
 ## reviewsテーブル
 
 |Column|Type|Options|
 |------|----|-------|
-|book_id|integer|null: false|
-|user_id|integer|null: false|
+|book_id|references|null: false|
+|user_id|references|null: false|
 |reading_status|integer||
 |rate|integer||
 |content|text||
@@ -91,12 +68,37 @@
 - has_many :favorites
 - has_one :books_users
 
+## commentsテーブル
+
+|Column|Type|Options|
+|------|----|-------|
+|review_id|integer|null: false|
+|user_id|references|null: false|
+|text|text|null: false|
+
+### Association
+- belongs_to :user
+- belongs_to :review
+
+## favoritesテーブル
+
+|Column|Type|Options|
+|------|----|-------|
+|review_id|references|null: false|
+|user_id|references|null: false|
+
+### Association
+- belongs_to :user
+- belongs_to :review
+
+
+
 ## reread_reviewsテーブル
 
 |Column|Type|Options|
 |------|----|-------|
-|book_id|integer|null: false|
-|user_id|integer|null: false|
+|book_id|references|null: false|
+|user_id|references|null: false|
 |reread_date|integer||
 |reread_rate|integer||
 |reread_review|text||
@@ -110,8 +112,8 @@
 
 |Column|Type|Options|
 |------|----|-------|
-|book_id|integer|null: false|
-|user_id|integer|null: false|
+|book_id|references|null: false|
+|user_id|references|null: false|
 |phrase|text||
 |phrase_page|integer||
 
