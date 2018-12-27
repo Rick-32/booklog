@@ -53,7 +53,7 @@
 |------|----|-------|
 |review_id|integer|null: false|
 |user_id|integer|null: false|
-|comment|text|null: false|
+|text|text|null: false|
 
 ### Association
 - belongs_to :user
@@ -65,7 +65,6 @@
 |------|----|-------|
 |review_id|integer|null: false|
 |user_id|integer|null: false|
-|favorite|boolean|default: false, null: false|
 
 ### Association
 - belongs_to :user
