@@ -24,8 +24,8 @@
 
 |Column|Type|Options|
 |------|----|-------|
-|book_id|integer|null: false|
-|user_id|integer|null: false|
+|book_id|references|null: false|
+|user_id|references|null: false|
 
 ### Association
 - belongs_to :user
@@ -51,8 +51,8 @@
 
 |Column|Type|Options|
 |------|----|-------|
-|review_id|integer|null: false|
-|user_id|integer|null: false|
+|review_id|references|null: false|
+|user_id|references|null: false|
 |comment|text|null: false|
 
 ### Association
@@ -63,8 +63,8 @@
 
 |Column|Type|Options|
 |------|----|-------|
-|review_id|integer|null: false|
-|user_id|integer|null: false|
+|review_id|references|null: false|
+|user_id|references|null: false|
 |favorite|boolean|default: false, null: false|
 
 ### Association
@@ -75,8 +75,8 @@
 
 |Column|Type|Options|
 |------|----|-------|
-|book_id|integer|null: false|
-|user_id|integer|null: false|
+|book_id|references|null: false|
+|user_id|references|null: false|
 |reading_status|integer||
 |rate|integer||
 |review|text||
@@ -96,8 +96,8 @@
 
 |Column|Type|Options|
 |------|----|-------|
-|book_id|integer|null: false|
-|user_id|integer|null: false|
+|book_id|references|null: false|
+|user_id|referencesr|null: false|
 |reread_date|integer||
 |reread_rate|integer||
 |reread_review|text||
@@ -111,8 +111,8 @@
 
 |Column|Type|Options|
 |------|----|-------|
-|book_id|integer|null: false|
-|user_id|integer|null: false|
+|book_id|references|null: false|
+|user_id|references|null: false|
 |phrase|text||
 |phrase_page|integer||
 
