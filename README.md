@@ -3,10 +3,8 @@
 |Column|Type|Options|
 |------|----|-------|
 |username|string|null: false, unique: true|
-|password|string|null: false|
-|email|string|null: false, unique: true|
 |gender|integer|null: false|
-|birthdate|integer|null: false|
+|birthdate|string|null: false|
 |bookshelf_name|string|null: false, unique: true|
 |prefecture|integer|null: false|
 |hometown|string|
@@ -19,6 +17,9 @@
 - has_many :reviews, through: :books_users
 - has_many :comments, through: reviews
 - has_many :favorites, through: reviews
+
+### memo
+認証機能にdeviseを使用予定。password・emailなどは自動生成されるため、READMEには記述していない。
 
 ## books_usersテーブル
 
