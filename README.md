@@ -57,7 +57,7 @@
 |rate|integer||
 |content|text||
 |spoiler_alert|boolean|default: false, null: false|
-|registration_date|integer||
+|registrated_at|datetime||
 |memo|text||
 |private_option|boolean|default: false, null: false|
 
