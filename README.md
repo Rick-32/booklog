@@ -35,7 +35,7 @@
 
 |Column|Type|Options|
 |------|----|-------|
-|ISBN|integer|null: false, unique: true|
+|isbn|integer|null: false, unique: true|
 |title|string|null: false|
 |price|integer||
 |publisher|string||
