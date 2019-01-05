@@ -9,9 +9,9 @@
 |birthdate|integer|null: false|
 |bookshelf_name|string|null: false, unique: true|
 |prefecture|integer|null: false|
-|hometown|string||
-|occupation|string||
-|profile|text||
+|hometown|string|
+|occupation|string|
+|profile|text|
 
 ### Association
 - has_many :books_users
@@ -37,10 +37,10 @@
 |------|----|-------|
 |isbn|integer|null: false, unique: true|
 |title|string|null: false|
-|price|integer||
-|publisher|string||
-|published_at|datetime||
-|image|string||
+|price|integer|
+|publisher|string|
+|published_at|datetime|
+|image|string|
 
 ### Association
 - has_many :reviews
@@ -53,12 +53,12 @@
 |------|----|-------|
 |book_id|references|null: false|
 |user_id|references|null: false|
-|reading_status|integer||
-|rate|integer||
-|content|text||
+|reading_status|integer|
+|rate|integer|
+|content|text|
 |spoiler_alert|boolean|default: false, null: false|
-|registrated_at|datetime||
-|memo|text||
+|registrated_at|datetime|
+|memo|text|
 |private_option|boolean|default: false, null: false|
 
 ### Association
@@ -99,9 +99,9 @@
 |------|----|-------|
 |book_id|references|null: false|
 |user_id|references|null: false|
-|reread_date|integer||
-|reread_rate|integer||
-|reread_review|text||
+|reread_at|datetime|
+|reread_rate|integer|
+|reread_review|text|
 
 ### Association
 - belongs_to :user
@@ -114,7 +114,7 @@
 |------|----|-------|
 |book_id|references|null: false|
 |user_id|references|null: false|
-|phrase|text||
+|phrase|text|
 |phrase_page|integer||
 
 ### Association
