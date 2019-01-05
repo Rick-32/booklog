@@ -39,7 +39,7 @@
 |title|string|null: false|
 |price|integer||
 |publisher|string||
-|published_date|integer||
+|published_at|datetime||
 |image|string||
 
 ### Association
