@@ -2,7 +2,7 @@
 
 |Column|Type|Options|
 |------|----|-------|
-|username|string|null: false, unique: true|
+|name|string|null: false, unique: true|
 |gender|integer|null: false|
 |birthdate|string|null: false|
 |bookshelf_name|string|null: false, unique: true|
@@ -73,7 +73,7 @@
 
 |Column|Type|Options|
 |------|----|-------|
-|review_id|integer|null: false|
+|review|references|null: false|
 |user|references|null: false|
 |text|text|null: false|
 
