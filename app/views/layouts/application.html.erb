@@ -9,7 +9,42 @@
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
-  <body>
+	<body>
+		<div class="grobal-navi">グローバルナビ</div>
+		<div class="contents">
+			<div class="contents__banner">バナー</div>
+			<div class="contents__about">ブクログについて</div>
+			<div class="contents__pick-up">Pick Up</div>
+		</div>
+		<div class="clearfix">
+			<div class="main-contents">
+				<div class="main-contents__release">新刊ニュース
+					<div class="main-contents__release__books">本の新刊</div>
+					<div class="main-contents__release__comics">漫画の新刊</div>
+				</div>
+				<div class="ranking">デイリーランキング
+					<div class="ranking__books">本のランキング</div>
+					<div class="ranking__comics">漫画のランキング</div>
+				</div>
+				<div class="info">お知らせ
+					<div class="info__list">お知らせ一覧</div>
+				</div>
+			</div>
+			<div class="side-bar">
+				<div class="side-bar__lets">やってみよう</div>
+				<div class="side-bar__for-biginners">初めての方へ</div>
+				<div class="side-bar__news">ブクログ通信</div>
+				<div class="side-bar__twitter">ブクログのツイート</div>
+				<div class="side-bar__app">iPhone App</div>
+				<div class="side-bar__honto">honto連携</div>
+			</div>
+		</div>
+			<div class="ads">
+				<div class="ads__image">広告</div>
+			</div>
+			<div class="footer">
+				<div class="footer__contents">フッター</div>
+			</div>
     <%= yield %>
   </body>
 </html>
