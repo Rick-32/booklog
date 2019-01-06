@@ -123,3 +123,4 @@
 - belongs_to :book
 - has_one :books_users
 
+![booklog_new_diagram_-_cacoo](https://user-images.githubusercontent.com/42862643/50732142-d1ea6e80-11b7-11e9-9ab9-c0394ade2027.png)
