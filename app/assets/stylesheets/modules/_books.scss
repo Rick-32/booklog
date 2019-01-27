@@ -1,3 +1,816 @@
-// Place all the styles related to the books controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+/*margin-top の設定*/
+.t0M {
+	margin-top: 0 !important;
+}
+.t5M {
+	margin-top: 5px !important;
+}
+.t10M{
+	margin-top: 10px !important;
+}
+.t15M {
+	margin-top: 15px !important;
+}
+.t20M {
+	margin-top: 20px !important;
+}
+.t30M {
+	margin-top: 30px !important;
+}
+.t40M {
+	margin-top: 40px !important;
+}
+
+/*margin-bottom の設定*/
+.b10M {
+	margin-bottom: 10px !important;
+}
+.b20M {
+	margin-bottom: 20px !important;
+}
+.b30M {
+	margin-bottom: 30px !important;
+}
+
+/*margin-left の設定*/
+.l5M {
+	margin-left: 5px !important;
+}
+/*padding-top の設定*/
+.t10P {
+	padding-top: 10px !important;
+}
+
+.t20P {
+	padding-top: 20px !important;
+}
+
+/*padding-bottom の設定*/
+.b20P {
+	padding-bottom: 20px !important;
+}
+
+/*padding-left　の設定*/
+.l10P {
+	padding-left: 10px;
+}
+
+/*text-align*/
+.taL {
+	text-align: left !important;
+}
+
+img {
+	border: none;
+	vertical-align: middle;
+}
+
+/*スライダー下の丸ポチ*/
+.banner-pager {
+	text-align: center;
+}
+
+.banner-pager__item {
+	width: 10px;
+	height: 10px;
+	border-radius: 50%;
+	background: #666666;
+	display: inline-block;
+	margin: 10px 5px;
+}
+
+/*本の表紙画像サイズ*/
+// .book-image {
+// 	width: 100px;
+// 	height: 150px;
+// }
+/*ランキングのリボン*/
+.ribbon {
+	width: 28px;
+}
+/*アイコン*/
+.user_png {
+	width: 12px;
+	height: 14px;
+}
+.star_png {
+	width: 12px;
+	height: 14px;
+}
+
+/*hontoロゴ*/
+.honto-logo {
+	width: 20px;
+	height: 20px;
+}
+
+/*ポイントの絵文字*/
+.point-image {
+	width: 80px;
+	height: 80px;
+}
+
+/*arrowの画像*/
+.arrow img {
+	display: block;
+	width: 26px;
+	height: 26px;
+	// position: absolute;
+	top: 25%;
+	left: 0;
+}
+
+/*はじめてのバナー*/
+.first img {
+	width: 300px;
+	height: 65px;
+}
+/*ブクログ通信ロゴ*/
+.logo img {
+	width: 230px;
+	height: 38px;
+}
+/*Twitterのiframe*/
+.twitter-widget img {
+	width: 302px;
+	height: 695px;
+}
+/*iphone appのバナー*/
+.booklog-iphone-app img {
+	width: 300px;
+}
+/*booklog honto連携バナー*/
+.booklog-honto img {
+	width: 300px;
+}
+
+/*ad-footer広告バナー*/
+.ad-footer img {
+	width: 728px;
+	height: 90px;
+}
+/*ブクログ通信サムネイル*/
+.tn {
+	width: 100px;
+}
+/*===/.画像関係の細かい調整===*/
+
+.page__container {
+	max-width: 1500px;
+	width: 100%;
+}
+
+.about__container {
+	width: 100%;
+	max-width: 1000px;
+	margin: 0 auto;
+}
+.about__container h2 {
+	font-size: 30px;
+	font-weight: bold;
+	text-align: center;
+	color: #1e1e1e;
+}
+.description {
+	font-size: 16px;
+	font-weight: bold;
+	line-height: 2.06;
+	letter-spacing: 0.2px;
+	text-align: center;
+	color: #1e1e1e;
+}
+.underline {
+	background: linear-gradient(rgba(0,0,0,0) 75%, #8ad8ff 0%);
+	background-image: linear-gradient(rgba(0,0,0,0) 75%, rgb(138, 216, 255) 0%);
+	background-position-x: initial;
+	background-position-y: initial;
+	background-size: initial;
+	background-attachment: initial;
+	background-origin: initial;
+	background-clip: initial;
+	background-color: initial;
+}
+
+.points {
+	margin-top: 50px;
+	display: flex;
+	justify-content: space-between;
+}
+.point {
+	width: 120px;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+.point .title {
+	min-height: 30px;
+	font-size: 15px;
+	text-align: center;
+	color: #56c6fe;
+}
+.points .description {
+	font-size: 12px;
+	font-weight: normal;
+	line-height: 1.33;
+	color: #1e1e1e;
+	text-align: left;
+	width: 100%;
+}
+.about-button {
+	display: flex;
+	justify-content: center;
+}
+.about-button a {
+	display: inline-block;
+	width: 300px;
+	height: 40px;
+	line-height: 40px;
+	font-size: 14px;
+	font-weight: bold;
+	letter-spacing: 0.1px;
+	color: #4ea6cc;
+	border-radius: 24px;
+	border: solid 3px #bfeaff;
+	position: relative;
+}
+.about-button .right-triangle {
+	position: absolute;
+	right: 15px;
+	top: 14px;
+	width: 11px;
+	height: 11px;
+	transform: rotate(45deg);
+	border-top: solid 2px #bfeaff;
+	border-right: solid 2px #bfeaff;
+}
+.page-border {
+	width: 100%;
+	height: 1px;
+	background-color: #dcdcdc;
+}
+.pickup__container {
+	padding: 0 15px;
+	width: calc(100% - 30px);
+}
+.pickup__container h3 {
+	text-align: left;
+	font-size: 24px;
+	font-weight: bold;
+}
+.carousel__container {
+	display: flex;
+}
+.arrow {
+	position: relative;
+	width: 30px;
+}
+.carousel__container .items {
+	font-size: 0;
+	margin: 0 10px;
+	white-space: nowrap;
+	overflow: hidden;
+}
+.carousel__container .items .item {
+	display: inline-block;
+	width: 130px;
+	margin-right: 28px;
+	white-space: normal;
+	vertical-align: top;
+}
+.catchcopy__wrapper {
+	display: flex;
+	justify-content: center;
+	height: 30px;
+}
+.catchcopy {
+	font-size: 14px;
+	line-height: 16px;
+	color: #66b50f;
+	font-weight: bold;
+}
+
+	.title {
+	color: #1e1e1e;
+	font-size: 12px;
+	font-weight: bold;
+	text-align: left;
+}
+.carousel__container a:link {
+	text-decoration: none;
+	color: #4ea6cc;
+}
+.carousel__container a:visited {
+	text-decoration: none;
+	color: #4ea6cc;
+}
+.carousel__container .author {
+	font-size: 12px;
+}
+.carousel__container .description {
+	width: 130px;
+	font-size: 12px;
+	text-align: left;
+	color: #646464;
+	line-height: 1.4em;
+	font-style: normal;
+	font-weight: normal;
+}
+
+/*main*/
+.main__wrapper {
+	display: flex;
+	margin: 0 5px;
+	width: calc(100% - 10px);
+}
+main {
+	padding-left: 10px;
+	min-width: calc(100% - 350px);
+}
+
+/*新刊ニュース*/
+.release h3 {
+	color: #3c3c3c;
+	font-size: 24px;
+	font-weight: bold;
+	text-align: left;
+}
+.genre-head {
+	display: flex;
+	justify-content: space-between;
+}
+.genre-head h4 {
+	color: #a1a1a1;
+	font-size: 18px;
+	font-weight: bold;
+	text-align: left;
+	margin: 0;
+	padding: 0;
+}
+.more {
+	font-size: 14px;
+	letter-spacing: -0.3px;
+	color: #4ea6cc;
+}
+.more .right-triangle {
+	display: inline-block;
+	width: 8px;
+	height: 8px;
+	transform: rotate(45deg);
+	border-top: 1.5px solid #4ea6cc;
+	border-right: 1.5px solid #4ea6cc;
+}
+.arrow {
+	position: relative;
+	width: 30px;
+}
+#left-arrow-release-books img {
+	position: absolute;
+	top: 40%;
+	left: 0;
+}
+#release-books {
+	display: flex;
+}
+.release-date-wrap {
+	width: 120px;
+	border-radius: 5px;
+	background-color: #fff;
+	border: solid 1px #dcdcdc;
+	box-sizing: border-box;
+}
+.release-date {
+	font-size: 12px;
+	color: #828282;
+}
+.image img {
+	max-height: 180px;
+}
+#release-books .title {
+	width: 120px;
+	color: #1e1e1e;
+	font-size: 14px;
+	font-weight: bold;
+	text-align: left;
+}
+#release-books .author {
+	text-align: left;
+	font-size: 14px;
+}
+
+#release-comic .title {
+	width: 120px;
+	color: #1e1e1e;
+	font-size: 14px;
+	font-weight: bold;
+	text-align: left;
+}
+#release-comic .author {
+	text-align: left;
+	font-size: 14px;
+}
+/*====カルーセルの両サイド矢印====*/
+#left-arrow-pickup {
+	position: relative;
+	width: 30px;
+}
+#left-arrow-pickup img {
+	position: absolute;
+	top: 25%;
+	left: 0;
+}
+#right-arrow-pickup {
+	position: relative;
+	width: 30px;
+}
+#right-arrow-pickup img {
+	position: absolute;
+	top: 25%;
+	left: 0;
+}
+
+#left-arrow-release-books {
+	position: relative;
+	width: 30px;
+}
+#left-arrow-release-books img {
+	position: absolute;
+	top: 40%;
+	left: 0;
+}
+#right-arrow-release-books {
+	position: relative;
+	width: 30px;
+}
+#right-arrow-release-books img {
+	position: absolute;
+	top: 40%;
+	left: 0;
+}
+
+#left-arrow-release-comic {
+	position: relative;
+	width: 30px;
+}
+#left-arrow-release-comic img {
+	position: absolute;
+	top: 40%;
+	left: 0;
+}
+#right-arrow-release-comic {
+	position: relative;
+	width: 30px;
+}
+#right-arrow-release-comic img {
+	position: absolute;
+	top: 40%;
+	left: 0;
+}
+
+#left-arrow-ranking-books {
+	position: relative;
+	width: 30px;
+}
+#left-arrow-ranking-books img {
+	position: absolute;
+	top: 40%;
+	left: 0;
+}
+#right-arrow-ranking-books {
+	position: relative;
+	width: 30px;
+}
+#right-arrow-ranking-books img {
+	position: absolute;
+	top: 40%;
+	left: 0;
+}
+
+#left-arrow-ranking-comics {
+	position: relative;
+	width: 30px;
+}
+#left-arrow-ranking-comics img {
+	position: absolute;
+	top: 40%;
+	left: 0;
+}
+#right-arrow-ranking-comics {
+	position: relative;
+	width: 30px;
+}
+#right-arrow-ranking-comics img {
+	position: absolute;
+	top: 40%;
+	left: 0;
+}
+
+/*====/.カルーセルの両サイド矢印====*/
+
+/*ランキング*/
+.ranking h3 {
+	color: #3c3c3c;
+	font-size: 24px;
+	font-weight: bold;
+	text-align: left;
+}
+.genre-head {
+	display: flex;
+	justify-content: space-between;
+}
+#ranking-books .items {
+	font-size: 0;
+	margin: 0 10px;
+	white-space: nowrap;
+	overflow: hidden;
+}
+#ranking-books .item {
+	position: relative;
+	display: inline-block;
+	width: 120px;
+	height: 290px;
+	margin-right: 40px;
+	white-space: normal;
+	vertical-align: top;
+}
+
+/*ランキングbooks*/
+#ranking-books img {
+	max-height: 180px;
+}
+#ranking-books .ribbon {
+	width: 28px;
+	position: absolute;
+	top: 0;
+	left: 0;
+}
+#ranking-books .image span {
+	position: absolute;
+	top: 10px;
+	left: 0;
+	font-size: 14px;
+	color: #ffffff;
+	width: 28px;
+}
+#ranking-books .title {
+	width: 120px;
+	color: #1e1e1e;
+	font-size: 14px;
+	font-weight: bold;
+	text-align: left;
+}
+#ranking-books .author {
+	text-align: left;
+	font-size: 14px;
+}
+#ranking-books .aggregate {
+	position: absolute;
+	display: flex;
+	justify-items: center;
+	justify-content: center;
+	bottom: 0;
+	left: 0;
+	width: 120px;
+}
+#ranking-books .aggregate img {
+	border: none;
+	vertical-align: middle;
+}
+#ranking-books .users {
+	color: #89c600;
+	margin-left: 3px;
+	font-size: 12px;
+	font-weight: bold;
+}
+#ranking-books .rating {
+	color: #f58c29;
+	margin-left: 3px;
+	font-size: 12px;
+	font-weight: bold;
+}
+
+/*ランキングcomics*/
+#ranking-comics .items {
+	font-size: 0;
+	margin: 0 10px;
+	white-space: nowrap;
+	overflow: hidden;
+}
+#ranking-comics .item {
+	position: relative;
+	display: inline-block;
+	width: 120px;
+	height: 290px;
+	margin-right: 40px;
+	white-space: normal;
+	vertical-align: top;
+}
+#ranking-comics img {
+	max-height: 180px;
+}
+#ranking-comics .ribbon {
+	width: 28px;
+	position: absolute;
+	top: 0;
+	left: 0;
+}
+#ranking-comics .image span {
+	position: absolute;
+	top: 10px;
+	left: 0;
+	font-size: 14px;
+	color: #ffffff;
+	width: 28px;
+}
+#ranking-comics .title {
+	width: 120px;
+	color: #1e1e1e;
+	font-size: 14px;
+	font-weight: bold;
+	text-align: left;
+}
+#ranking-comics .author {
+	text-align: left;
+	font-size: 14px;
+}
+#ranking-comics .aggregate {
+	position: absolute;
+	display: flex;
+	justify-items: center;
+	justify-content: center;
+	bottom: 0;
+	left: 0;
+	width: 120px;
+}
+#ranking-comics .aggregate img {
+	border: none;
+	vertical-align: middle;
+}
+#ranking-comics .users {
+	color: #89c600;
+	margin-left: 3px;
+	font-size: 12px;
+	font-weight: bold;
+}
+#ranking-comics .rating {
+	color: #f58c29;
+	margin-left: 3px;
+	font-size: 12px;
+	font-weight: bold;
+}
+
+/*お知らせ*/
+.info-booklog-jp {
+	text-align: left;
+}
+.info-booklog-jp h2 {
+	font-size: 24px;
+	font-weight: bold;
+	color: #3c3c3c;
+}
+.date {
+	font-size: 12px;
+	color: #a1a1a1;
+}
+.subject {
+	margin-left: 15px;
+	display: inline-block;
+	width: 100px;
+	background-color: #4ea6cc;
+	text-align: center;
+	color: #ffffff;
+	font-size: 10px;
+	letter-spacing: -0.2px;
+	border-radius: 4px;
+}
+.info-booklog-jp .title {
+	margin-left: 15px;
+	font-size: 12px;
+	color: #1e1e1e;
+	line-height: 1.4em;
+	font-style: normal;
+	font-weight: normal;
+}
+
+/*サイドバー*/
+.side {
+	width: 300px;
+	margin-left: 30px;
+}
+/*lets*/
+.lets {
+	border-radius: 6px;
+	border: solid 1px #cdcdcd;
+	width: 300px;
+}
+.lets .title {
+	text-align: center;
+	font-size: 16px;
+	font-weight: bold;
+	color: #1e1e1e;
+	letter-spacing: 0.1px;
+}
+.mail {
+	background-color: #f5b629;
+	position: relative;
+	height: 40px;
+	line-height: 40px;
+	margin: 0 20px;
+	color: #ffffff;
+	letter-spacing: 0.1px;
+	font-weight: bold;
+	border-radius: 6px;
+}
+.lets .or {
+	font-size: 14px;
+	font-weight: bold;
+	color: #1e1e1e;
+	letter-spacing: 0.1px;
+}
+.lets .facebook {
+	background-color: #3b5998;
+	position: relative;
+	height: 40px;
+	line-height: 40px;
+	margin: 0 20px;
+	color: #ffffff;
+	letter-spacing: 0.1px;
+	font-weight: bold;
+	border-radius: 6px;
+}
+.lets .fa-facebook-square {
+	position: absolute;
+	top: 10px;
+	left: 10px;
+	font-size: 20px;
+}
+.lets .twitter {
+	background-color: #55acee;
+	position: relative;
+	height: 40px;
+	line-height: 40px;
+	margin: 0 20px;
+	color: #ffffff;
+	letter-spacing: 0.1px;
+	font-weight: bold;
+	border-radius: 6px;
+}
+.lets .fa-twitter {
+	position: absolute;
+	top: 10px;
+	left: 10px;
+	font-size: 20px;
+}
+.lets .honto {
+	background-color: #007bcd;
+	position: relative;
+	height: 40px;
+	line-height: 40px;
+	margin: 0 20px;
+	color: #ffffff;
+	letter-spacing: 0.1px;
+	font-weight: bold;
+	border-radius: 6px;
+}
+.lets .honto img {
+	position: absolute;
+	top: 10px;
+	left: 10px;
+	font-size: 20px;
+}
+/*ブクログ通信*/
+.hon-booklog-jp {
+	width: 300px;
+}
+.hon-booklog-jp .contents {
+	margin-top: 30px;
+}
+.hon-booklog-jp .content {
+	display: flex;
+	margin-bottom: 20px;
+}
+.hon-booklog-jp .thumbnail {
+	position: relative;
+}
+.hon-booklog-jp .description {
+	margin-left: 10px;
+}
+.description .title {
+	text-align: left;
+	font-size: 14px;
+	font-weight: bold;
+	line-height: 1.14;
+	color: #1e1e1e;
+}
+.description .date {
+	margin-top: 10px;
+	text-align: left;
+	font-size: 10px;
+	color: #a1a1a1;
+}
+
+/*広告*/
+.ad-footer {
+	margin: 30px auto;
+	width: 728px;
+	height: 90px;
+}

@@ -11,6 +11,10 @@ html, body {
 body, div, p, h1, h2, h3, h4, ul, figure {
 	margin: 0;
 	padding: 0;
+	line-height: 1.4em;
+	font-size: 12px;
+	font-style: normal;
+	font-weight: normal;
 }
 
 img {
@@ -308,6 +312,7 @@ footer ul li a {
 .area4 {
 	width: 130px;
 	float: left;
+	padding: 0 40px 0 0;
 }
 /*area5*/
 .area5 {
