@@ -144,3 +144,5 @@ build-iPhoneSimulator/
 *.css.map
 *.sass.map
 *.scss.map
+
+app/assets/images
