@@ -52,4 +52,4 @@ production:
   database: booklog_production
   username: booklog
   password: <%= ENV['BOOKLOG_DATABASE_PASSWORD'] %>
-  socket: /var/lib/mysql.sock
+  socket: /var/lib/mysql/mysql.sock
