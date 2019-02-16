@@ -6,6 +6,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<meta http-equiv="X-UA-Compatible" content="ie=edge">
 	<%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track' => true %>
+	<%= csrf_meta_tags %>
 	<title>ブクログ</title>
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 	<%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
@@ -57,9 +58,128 @@
 			<div class="right-menu__container clearfix">
 				<!--  menu area  -->
 				<div class="right-menu__inner">
+				  <!--  ログイン済み  -->
+					<% if user_signed_in? %>
+					<div class="right-menu__box">
+						<!--  ログアウトは本来別の位置だが開発中は便宜的にここに実装  -->
+						<%= link_to 'ログアウト', destroy_user_session_path, method: :delete %>
+					</div>
+					<div class="right-menu__box">
+						ここは後で
+					</div>
+					<!--  dropdown-menu  -->
+					<div class="right-menu__dropdown-menu">
+						<div href="#" class="right-menu__button dropdown-trigger"></div>
+						<!--%= image_tag "humburger.png", class: "button-image" %>
+						<!--  dropdown__list  -->
+						<div class="dropdown none">
+							<ul>
+								<li class="signup li">
+									<a href="#">
+										<i class="fa fa-user fa-fw"></i>
+										"新規登録"
+								</a>
+								</li>
+
+								<li class="login bar li">
+									<a href="#">
+										<i class="fa fa-sign-in fa-fw"></i>
+										"ログイン"
+									</a>
+								</li>
+
+								<li class="discover li">
+									<a href="#">
+										<i class="fa fa-chevron-circle-right fa-fw"></i>
+										"ランキング"
+									</a>
+								</li>
+
+								<li class="discover li">
+									<a href="#">
+										<i class="fa fa-chevron-circle-right fa-fw"></i>
+										"新刊情報"
+									</a>
+								</li>
+
+								<li class="discover li">
+									<a href="#">
+										<i class="fa fa-chevron-circle-right fa-fw"></i>
+										"談話室"
+									</a>
+								</li>
+
+								<li class="discover bar li">
+									<a href="#">
+										<i class="fa fa-chevron-circle-right fa-fw"></i>
+										"まとめ"
+									</a>
+								</li>
+
+								<li class="li">
+									<a href="#">
+										<i class="fa fa-heart fa-fw"></i>
+										"ブクログ公式本棚"
+									</a>
+								</li>
+
+								<li class="bar li">
+									<a href="#">
+										<i class="fa fa-diamond fa-fw"></i>
+										"ブクログ特集"
+									</a>
+								</li>
+
+								<li class="search bar li">
+									<a href="#">
+										<i class="fa fa-search fa-fw"></i>
+										"アイテム検索"
+									</a>
+								</li>
+
+								<li class="li">
+									<a href="#">
+										<i class="fa fa-book fa-fw"></i>
+										"ブクログとは"
+									</a>
+								</li>
+
+								<li class="li">
+									<a href="#">
+										<i class="fa fa-info-circle fa-fw"></i>
+										"お知らせブログ"
+									</a>
+								</li>
+
+								<li class="li">
+									<a href="#">
+										<i class="fa fa-question-circle fa-fw"></i>
+										"ヘルプ"
+									</a>
+								</li>
+
+								<li class="bar li">
+									<a href="#">
+										<i class="fa fa-shopping-cart fa-fw"></i>
+										"ブクログ公式グッズ"
+									</a>
+								</li>
+
+								<li class="app-banner li">
+									<a href="#">
+										<img src="" width="150" height="50" alt="ブクログの読書管理アプリ">
+									</a>
+								</li>
+							</ul>
+						</div><!--  /.dropdown__list  -->
+					</div><!--  /.dropdown-menu  -->
+				</div><!--  /.menu area  -->
+			</div><!--  グローバルナビ右側  -->
+
+					<% else %>
+					<!--  未ログイン  -->
 					<div class="right-menu__box">
 						<%= link_to "新規登録", new_user_registration_path, class: 'nav signup' %>
-						<!--a class="nav signup" href="#">新規登録</a-->
 					</div>
 					<div class="right-menu__box">
 						<%= link_to "ログイン", new_user_session_path, class: 'nav login' %>
@@ -172,7 +292,7 @@
 					</div><!--  /.dropdown-menu  -->
 				</div><!--  /.menu area  -->
 			</div><!--  グローバルナビ右側  -->
-
+			<% end %>
 		</div><!--  /.global-navi__inner -->
 	</div><!--  /.global-navi__container  -->
 </header><!--  /.header  -->
