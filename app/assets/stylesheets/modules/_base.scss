@@ -17,6 +17,71 @@ body, div, p, h1, h2, h3, h4, ul, figure {
 	font-weight: normal;
 }
 
+/*margin-top の設定*/
+.t0M {
+	margin-top: 0 !important;
+}
+.t5M {
+	margin-top: 5px !important;
+}
+.t10M{
+	margin-top: 10px !important;
+}
+.t15M {
+	margin-top: 15px !important;
+}
+.t20M {
+	margin-top: 20px !important;
+}
+.t30M {
+	margin-top: 30px !important;
+}
+.t40M {
+	margin-top: 40px !important;
+}
+
+/*margin-bottom の設定*/
+.b10M {
+	margin-bottom: 10px !important;
+}
+.b20M {
+	margin-bottom: 20px !important;
+}
+.b30M {
+	margin-bottom: 30px !important;
+}
+.b40M {
+	margin-bottom: 40px !important;
+}
+
+/*margin-left の設定*/
+.l5M {
+	margin-left: 5px !important;
+}
+/*padding-top の設定*/
+.t10P {
+	padding-top: 10px !important;
+}
+
+.t20P {
+	padding-top: 20px !important;
+}
+
+/*padding-bottom の設定*/
+.b20P {
+	padding-bottom: 20px !important;
+}
+
+/*padding-left　の設定*/
+.l10P {
+	padding-left: 10px;
+}
+
+/*text-align*/
+.taL {
+	text-align: left !important;
+}
+
 img {
 	width: 100%;
 	height: auto;
