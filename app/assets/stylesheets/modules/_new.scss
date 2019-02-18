@@ -1,0 +1,47 @@
+#main {
+	margin: 0 auto;
+	padding: 0;
+	text-align: left;
+	border: none;
+	position: relative;
+	width: 100%;
+}
+
+.main__inner {
+	letter-spacing: 0.1px;
+	color: #1e1e1e;
+	margin: 40px auto 100px;
+	width: 600px;
+	&--lead {
+		font-size: 24px;
+		font-weight: 600;
+		text-align: center;
+		word-break: normal;
+		margin: 20px 0 20px 0;
+		color: #333;
+		line-height: 1.7em;
+	}}
+
+.main__inner h1 {
+font-size: 34px;
+font-weight: normal;
+line-height: 38px;
+margin: 0 0 10px;
+color: #1e1e1e;
+letter-spacing: 0.2px;
+text-align: center;
+}
+
+.main__inner--signup-area {
+	box-sizing: border-box;
+	margin: 0 auto;
+	padding: 30px;
+	width: 560px;
+	background-color: #fff;
+	border: solid 1px #dcdcdc;
+	border-radius: 6px;
+}
+
+.list1 {
+	list-style: none;
+}
