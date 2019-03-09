@@ -2,8 +2,13 @@ class User < ApplicationRecord
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   devise :database_authenticatable, :registerable,
-				 :recoverable, :rememberable, :validatable,
+				 :recoverable, :rememberable, :validatable, :confirmable,
 				 :authentication_keys => [:user_id]
+
+	validates :user_id,
+		uniqueness: { case_sensitive: :false },
+		length: { minimum: 3, maximum: 16 },
+		format: { with: /\A[a-z0-9]+\z/, message: "ユーザー名は半角英数字です"}
 
 	attr_accessor :login
 	#usernameを必須・一意とする
