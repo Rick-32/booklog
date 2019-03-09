@@ -3,6 +3,27 @@ img {
 	vertical-align: middle;
 }
 
+/*ログアウトボタン*/
+a.btn__logout {
+	color: #fafafa;
+}
+.btn__logout {
+	text-align: center;
+	font-size: 14px;
+}
+.btn__logout {
+	display: block;
+	width: 100px;
+	height: 22px;
+	padding-top: 11px;
+	padding-bottom: 3px;
+	margin-bottom: 5px;
+	background-color: #393939;
+	top: 14px;
+	border-radius: 3px;
+	font-size: 13px;
+}
+
 /*スライダー下の丸ポチ*/
 .banner-pager {
 	text-align: center;
