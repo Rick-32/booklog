@@ -1,0 +1,36 @@
+body {
+	background: #fefef7;
+}
+.container {
+	position: relative;
+	margin: 20px auto 0;
+	padding: 0;
+	width: 980px;
+	background: none;
+}
+
+#main {
+	margin: 0 auto;
+	padding: 0;
+	text-align: left;
+	border: none;
+	position: relative;
+	width: 100%;
+}
+#mainArea {
+	float: left;
+}
+#mainArea h1 {
+	margin: 0 0 10px;
+	color: #1e1e1e;
+	font-size: 34px;
+	line-height: 38px;
+	word-break: normal;
+}
+.lead__logout {
+	word-break: normal;
+	margin: 20px 0 20px 0;
+	color: #333333;
+	font-size: 14px;
+	line-height: 1.7em;
+}
