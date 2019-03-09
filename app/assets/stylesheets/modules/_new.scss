@@ -1,0 +1,313 @@
+.global-navi__minilogo {
+width: 52px;
+height: 60px;
+margin: 0 auto;
+padding: 0;
+}
+
+
+.main__container {
+	margin: 0 auto;
+	padding: 0;
+	text-align: left;
+	border: none;
+	position: relative;
+	width: 100%;
+}
+
+.main__inner {
+	letter-spacing: 0.1px;
+	color: #1e1e1e;
+	margin: 40px auto 100px;
+	width: 600px;
+}
+/*新規登録画面-----------------------*/
+.lead {
+		font-size: 24px;
+		font-weight: 600;
+		text-align: center;
+		word-break: normal;
+		margin: 20px 0 20px 0;
+		color: #333;
+		line-height: 1.7em;
+}
+/*ログイン画面*/
+.main__inner p {
+	word-break: normal;
+	margin: 20px 0 20px 0;
+	color: #333;
+	font-size: 14px;
+	line-height: 1.7em;
+	font-style: normal;
+	font-weight: normal;
+}
+/*------------------------------------*/
+.main__inner h1 {
+font-size: 34px;
+font-weight: normal;
+line-height: 38px;
+margin: 0 0 10px;
+color: #1e1e1e;
+letter-spacing: 0.2px;
+text-align: center;
+}
+
+.main__inner--signup-area {
+	box-sizing: border-box;
+	margin: 0 auto;
+	padding: 30px;
+	width: 560px;
+	background-color: #fff;
+	border: solid 1px #dcdcdc;
+	border-radius: 6px;
+}
+
+.text {
+	float: none;
+	text-align: left;
+	font-size: 10px;
+	line-height: 1.4;
+	font-weight: normal;
+}
+.red {
+	margin: 0 3px 0 0;
+	color: #da4740;
+	font-size: 130%;
+	font-weight: bold;
+}
+
+table {
+	margin: 0;
+	border: none;
+	width: 100%;
+	background: #fff;
+}
+th {
+	box-sizing: border-box;
+	padding: 0;
+	width: 103px;
+	color: #1e1e1e;
+	background-color: #fff;
+	border: none;
+	text-align: left;
+	white-space: nowrap;
+	font-size: 14px;
+	font-weight: normal;
+}
+td {
+	padding: 0;
+	font-size: 16px;
+	border: none;
+	width: 65%;
+	position: relative;
+}
+
+.error-area {
+	height: 2em;
+}
+.input-area {
+	width: 372px;
+	height: 40px;
+	box-sizing: border-box;
+	background: #fafafa;
+	border: solid 1px #dcdcdc;
+	border-radius: 6px;
+	padding: 7px;
+	font-size: 14px;
+	line-height: 1.5em;
+}
+
+.list1 {
+	list-style: none;
+	float: left;
+	margin: 5px 0;
+	padding: 0;
+	line-height: 1.4em;
+	font-size: 12px;
+	font-style: normal;
+	font-weight: normal;
+}
+.agree {
+	text-align: left;
+	padding-left: 3px;
+	margin: 15px 0;
+}
+.agree-link{
+	text-decoration: none;
+	color: #4ea6cc;
+}
+label {
+	font-size: 12px;
+	font-weight: normal;
+	letter-spacing: 0.1px;
+	line-height: 1.42;
+}
+
+.buttons {
+	font-size: 24px;
+	font-weight: 600;
+	text-align: center;
+	margin: 0 0 40px;
+}
+.btnBlue {
+	box-sizing: border-box;
+	display: block;
+	margin: 0;
+	border: none;
+	font-family: "ヒラギノ角ゴ Pro W3","Hiragino Kaku Gothic Pro","メイリオ",Meiryo,"ＭＳ Ｐゴシック",sans-serif;
+	font-weight: normal;
+	color: #fff;
+	text-align: center;
+	line-height: 1,6em;
+	cursor: pointer;
+	border-radius: 5px;
+	padding: 0;
+	height: 50px;
+	width: 100%;
+	font-size: 14px;
+	letter-spacing: 0.1px;
+	background-color: #f5b629 !important;
+}
+
+.main__inner--social-login-area p {
+	font-size: 14px;
+	letter-spacing: 0.1px;
+	font-weight: 600;
+	text-align: center;
+}
+.main__inner--social-login-area ul li {
+	box-sizing: border-box;
+	width: 100%;
+	height: 50px;
+	float: none;
+	margin-top: 10px;
+}
+.main__inner--social-login-area ul li a {
+	position: relative;
+	margin: 0 !important;
+	padding: 15px 0;
+	display: block;
+	color: #fff;
+	text-align: center;
+	font-size: 14px;
+	border-radius: 5px;
+}
+.fb {
+	background: #3b5998;
+}
+.fb::before {
+	position: absolute;
+	font-family: "Font Awesome 5 Brands";
+	font-weight: 900;
+	font-size: 20px;
+	content: '\f082';
+	left: 30px;
+}
+
+.tw {
+	background: #55acee;
+}
+.tw::before {
+	position: absolute;
+	font-family: "Font Awesome 5 Brands";
+	font-weight: 900;
+	font-size: 20px;
+	content: '\f099';
+	left: 30px;
+}
+
+.honto {
+	background: #007bcd;
+}
+.honto::before {
+	position: absolute;
+	content: " ";
+	width: 20px;
+	height: 20px;
+	left: 30px;
+	background-image: url(honto-logo-mini.png);
+	background-size: cover;
+}
+
+
+#footer-mini ul {
+	padding: 0 0 10px;
+	font-size: 12px;
+	list-style: none;
+	list-style-position: outside;
+}
+#footer-mini ul li {
+	display: inline;
+	padding: 0 5px;
+}
+#footer-mini {
+	margin: 0;
+	padding: 30px 0;
+	text-align: center;
+	font-family: "ヒラギノ角ゴ Pro W3","Hiragino Kaku Gothic Pro","メイリオ",Meiryo,"ＭＳ Ｐゴシック",sans-serif;
+}
+#footer-mini a {
+	font-weight: bold;
+}
+.footer-mini_link {
+	text-decoration: none;
+	color: #4ea6cc;
+}
+
+/*ログイン画面*/
+.here_link {
+	text-decoration: none;
+	color: #4ea6cc;
+}
+.main__inner--signup-link-area {
+	margin-top: 30px;
+}
+.main__inner--signup-link-area p {
+	text-align: center;
+	font-size: 14px;
+	font-weight: 600;
+}
+
+.link-btn {
+	box-sizing: border-box;
+	margin: 30px auto;
+	height: 50px;
+}
+.link-btn a {
+	padding: 15px 0;
+	display: block;
+	color: #fff;
+	background: #f5b629;
+	text-align: center;
+	font-size: 14px;
+	border-radius: 5px;
+}
+
+.btn__login {
+	height: 50px;
+	width: 100%;
+	font-size: 14px;
+	box-sizing: border-box;
+	display: block;
+	margin: 0 auto;
+	padding: 0;
+	font-family: "ヒラギノ角ゴ Pro W3","Hiragino Kaku Gothic Pro","メイリオ",Meiryo,"ＭＳ Ｐゴシック",sans-serif;
+	font-weight: normal;
+	color: #4ea6cc;
+	background-color: #fff;
+	border-radius: 5px;
+	border: solid 1px #4ea6cc;
+	text-align: center;
+	line-height: 1,6em;
+	cursor: pointer;
+	letter-spacing: 0.1px;
+}
+
+#mini {
+	display: block;
+	color: #1e1e1e;
+	text-align: center;
+	font-style: normal;
+	font-size: 12px;
+	width: 100%;
+}

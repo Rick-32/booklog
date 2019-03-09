@@ -1,0 +1,47 @@
+#page {
+	position: relative;
+	margin: 20px auto 0;
+	padding: 0;
+	width: 980px;
+	background: none;
+}
+#mode-signup_submit {
+	background: none;
+	background-color: #fafafa;
+}
+#main {
+	margin: 0 auto;
+	padding: 0;
+	text-align: left;
+	border: none;
+	position: relative;
+	width: 100%;
+}
+
+.single-main-area {
+	margin: 40px auto 100px;
+	width: 600px;
+}
+
+.single-main-area h1 {
+	font-size: 34px;
+	font-weight: normal;
+	line-height: 38px;
+	margin: 0 0 10px;
+	color: #1e1e1e;
+}
+
+.single-main-area .lead__signup {
+	word-break: normal;
+	margin: 20px 0 20px 0;
+	color: #333;
+	font-size: 14px;
+	line-height: 1.7em;
+}
+
+.welcome-area {
+	margin: 20px 0 0;
+}
+.welcome-area a:hover {
+	opacity: 0.8;
+}

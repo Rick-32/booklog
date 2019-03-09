@@ -17,6 +17,90 @@ body, div, p, h1, h2, h3, h4, ul, figure {
 	font-weight: normal;
 }
 
+.none {
+	display: none;
+}
+
+/*widthの設定*/
+.w980px {
+	width: 980px !important;
+}
+
+/*margin-top の設定*/
+.t0M {
+	margin-top: 0 !important;
+}
+.t5M {
+	margin-top: 5px !important;
+}
+.t10M{
+	margin-top: 10px !important;
+}
+.t15M {
+	margin-top: 15px !important;
+}
+.t20M {
+	margin-top: 20px !important;
+}
+.t30M {
+	margin-top: 30px !important;
+}
+.t40M {
+	margin-top: 40px !important;
+}
+
+/*margin-bottom の設定*/
+.b10M {
+	margin-bottom: 10px !important;
+}
+.b20M {
+	margin-bottom: 20px !important;
+}
+.b30M {
+	margin-bottom: 30px !important;
+}
+.b40M {
+	margin-bottom: 40px !important;
+}
+
+/*margin-left の設定*/
+.l5M {
+	margin-left: 5px !important;
+}
+/*padding-top の設定*/
+.t10P {
+	padding-top: 10px !important;
+}
+
+.t20P {
+	padding-top: 20px !important;
+}
+
+.t25P {
+	padding-top: 25px !important;
+}
+/*padding-bottom の設定*/
+.b20P {
+	padding-bottom: 20px !important;
+}
+
+/*padding-left　の設定*/
+.l10P {
+	padding-left: 10px;
+}
+
+/*text-align*/
+.taL {
+	text-align: left !important;
+}
+.taC {
+	text-align: center !important;
+}
+
+.bar {
+	border-bottom: 1px #cdcdcd solid;
+}
+
 img {
 	width: 100%;
 	height: auto;
@@ -186,10 +270,74 @@ button {
 	background: none;
 	color: #4ea6cc;
 }
+/*--------------右側のメニュー----------*/
 
 /*dropdown menu*/
-.none {
-	display: none;
+.dropdown {
+	z-index: 4000;
+	position: absolute;
+	background: #FFF;
+	border: 1px solid #cdcdcd;
+	border-radius: 5px;
+	right: -92px;
+	left: -145px;
+	top: 60px;
+	width: 180px;
+}
+.dropdown ul {
+	margin: 5px 0 0;
+}
+.dropdown li {
+	margin: 0;
+	padding: 2px 0;
+	width: 100%;
+}
+
+.dropdown a {
+	position: relative;
+	display: block;
+	color: #1e1e1e;
+	padding: 6px 15px;
+}
+.dropdown a:hover {
+	color: #4ea6cc;
+}
+.global_menu_bnr_app.png {
+	width: 150px;
+	height: 50px;
+}
+.dropdown::before {
+	position: absolute;
+	display: block;
+	width: 10px;
+	height: 10px;
+	top: -7px;
+	bottom: 100%;
+	left: 85%;
+	background-color: #fff;
+	transform: rotate(225deg);
+	box-shadow: 1px 1px 1px -1px rgba(0,0,0,0.4);
+	border: solid transparent;
+	content: " ";
+	pointer-events: none;
+}
+
+.dropdown::after {
+	left: 155px;
+}
+/*FontAwesomeのアイコン色*/
+.fa-twitter {
+	color: #1dadea;
+}
+.fa-facebook-square {
+	color: #4861a8;
+}
+
+
+.right-menu__dropdown-menu {
+	position: relative;
+	float: left;
+	width: 40px;
 }
 .right-menu__button {
 	width: 40px;
@@ -201,7 +349,15 @@ button {
 	background-position: center center;
 }
 
+
 /*right-menu要素の間隔調整*/
+.right-menu__inner {
+	text-align: left;
+}
+.nav {
+	text-align: center;
+	font-size: 14px;
+}
 .right-menu__box {
 	margin-top: 3px;
 	margin-right: 15px;
@@ -222,7 +378,7 @@ button {
 	background-color: #da4740;
 	top: 14px;
 	border-radius: 3px;
-	font-size: 0.8em;
+	font-size: 13px;
 }
 .login {
 	display: block;
@@ -234,7 +390,7 @@ button {
 	background-color: #393939;
 	top: 14px;
 	border-radius: 3px;
-	font-size: 0.8em;
+	font-size: 13px;
 }
 
 /*footer*/

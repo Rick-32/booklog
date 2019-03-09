@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+	<meta charset="UTF-8">
+	<meta name="description" content="ブクログは、本の感想や評価をチェックしたり、webやアプリで本棚をかんたんに作成し、 感想やレビューを書いたり、読書の管理・記録をすることできます。">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track' => true %>
+	<title>ブクログ</title>
+	<%= csrf_meta_tags %>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+	<link href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" rel="stylesheet">
+</head>
+<body id="mode-signup_submit">
+<!--  header  -->
+<header class="header__global-navi clearfix">
+	<div class="global-navi__container">
+		<div class="global-navi__inner">
+			<!--  ブクログ logo  -->
+			<div class="global-navi__minilogo">
+				<%= link_to image_tag("header_mini_logo.png", class: "global-navi__minilogo--image"), root_path %>
+			</div><!--  /.ブクログ logo  -->
+		</div><!--  /.global-navi__inner -->
+	</div><!--  /.global-navi__container  -->
+</header><!--  /.header  -->
+
+<div id="page">
+<div id="main">
+  <div class="single-main-area">
+    <h1 id="signup_submit">新規登録 </h1>
+    <p class="lead__signup">
+      登録メールアドレス宛てにメールアドレス認証のメールを送信しました。<br>
+      メールの内容をご確認の上、メールアドレス認証を行ってください。<br>
+      メールアドレス認証は、ブクログからの大切なおしらせメールなどを正確にお届けするために必要です。
+    </p>
+
+    <div class="welcome-area">
+			<%= link_to image_tag("signed-up.png", class: "welcome-area__image"), user_session_path %>
+    </div>
+
+  </div>
+</div>
+</div>
+	<!--  footer-mini  -->
+	<div id="footer-mini">
+	<ul>
+		<li class="begin">
+			<%= link_to 'ブクログ', root_path, class: "footer-mini_link" %>
+		</li>
+		<li>
+			<%= link_to '新規登録', new_user_registration_path, class: "footer-mini_link" %>
+		</li>
+		<li>
+			<%= link_to 'ブクログについて', root_path, class: "footer-mini_link" %> <!--  仮置き  -->
+		</li>
+		<li>
+			<%= link_to 'お知らせブログ', root_path, class: "footer-mini_link" %> <!--  仮置き  -->
+		</li>
+		<li>
+			<%= link_to '利用規約', root_path, class: "footer-mini_link" %> <!--  仮置き  -->
+		</li>
+		<li>
+			<%= link_to 'プライバシーポリシー', root_path, class: "footer-mini_link" %> <!--  仮置き  -->
+		</li>
+		<li>
+			<%= link_to 'お問い合わせ', root_path, class: "footer-mini_link" %> <!--  仮置き  -->
+		</li>
+	</ul>
+	<address id="mini">Copyright ©︎2019 Booklog,Inc. All Rights Reserved.</address>
+	</div><!--  /.footer-mini  -->
+</body>
+</html>

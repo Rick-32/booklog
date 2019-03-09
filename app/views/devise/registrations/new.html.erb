@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+	<meta charset="UTF-8">
+	<meta name="description" content="ブクログは、本の感想や評価をチェックしたり、webやアプリで本棚をかんたんに作成し、 感想やレビューを書いたり、読書の管理・記録をすることできます。">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track' => true %>
+	<title>ブクログ</title>
+	<%= csrf_meta_tags %>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+	<link href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" rel="stylesheet">
+</head>
+<body>
+<!--  header  -->
+<header class="header__global-navi clearfix">
+	<div class="global-navi__container">
+		<div class="global-navi__inner">
+			<!--  ブクログ logo  -->
+			<div class="global-navi__minilogo">
+				<%= link_to image_tag("header_mini_logo.png", class: "global-navi__minilogo--image"), root_path %>
+			</div><!--  /.ブクログ logo  -->
+		</div><!--  /.global-navi__inner -->
+	</div><!--  /.global-navi__container  -->
+</header><!--  /.header  -->
+
+<div class="main">
+	<div class="main__container">
+		<div class="main__inner">
+			<h1 id="signup">ブクログの新規登録</h1>
+			<p class="lead b40M">
+				ようこそ、ブクログへ。
+			</p>
+
+			<div class="main__inner--signup-area">
+				<%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+
+					<%= devise_error_messages! %>
+					<p class="text">
+						(
+						<span class="red">*</span>
+						は必須項目です
+						)
+					</p>
+
+					<table>
+						<tbody>
+							<tr>
+								<th valign="middle" class="t25P">
+									<%= f.label :メールアドレス %>
+									<span class="red">*</span><br />
+								</th>
+								<td valign="middle">
+									<div class="error-area"></div>
+									<div>
+										<%= f.email_field :email, autofocus: true, autocomplete: "email", placeholder: "メールアドレスを入力", class: "input-area" %><br />
+									</div>
+								</td>
+							</tr><!--  /.メールアドレスの行  -->
+
+							<tr>
+								<th valign="middle">
+									<%= f.label :ブクログID %>
+									<span class="red">*</span>
+								</th>
+								<td>
+									<em class="list1">( 半角英数小文字: 3〜16文字 )</em>
+									<br />
+									<%= f.text_field :user_id, autofocus: true, maxlength: '16', placeholder: "ブクログIDを作成", class: "input-area" %>
+								</td>
+							</tr>
+
+							<tr>
+								<th valign="middle">
+									<%= f.label :パスワード %>
+									<span class="red">*</span>
+								</th>
+								<td>
+									<% if @minimum_password_length %>
+									<em class="list1">(半角英数・記号 <%= @minimum_password_length %> 〜 16文字)</em>
+									<% end %><br />
+									<%= f.password_field :password, autocomplete: "new-password", placeholder: "パスワードを作成", class: "input-area" %>
+								</td>
+							</tr>
+							<tr>
+								<th>
+									<%= f.label :パスワードの確認 %><br />
+								</th>
+								<td>
+									<%= f.password_field :password_confirmation, autocomplete: "new-password", placeholder: "再度パスワードを入力してください", class: "input-area" %>
+								</td>
+							</tr>
+							</tbody>
+						</table>
+						<p class="agree">
+							<label>新規会員登録する場合は、
+								<a href="#", class="agree-link">プライバシーポリシー</a>
+								および
+								<a href="#", class="agree-link">利用規約、外部サービス連携規約</a>
+								に同意するものとします。
+							</label>
+						</p>
+						<p class="buttons">
+							<%= f.submit "登録", class: 'btnBlue' %>
+						</p>
+					<% end %>
+
+					<div class="main__inner--social-login-area">
+						<p>または</p>
+						<!--  NOTE: リンク先は便宜的にルートパスに  -->
+						<ul class="clearfix">
+							<li class="li"><%= link_to 'Facebookで新規登録', root_path, class: "fb" %></li>
+							<li class="li"><%= link_to 'Twitterで新規登録', root_path, class: "tw" %></li>
+							<li class="li"><%= link_to 'hontoで新規登録', root_path, class: "honto" %></li>
+						</ul>
+					</div>
+			</div><!--  main__inner--signup-area  -->
+		</div><!--  /.main__inner  -->
+	</div><!--  /.main__container  -->
+</div><!--  /.main  -->
+
+	<!--  footer-mini  -->
+	<div id="footer-mini">
+	<ul>
+		<li class="begin">
+			<%= link_to 'ブクログ', root_path, class: "footer-mini_link" %>
+		</li>
+		<li>
+			<%= link_to '新規登録', new_user_registration_path, class: "footer-mini_link" %>
+		</li>
+		<li>
+			<%= link_to 'ブクログについて', root_path, class: "footer-mini_link" %> <!--  仮置き  -->
+		</li>
+		<li>
+			<%= link_to 'お知らせブログ', root_path, class: "footer-mini_link" %> <!--  仮置き  -->
+		</li>
+		<li>
+			<%= link_to '利用規約', root_path, class: "footer-mini_link" %> <!--  仮置き  -->
+		</li>
+		<li>
+			<%= link_to 'プライバシーポリシー', root_path, class: "footer-mini_link" %> <!--  仮置き  -->
+		</li>
+		<li>
+			<%= link_to 'お問い合わせ', root_path, class: "footer-mini_link" %> <!--  仮置き  -->
+		</li>
+	</ul>
+	<address id="mini">Copyright ©︎2019 Booklog,Inc. All Rights Reserved.</address>
+	</div><!--  /.footer-mini  -->
+</body>
+</html>
