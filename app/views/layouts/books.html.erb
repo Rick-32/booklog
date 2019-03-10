@@ -58,7 +58,7 @@
 			<div class="right-menu__container clearfix">
 				<!--  menu area  -->
 				<div class="right-menu__inner">
-				  <!--  ログイン済み  -->
+					<!--  ログイン済み  -->
 					<% if user_signed_in? %>
 					<div class="right-menu__box">
 						<!--  ログアウトは本来別の位置だが開発中は便宜的にここに実装  -->
@@ -73,16 +73,15 @@
 							<div class="dropdown none">
 								<ul>
 									<li class="li">
-										<a href="#">
-											<i class="fas fa-home fa-fw"></i>
-											HOME
-										</a>
+										<%= link_to home_users_path do %>
+											<i class="fas fa-home fa-fw"></i>HOME
+										<% end %>
+
 									</li>
 									<li class="li">
-										<a href="#">
-											<i class="fas fa-user fa-fw"></i>
-											プロフィール
-										</a>
+										<%= link_to profile_users_path do %>
+											<i class="fas fa-user fa-fw"></i>プロフィール
+										<% end %>
 									</li>
 									<li class="bar li">
 										<a href="#">
