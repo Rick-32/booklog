@@ -1,1 +1,353 @@
-ここはホーム画面
+<div class="page">
+	<!--  page__breadcrumbs  -->
+	<ul class="breadcrumbs">
+		<li class="breadcrumbs__li" itemscope="itemscope" itemtype="http://data-vocabulary.org/Breadcrumb">
+			<%= link_to root_path itemprop="url" do %>
+				<span class="breadcrumbs__li--a" itemprop="title">ブクログ</span>
+			<% end %>
+		</li>
+		<li class="breadcrumbs__li" itemscope="itemscope" itemtype="http://data-vocabulary.org/Breadcrumb">
+			<span itemprop="title"><%= current_user.name %>さんのホーム</span>
+		</li>
+	</ul><!--  /.page__breadcrumbs  -->
+
+	<!--  page__main  -->
+	<div clas="page__main" id="main">
+		<div class="page__main--mainArea">
+			<div class="user b20M">
+				<div class="user__wrapper clearfix">
+					<div class="user__prof">
+						<div class="user__prof--icon">
+							<a href="#">
+								<%= image_tag 'prof_noimage.png', class: 'prof__image' %>
+								<span class="user__prof--icon-edit">編集</span>
+							</a>
+						</div><!--  /.user__prof--icon  -->
+						<div class="user__prof--social">
+							<div class="user-follow-btn">
+								<span class="follow-myself">あなたの本棚</span>
+							</div>
+						</div><!--  /.user__prof--social  -->
+					</div><!--  /.user__prof  -->
+
+					<div class="user__info">
+						<div class="user__info--shelf">
+							<h1><%= current_user.name %>さんのホーム</h1>
+							<%= link_to profile_users_path, class: 'user-shelf-nickname' do %>
+								<%= current_user.name%>さん
+							<% end %>
+						</div><!--  /.user__info--shelf  -->
+						<ul class="user__info--activity">
+							<li class="li">
+								<dl>
+									<dt>登録数</dt>
+									<dd>
+										<%= link_to '登録数', root_path %>
+									</dd>
+								</dl>
+							</li>
+							<li class="li">
+								<dl>
+									<dt>レビュー</dt>
+									<dd>
+										<%= link_to 'review数', root_path %>
+									</dd>
+								</dl>
+							</li>
+							<li class="li">
+								<dl>
+									<dt>レビュー率</dt>
+									<dd>◯◯
+										<span class="percent">%</span>
+									</dd>
+								</dl>
+							</li>
+						</ul>
+						<ul class="user__info--follow">
+							<li class="li">
+								<dl>
+									<dt>フォロー</dt>
+									<dd>
+										<a href="#">
+											<span class="following_num">◯◯</span>
+										</a>
+									</dd>
+								</dl>
+							</li>
+							<li class="li">
+								<dl>
+									<dt>フォロワー</dt>
+									<dd>
+										<a href="#">
+											<span class="follower_num">◯◯</span>
+										</a>
+									</dd>
+								</dl>
+							</li>
+						</ul>
+					</div><!--  /.user__info  -->
+
+					<div class="user-navi clearfix">
+						<ul class="user-navi__ul">
+							<li class="user-navi__li li">
+								<%= link_to root_path do %>
+									<%= image_tag "book-shelf.png", class: "book-shelf__image" %><span>本棚（仮）</span>
+								<% end %>
+							</li>
+							<li class="user-navi__li li">
+								<%= link_to profile_users_path do %>
+									<%= image_tag "profile.png", class: "profile__image" %><span>プロフィール</span>
+								<% end %>
+							</li>
+							<li class="user-navi__li li">
+								<%= link_to root_path do %>
+									<%= image_tag "timeline.png", class: "timeline__image" %><span>タイムライン（仮）</span>
+								<% end %>
+							</li>
+							<li class="user-navi__li li">
+								<%= link_to root_path do %>
+									<%= image_tag "reading-graph.png", class: "reading-graph__image" %><span>読書グラフ（仮）</span>
+								<% end %>
+							</li>
+							<li class="user-navi__li li">
+								<%= link_to root_path do %>
+									<%= image_tag "other.png", class: "other__image" %><span>その他（仮）</span>
+								<% end %>
+							</li>
+						</ul>
+						<div class="user-navi__buttons">
+							<div class="user-setting-btn menu dropdown-menu-click">
+								<p class="dropdown-trigger">
+									<%= image_tag "setting.png", class: "setting__image" %><span>設定</span>
+								</p>
+								<div id="dropdown"class="dropdown">
+									<ul>
+										<li class="bar li">
+											<%= link_to root_path do %>
+												<i class="fa fa-tw fa-th"></i>本棚の設定（仮）
+											<% end %>
+										</li>
+										<li class="bar li">
+											<%= link_to root_path do %>
+												<i class="far fa-smile"></i>プロフィールの設定（仮）
+											<% end %>
+										</li>
+									</ul>
+								</div>
+							</div>
+						</div>
+					</div><!--  /.user__navi  -->
+
+				</div><!--  /.user__wrapper  -->
+
+			</div><!--  /.user  -->
+			<p class="lead">
+				<%= current_user.name %>さんの本棚の状態や通知を確認できます。
+			</p>
+			<div class="boxArea">
+				<h3 id="underline">あなたの読了した本からのオススメ</h3>
+				<div class="recommend">
+					<div class="recommend__col-scroll">
+						<div class="recommend__target-book">
+							<div class="recommend__target-book--item-block">
+								<div class="recommend__target-book--item-intro">
+									あなたが読んだ本
+								</div>
+								<div class="recommend__target-book--item-image">
+									<%= link_to image_tag("book0.jpeg", class: "itemImage img_genre1"), root_path %>
+								</div>
+								<div class="shelf-line"></div>
+							</div>
+						</div><!--  /.recommend__target-book  -->
+						<div class="recommend-area">
+							<div class="recommend-area__description">
+								この本を読み終わった人は、次にこの本を読んでいます！
+							</div>
+							<div class="recommend-area__list">
+
+								<div class="recommend-area__list--item-block">
+									<div class="item__img">
+										<div class="rank">
+											<%= image_tag "ribbon1.png", class: "ribbon" %>
+										</div>
+										<a href="#">
+											<%= image_tag "book17.jpg", class: "itemImage" %>
+										</a>
+									</div>
+									<div class="item__info">
+										<a href="#" class="item-info__link">
+											<div class="item-title">ひと</div>
+										</a>
+										<div class="item-author">
+											小野寺史宣
+										</div>
+									</div>
+								</div>
+
+								<div class="recommend-area__list--item-block">
+									<div class="item__img">
+										<div class="rank">
+											<%= image_tag "ribbon2.png", class: "ribbon" %>
+										</div>
+										<a href="#">
+											<%= image_tag "book18.jpg", class: "itemImage" %>
+										</a>
+									</div>
+									<div class="item__info">
+										<a href="#" class="item-info__link">
+											<div class="item-title">ひと</div>
+										</a>
+										<div class="item-author">
+											小野寺史宣
+										</div>
+									</div>
+								</div>
+
+								<div class="recommend-area__list--item-block">
+									<div class="item__img">
+										<div class="rank">
+											<%= image_tag "ribbon3.png", class: "ribbon" %>
+										</div>
+										<a href="#">
+											<%= image_tag "book19.jpg", class: "itemImage" %>
+										</a>
+									</div>
+									<div class="item__info">
+										<a href="#" class="item-info__link">
+											<div class="item-title">ひと</div>
+										</a>
+										<div class="item-author">
+											小野寺史宣
+										</div>
+									</div><!--  /.item__info  -->
+								</div><!--  /.recommend-area__list--item-block  -->
+							</div><!--  /.recommend-area__list  -->
+						</div><!--  /.recommend-area  -->
+					</div>
+				</div><!--  /.boxarea  -->
+
+				<div class="boxarea">
+					<ul id="contentsBnrListHome" class="clearfix">
+					</ul>
+				</div>
+
+				<div class="boxarea">
+					<h3>読書状況</h3>
+					<table class="mybookArea clearfix">
+						<tbody>
+							<tr>
+								<th class="status">
+									<h4><!--  FIXME: リンク先&メソッド  -->
+										<%= link_to root_path, class: "" do %>
+											読みたい[全<span><%= current_user.name.length %></span>件]
+										<% end %>
+									</h4>
+								</th>
+								<th class="status">
+									<h4><!--  FIXME: リンク先&メソッド  -->
+										<%= link_to root_path, class: "" do %>
+											いま読んでる[全<span><%= (current_user.name.length)*2 %></span>件]
+										<% end %>
+									</h4>
+								</th>
+							</tr>
+							<tr>
+								<td class="img">
+									<ul>
+										<li class="li">
+											<%= link_to image_tag("book7.jpeg", class: "itemImage"), root_path %>
+										</li>
+									</ul>
+								</td>
+								<td class="img">
+									<ul>
+										<li class="li">
+											<%= link_to image_tag("book7.jpeg", class: "itemImage"), root_path %>
+										</li>
+										<li class="li">
+											<%= link_to image_tag("book9.jpeg", class: "itemImage"), root_path %>
+										</li>
+										<li class="li">
+											<%= link_to image_tag("book10.jpeg", class: "itemImage"), root_path %>
+										</li>
+										<li class="li">
+											<%= link_to image_tag("book3.jpeg", class: "itemImage"), root_path %>
+										</li>
+									</ul>
+								</td>
+							</tr>
+
+							<tr>
+								<th class="status">
+									<h4><!--  FIXME: リンク先&メソッド  -->
+										<%= link_to root_path, class: "" do %>
+											読み終わった[全<span><%= (current_user.name.length)*16 %></span>件]
+										<% end %>
+									</h4>
+								</th>
+								<th class="status">
+									<h4><!--  FIXME: リンク先&メソッド  -->
+										<%= link_to root_path, class: "" do %>
+											積読[全<span><%= (current_user.name.length)*3 %></span>件]
+										<% end %>
+									</h4>
+								</th>
+							</tr>
+							<tr>
+								<td class="img">
+									<ul>
+										<li class="li">
+											<%= link_to image_tag("book3.jpeg", class: "itemImage"), root_path %>
+										</li>
+									</ul>
+								</td>
+								<td class="img">
+									<ul>
+										<li class="li">
+											<%= link_to image_tag("book6.jpeg", class: "itemImage"), root_path %>
+										</li>
+										<li class="li">
+											<%= link_to image_tag("book8.jpeg", class: "itemImage"), root_path %>
+										</li>
+										<li class="li">
+											<%= link_to image_tag("book11.jpeg", class: "itemImage"), root_path %>
+										</li>
+										<li class="li">
+											<%= link_to image_tag("book13.jpeg", class: "itemImage"), root_path %>
+										</li>
+									</ul>
+								</td>
+							</tr>
+							<tr>
+								<th class="status">
+									<h4><!--  FIXME: リンク先&メソッド  -->
+										<%= link_to root_path, class: "" do %>
+											未設定[全<span><%= current_user.name.length %></span>件]
+										<% end %>
+									</h4>
+								</th>
+								<th class="status">
+									<h4><!--  FIXME: リンク先&メソッド  -->
+										<%= link_to '読書状況まとめて変更', root_path, class: "" %>
+									</h4>
+								</th>
+							</tr>
+						</tbody>
+					</table>
+				</div><!--  /.boxarea  -->
+
+				<div class="boxarea">
+				</div>
+
+				<div class="boxarea">
+				</div>
+
+				<div class="boxarea">
+				</div>
+			</div><!--  /.page__main--mainArea  -->
+
+			<div class="page__main--sideArea">
+			</div>
+		</div>
+	</div><!--  /.page__main  -->
+</div>
