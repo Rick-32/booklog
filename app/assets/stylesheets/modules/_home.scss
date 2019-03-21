@@ -1,8 +1,25 @@
+.clearfix:after {
+	content: " ";
+	display: block;
+	clear: both;
+}
+/*FIXME:important*/
+body {
+	background: #fafafa !important;
+}
+#main:after {
+	content: " ";
+	display: block;
+	clear: both;
+}
+#main{
+	background: #fafafa;
+}
 #mode-home {
 	position: relative;
 	margin: 0 auto;
 	padding:0;
-	background: #fefef7;
+	background: #fafafa;
 	font-size: 12px;
 	line-height: 130%;
 	color: #1e1e1e;
@@ -13,7 +30,7 @@
 	margin: 20px auto 0;
 	padding: 0;
 	width: 980px;
-	background: none;
+	background: #fafafa;
 }
 .breadcrumbs {
 	margin: 0 0 15px;
@@ -50,6 +67,7 @@
 
 .page__main--mainArea {
 	width: 650px;
+	float: left;
 }
 
 .user {
@@ -443,3 +461,522 @@ h3#underline {
 		box-shadow: none;
 	}
 }
+
+/*タイムラインのboxArea*/
+.prof-image-s {
+	height: 30px;
+	width: 30px;
+}
+.book-thumb {
+	height: 75px;
+	width: 53px;
+}
+.netabare {
+	height: 15px;
+	width: 60px;
+}
+#active {
+	height: 24px;
+	width: 24px;
+}
+#deactive {
+	height: 24px;
+	width: 24px;
+}
+
+#timelineArea li {
+	border-bottom: 1px solid #e4e4e4;
+	margin: 0 0 15px;
+	padding: 0 0 15px;
+	line-height: 1.6em;
+	& div {
+		line-height: 20px;
+	}
+}
+.itemArea {
+	margin: 10px 0 0;
+	padding: 10px;
+	border: 1px solid #ccc;
+	background-color: #eee;
+	& .thumb {
+		float: left;
+		margin-right: 20px;
+		vertical-align: middle;
+		text-align: center;
+	}
+	& .title a {
+		font-size: 14px;
+		color: #333;
+	}
+	& a:link {
+		text-decoration: none;
+	}
+	& a:hover {
+		color: #da4740;
+	}
+	& .btnUsers {
+		padding: 0 10px 0 0;
+		font-size: 12px;
+		font-weight: bold;
+		color: #da4740;
+		white-space: nowrap;
+		border-radius: 3px;
+	}
+	& .btnRating {
+		padding: 0 10px 0 0;
+		font-size: 12px;
+		font-weight: bold;
+		color: #f58c29;
+		white-space: nowrap;
+		border-radius: 3px;
+	}
+	& .desc a:link {
+		text-decoration: none;
+		color: #4ea6cc;
+	}
+}
+
+.icon {
+	float: left;
+	width: 50px;
+	vertical-align: middle;
+	& a:link {
+		text-decoration: none;
+		color: #4ea6cc;
+	}
+	& img {
+		margin: 0;
+		padding: 2px;
+		border: 1px solid #cdcdcd;
+		border-radius: 3px;
+		background: #fff;
+	}
+	& img:hover {
+		margin: 0;
+		padding: 2px;
+		border: 1px solid #4ea6cc;
+		border-radius: 3px;
+		background: #fff;
+	}
+}
+
+.action {
+	width: 559px;
+	float: left;
+	& .txtBlack:link {
+		text-decoration: underline;
+		color: #1e1e1e;
+	}
+	& .txtBlack:visited {
+		text-decoration: underline;
+		color: #1e1e1e;
+	}
+	& .txtBlack:hover {
+		color: #4ea6cc;
+	}
+	& a.txtBlack {
+		font-weight: bold;
+	}
+	& .txtBlue {
+		font-weight: bold;
+	}
+	& .txtBlue:link {
+		text-decoration: none;
+		color: #4ea6cc;
+	}
+	& .txtBlue:visited {
+		text-decoration: none;
+		color: #4ea6cc;
+	}
+	& span.when {
+		color: #999;
+		font-size: 11px;
+		white-space: nowrap;
+	}
+}
+
+.r-description {
+	margin: 10px 0 0;
+	border: 1px solid #ccc;
+	background-color: #fff;
+	line-height: 1.5em;
+	font-size: 11px;
+	& a:link {
+		text-decoration: none;
+		color: #4ea6cc;
+	}
+	& .review-info-link {
+		background: #e5f1f5;
+		padding: 8px 10px;
+	}
+	& .more {
+		font-size: 12px;
+	}
+	.rating-area i {
+		margin: 0 1px 0 0;
+		&.orange {
+			color: #f5b629;
+		}
+	}
+	.fa {
+		display: inline-block;
+		line-height: 1;
+		font-family: "Font Awesome 5 Free";
+		font-size: inherit;
+	}
+	& .fa-star:before {
+		content: "\f005"
+	}
+}
+
+.fav-area {
+	display: inline-block;
+	height: 25px;
+	& .deactive {
+		height: 24px;
+		width: 24px;
+	}
+	& .active {
+		display: inline-block;
+	}
+	& .fav-button img {
+		color: #da4740;
+		vertical-align: middle;
+	}
+	.fav-count {
+		display: inline-block;
+		position: relative;
+		padding: 0 5px;
+		color: #333;
+		background: #fff;
+		border:  1px #cdcdcd solid;
+		text-align: center;
+		vertical-align: middle;
+		font-family: helvetica,clean,Hiragino Kaku Gothic Pro,sans-serif;
+		font-size: 12px;
+		line-height: 25px;
+		margin-left: 5px;
+		border-radius: 3px;
+	}
+	.fav-count:before {
+		position: absolute;
+		border-right-color: #fff;
+		top: 6px;
+		left: -10px;
+		content: " ";
+		border-style: solid solid outset;
+		border-width: 5px;
+		border-top-color: transparent;
+		border-bottom-color: transparent;
+		border-left-color: transparent;
+		border-right-color: silver;
+	}
+	.fav-count:after {
+		position: absolute;
+		margin: 1px 0 0 2px;
+		border-width: 4px;
+		border-right-color: #fff;
+		border-top-color: transparent;
+		border-bottom-color: transparent;
+		border-left-color: transparent;
+		top: 6px;
+		right: 100%;
+		left: -10px;
+		display: block;
+		width: 0;
+		height: 0;
+		content: " ";
+		border-style: solid solid outset;
+	}
+}
+#timelineArea li.last {
+	border-bottom: none;
+}
+
+.moreBtnArea {
+	margin: 15px 0 0;
+	padding: 10px;
+	text-align: right;
+	& .m-btnBlue, .m-btnBlue:link {
+		margin: 0;
+		padding: 10px 20px;
+		border: none;
+		display: inline-block;
+		font-size: 12px;
+		font-weight: normal;
+		font-family: "ヒラギノ角ゴ Pro W3","Hiragino Kaku Gothic Pro","メイリオ",Meiryo,"ＭＳ Ｐゴシック",sans-serif;
+		line-height: 1.6em;
+		cursor: pointer;
+		border-radius: 5px;
+		background: #4ea6cc;
+		color: #fff !important;
+	}
+	& .m-btnBlue:hover {
+		background: #3887A6;
+	}
+}
+/*FIXME: 他で設定したアンダーラインも重ねて出てしまう*/
+.boxArea h3.underline {
+	width: 100%;
+	border-bottom: 5px solid #333;
+	padding: 0 0 4px;
+	margin: 0 0 15px;
+}
+
+
+.listType01 li {
+	margin: 0 0 5px;
+	padding: 2px 6px;
+	& a:link, a:visited {
+		text-decoration: none;
+		color: #4ea6cc !important;
+	}
+}
+.ListBgBlue {
+	background: #e5f1f5;
+}
+
+#page__main--sideArea {
+	float: left;
+	padding: 0 0 0 30px;
+	width: 300px;
+	& .recommend-shelf-area {
+		margin-bottom: 10px;
+		padding: 10px;
+		border: solid 1px #8ad8ff;
+		border-radius: 6px;
+		background-color: #fff;
+		& header {
+			padding-bottom: 3px;
+			&	.title {
+				text-align: center;
+				& img {
+					border: none;
+					vertical-align: middle;
+					width: 280px;
+					height: 68px;
+				}
+			}
+		}
+		& .user {
+			margin: 10px 0;
+			padding: 10px;
+			display: flex;
+			flex-direction: column;
+			background-color: #ece2d8;
+			border-radius: 7px;
+			& .shelf {
+				width: 260px;
+				height: 120px;
+				text-indent: -9876px;
+				display: flex;
+				justify-content: space-around;
+				align-items: flex-end;
+				& .book {
+					margin-bottom: 23px;
+					& a:link {
+						text-decoration: none;
+						color: #4ea6cc;
+						& img {
+							display: block;
+							width: 60px;
+						}
+					}
+				}
+				& a:link {
+					text-decoration: none;
+					color: #4ea6cc;
+				}
+			}
+			& .account {
+				margin: 5px 0;
+				display: flex;
+				align-items: center;
+				& .icon {
+					vertical-align: middle;
+					& img {
+						width: 30px;
+						height: 30px;
+						object-fit: cover;
+						border-radius: 50%;
+						vertical-align: middle;
+					}
+				}
+				& .nickname {
+					margin-left: 10px;
+					font-size: 13px;
+					color: #4ea6cc;
+				}
+				& div {
+					color: #4ea6cc;
+				}
+			}
+			& .infomation span {
+				color: #4ea6cc;
+			}
+		}
+		& .fav-area {
+			margin: 15px 0;
+			display: flex;
+			align-items: center;
+			color: #da4740;
+			font-size: 13px;
+			height: 25px;
+			& .fav-button {
+				margin: 7px;
+				& #deactive-f {
+					display: flex;
+					align-items: center;
+					& img {
+						width: 24px;
+						height: 24px;
+						color: #da4740;
+						vertical-align: middle;
+					}
+				}
+			}
+		}
+		& .enquete-area form {
+			position: relative;
+			margin: 4px;
+			& .before-input .title {
+				font-size: 13.5px;
+				color: #4ea6cc;
+				font-weight: normal;
+			}
+			& .before-input li {
+				margin: 7px 0;
+				font-size: 13px;
+				& input {
+					margin-right: 10px;
+					color: #3c3c3c;
+				}
+				& input[type="radio"] {
+					margin: 5px 3px 5px 0;
+				}
+			}
+			& .before-input textarea {
+				box-sizing: border-box;
+				width: 100%;
+				border: solid 1px #cdcdcd;
+				border-radius: 5px;
+				padding: 7px;
+				font-size: 14px;
+				line-height: 1.4em;
+				resize: vertical;
+				letter-spacing: 0;
+				overflow: auto;
+				vertical-align: top;
+			}
+			& .before-input .button {
+				margin: 15px;
+				display: flex;
+				justify-content: center;
+				align-items: center;
+				& input {
+					width: 200px;
+					height: 30px;
+					font-size: 13px;
+					color: #fff;
+					border-radius: 5px;
+					background-color: #56c6fe;
+					cursor: pointer;
+					text-align: center;
+				}
+			}
+		}
+		& .description {
+			margin-top: 8px;
+			text-align: center;
+			color: #646464;
+			font-size: 12px;
+			line-height: 1.17;
+			font-weight: normal;
+		}
+		& .note {
+			margin-top: 3px;
+			text-align: center;
+			font-size: 10px;
+			line-height: 1.4;
+			color: #646464;
+		}
+	}
+	& aside {
+		position: relative;
+		margin: 0 0 10px;
+	}
+	& .sidemenu {
+		margin: 10px 0;
+		padding: 15px;
+		background: #f0f0f0;
+		border-radius: 10px;
+		& .sidemenu-title {
+			display: block;
+			margin: 0 0 15px;
+			padding: 10px 15px;
+			background: #fff;
+			color: #555;
+			font-weight: bold;
+			border: 3px solid #4ea6cc;
+			text-align: center;
+			font-size: 1rem;
+			line-height: 2.1rem;
+			border-radius: 10px;
+		}
+		& .sidemenu-subtitle {
+			padding: 6px 17px;
+			background: #f0f0f0;
+			color: #888;
+			border: 3px solid #cdcdcd;
+			border-bottom: 1px solid #cdcdcd;
+			text-align: center;
+			font-weight: bold;
+			font-size: 1.2rem;
+			line-height: 1.8rem;
+			border-radius: 10px 10px 0 0;
+		}
+		& .sidemenu-list {
+			margin: 0;
+			padding: 0;
+		}
+		& .sidemenu-list li:last-child {
+			margin: 0 0 20px;
+			border-bottom: 3px solid #cdcdcd;
+			border-radius: 0 0 10px 10px;
+		}
+		& .sidemenu-list li {
+			position: relative;
+			background: #fff;
+			border-left: 3px solid #cdcdcd;
+			border-right: 3px solid #cdcdcd;
+			border-bottom: 1px dotted #cdcdcd;
+			& a {
+				display: block;
+				padding: 10px 17px;
+				font-weight: bold;
+				color: #555;
+			}
+		}
+		.sidemenu-toggle {
+			margin: 0 0 20px;
+			& .sidemenu-subtitle {
+				position: relative;
+				background: #fff;
+				border-bottom: 3px solid #cdcdcd;
+				color: #888;
+				border-radius: 10px;
+				font-size: 1.2rem;
+				line-height: 1.8rem;
+			}
+			& .sidemenu-subtitle:after {
+				// position: absolute;
+				top: 6px;
+				right: 10px;
+				font-family: "Font Awesome 5 Free";
+				content: "\f13a";
+				font-size: 14px;
+			}
+		}
+	}
+}
+
