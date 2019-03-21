@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_03_19_205616) do
+ActiveRecord::Schema.define(version: 2019_03_21_052430) do
 
   create_table "users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "email", default: "", null: false
@@ -27,13 +27,15 @@ ActiveRecord::Schema.define(version: 2019_03_19_205616) do
     t.string "unconfirmed_email"
     t.string "name", null: false
     t.integer "gender", null: false
-    t.string "birthdate", null: false
     t.string "bookshelf_name", null: false
     t.integer "prefecture", null: false
     t.string "hometown"
     t.string "occupation"
     t.text "profile"
     t.string "bookshelf_profile"
+    t.integer "birth_y"
+    t.integer "birth_m"
+    t.integer "birth_d"
     t.index ["user_id"], name: "index_users_on_user_id", unique: true
   end
 
