@@ -67,6 +67,17 @@ body, div, p, h1, h2, h3, h4, ul, figure {
 .l5M {
 	margin-left: 5px !important;
 }
+/*margin-right の設定*/
+.r10M {
+	margin-right: 10px !important;
+}
+/*paddingの設定*/
+.noneP {
+	padding: 0 !important;
+}
+.a10P {
+	padding: 10px !important;
+}
 /*padding-top の設定*/
 .t10P {
 	padding-top: 10px !important;
@@ -394,7 +405,7 @@ button {
 }
 
 /*footer*/
-footer {
+#footer {
 	position: relative;
 	margin: 30px auto 0;
 	padding: 30px 0 5px;
@@ -402,12 +413,15 @@ footer {
 	height: 100%;
 	background: #e4e4e4;
 	text-align: center;
+	& div {
+		text-align: left;
+	}
 }
 
 .footer__container {
 	margin: 5px auto 15px;
 	padding: 30px;
-	width: 930px;
+	width: 730px;
 	background: #fff;
 	border-radius: 10px;
 	text-align: left;
@@ -433,6 +447,9 @@ footer ul li a {
 	color: #656565;
 }
 
+.page__container {
+	background-color: #fafafa;
+}
 /*borderのあるlist*/
 .border {
 	margin: 0 0 5px;
