@@ -10,6 +10,7 @@ Rails.application.routes.draw do
 
 	root 'books#index'
 	get '/logout' => "users#logout", as: :logout
+	get '/profile' => "users#show", as: :profile
 
 	resources :users do
 		collection do
