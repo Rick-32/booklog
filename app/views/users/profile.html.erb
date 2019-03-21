@@ -133,8 +133,8 @@
 													<% end %>
 												</li>
 												<li class="bar li">
-													<%= link_to root_path do %>
-														<i class="far fa-smile"></i>プロフィールの設定（仮）
+													<%= link_to edit_user_path(@user) do %>
+														<i class="far fa-smile"></i>プロフィールの設定
 													<% end %>
 												</li>
 											</ul>
@@ -147,7 +147,7 @@
 					</div><!--  /.user  -->
 
 					<p class="lead">
-						<%= @user.prefecture %> / <%= @user.hometown %>の<%= @user.occupation %>。<%= @user.birthdate %>生まれ
+						<%= @user.prefecture %> / <%= @user.hometown %>の<%= @user.occupation %>。<%= @user.birth_y %>年<%= @user.birth_m %>/<%= @user.birth_d %>生まれ
 					</p>
 					<table class="tableType4 profileUsersDate t0M">
 						<tbody>
@@ -175,7 +175,7 @@
 							</tr>
 							<tr>
 								<th>生年月日</th>
-								<td><%= @user.birthdate %>生まれ</td>
+								<td><%= @user.birth_y %>年<%= @user.birth_m %>月<%= @user.birth_d %>日生まれ</td>
 							</tr>
 							<tr>
 								<th>職業</th>
