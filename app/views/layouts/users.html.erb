@@ -10,12 +10,13 @@
 	<%= csrf_meta_tags %>
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 	<%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+	<link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/smoothness/jquery-ui.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
 	<link href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" rel="stylesheet">
 </head>
-
-<body id="mode-home">
+<body>
 	<div id="body">
-	<!--  header  -->
+<!--  header  -->
 		<header class="header__global-navi clearfix">
 			<div class="global-navi__container">
 				<div class="global-navi__inner">
@@ -78,6 +79,7 @@
 												<%= link_to home_users_path do %>
 													<i class="fas fa-home fa-fw"></i>HOME
 												<% end %>
+
 											</li>
 											<li class="li">
 												<%= link_to profile_users_path do %>
@@ -222,10 +224,11 @@
 			</div><!--  /.global-navi__container  -->
 		</header><!--  /.header  -->
 
-		<%= yield %>
 
-		<!--  footer  -->
-		<footer class="footer">
+	<%= yield %>
+
+	<!--  footer  -->
+		<footer id="footer">
 			<div class="footer__container clearfix">
 				<div class="footer__container--inner clearfix">
 					<!--  area1  -->
@@ -363,15 +366,6 @@
 							</li>
 						</ul>
 					</div><!--  /.area4  -->
-					<div class="area5">
-						<ul>
-							<li class="li">
-								<a href="https://suzuri.jp/booklog.png" target="_blank">
-									<%= image_tag "bnr_booklogshop.png", class: "bnr_booklog" %>
-								</a>
-							</li>
-						</ul>
-					</div><!--  /.area5  -->
 				</div><!--  /.footer__container--inner  -->
 			</div><!--  /.footer__container  -->
 			<!--  footer-navi  -->
@@ -402,5 +396,6 @@
 				</div>
 			</div><!--  /.footer-navi  -->
 		</footer><!--  /.footer  -->
-	</div>
+	</div><!--  /.div#body  -->
 </body>
+</html>
