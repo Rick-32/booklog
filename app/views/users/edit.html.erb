@@ -1,0 +1,361 @@
+		<div class="page" id="mode-profile">
+			<!--  page__breadcrumbs  -->
+			<ul class="breadcrumbs">
+				<li class="breadcrumbs__li" itemscope="itemscope" itemtype="http://data-vocabulary.org/Breadcrumb">
+					<%= link_to root_path itemprop="url" do %>
+						<span class="breadcrumbs__li--a" itemprop="title">ブクログ</span>
+					<% end %>
+				</li>
+				<li class="breadcrumbs__li" itemscope="itemscope" itemtype="http://data-vocabulary.org/Breadcrumb">
+					<span itemprop="title">プロフィールの設定</span>
+				</li>
+			</ul><!--  /.page__breadcrumbs  -->
+
+			<!--  page__main  -->
+			<div clas="page__main" id="main">
+				<div class="page__main--mainArea">
+					<h1 id="setting_profile">プロフィールの設定</h1>
+					<p class="lead">
+						プロフィール、プロフィールタグ、お気に入りベスト３を設定します。
+					</p>
+
+					<%= form_for @user do |f| %><!--  フォーム１  -->
+						<div class="posR">
+							<h2>基本設定</h2>
+							<div class="posA t10 r0">
+								<%= link_to 'プロフィールを確認', profile_users_path, target: "_blank" %>
+							</div>
+
+						</div>
+					<table class="tableType4 profileUsersDate t0M">
+						<tbody>
+							<tr>
+								<th>ブクログID</th>
+								<td colspan="2">
+									<strong class="r10M"><%= @user.user_id %></strong>
+									<%= link_to '変更はこちらから', edit_user_registration_path %>
+								</td>
+							</tr>
+							<tr>
+								<th>ニックネーム</th>
+								<td colspan="2">
+									<strong class="r10M"><%= @user.name %></strong>
+									<%= link_to '変更はこちらから', edit_user_registration_path %>
+								</td>
+							</tr>
+							<tr>
+								<th><%= f.label :profile, '自己紹介', {class: 'th'} %></th>
+								<td colspan="2">
+									<%= f.text_field :profile %>
+									<ul class="list1">
+										<li class="li">
+											1000文字以内 / HTMLタグ使用不可
+										</li>
+									</ul>
+								</td>
+							</tr>
+							<tr>
+								<th>性別</th>
+								<td class="separate-l">
+									<span>
+										<%= f.radio_button :gender, :男性, checked: "checked" %>男性
+									</span>
+									<span class="l10M">
+										<%= f.radio_button :gender, :女性, checked: "checked" %>女性
+									</span>
+									<span class="l10M">
+										<%= f.radio_button :gender, :秘密, checked: "checked" %>秘密
+									</span>
+								</td>
+							</tr>
+							<tr>
+								<th>誕生日</th>
+								<td><%= f.select :birth_y,
+								[["1901","1901"], ["1902","1902"], ["1903","1903"], ["1904","1904"], ["1905","1905"], ["1906","1906"], ["1907","1907"], ["1908","1908"], ["1909","1909"],
+								["1910","1910"],["1911","1911"], ["1912","1912"], ["1913","1913"], ["1914","1914"], ["1915","1915"], ["1916","1916"], ["1917","1917"], ["1918","1918"], ["1919","1919"],
+								["1920","1920"],["1921","1921"], ["1922","1922"], ["1923","1923"], ["1924","1924"], ["1925","1925"], ["1926","1926"], ["1927","1927"], ["1928","1928"], ["1929","1929"],
+								["1930","1930"],["1931","1931"], ["1932","1932"], ["1933","1933"], ["1934","1934"], ["1935","1935"], ["1936","1936"], ["1937","1937"], ["1938","1938"], ["1939","1939"],
+								["1940","1940"],["1941","1941"], ["1942","1942"], ["1943","1943"], ["1944","1944"], ["1945","1945"], ["1946","1946"], ["1947","1947"], ["1948","1948"], ["1949","1949"],
+								["1950","1950"],["1951","1951"], ["1952","1952"], ["1953","1953"], ["1954","1954"], ["1955","1955"], ["1956","1956"], ["1957","1957"], ["1958","1958"], ["1959","1959"],
+								["1960","1960"],["1961","1961"], ["1962","1962"], ["1963","1963"], ["1964","1964"], ["1965","1965"], ["1966","1966"], ["1967","1967"], ["1968","1968"], ["1969","1969"],
+								["1970","1970"],["1971","1971"], ["1972","1972"], ["1973","1973"], ["1974","1974"], ["1975","1975"], ["1976","1976"], ["1977","1977"], ["1978","1978"], ["1979","1979"],
+								["1980","1980"],["1981","1981"], ["1982","1982"], ["1983","1983"], ["1984","1984"], ["1985","1985"], ["1986","1986"], ["1987","1987"], ["1988","1988"], ["1989","1989"],
+								["1990","1990"],["1991","1991"], ["1992","1992"], ["1993","1993"], ["1994","1994"], ["1995","1995"], ["1996","1996"], ["1997","1997"], ["1998","1998"], ["1999","1999"],
+								["2000","2000"],["2001","2001"], ["2002","2002"], ["2003","2003"], ["2004","2004"], ["2005","2005"], ["2006","2006"], ["2007","2007"], ["2008","2008"], ["2009","2009"],
+								["2010","2010"],["2011","2011"], ["2012","2012"], ["2013","2013"], ["2014","2014"], ["2015","2015"], ["2016","2016"], ["2017","2017"], ["2018","2018"], ["2019","2019"],
+								["2020","2020"]
+								], :selected => @user.birth_y %>年
+								<%= f.select :birth_m,
+								[["1","1"], ["2","2"], ["3","3"], ["4","4"], ["5","5"], ["6","6"], ["7","7"], ["8","8"], ["9","9"], ["10","10"], ["11","11"], ["12","12"]],
+								:selected => @user.birth_m %>月
+								<%= f.select :birth_d,
+								[["1","1"], ["2","2"], ["3","3"], ["4","4"], ["5","5"], ["6","6"], ["7","7"], ["8","8"], ["9","9"], ["10","10"],
+								["11","11"], ["12","12"], ["13","13"], ["14","14"], ["15","15"], ["16","16"], ["17","17"], ["18","18"], ["19","19"], ["20","20"],
+								["21","21"], ["22","22"], ["23","23"], ["24","24"], ["25","25"], ["26","26"], ["27","27"], ["28","28"],["29","29"], ["30","30"], ["31","31"]],
+								:selected => @user.birth_d %>日</td>
+							</tr>
+								<th><%= f.label :occupation, '職業', {class: 'th'} %></th>
+								<td colspan="2">
+									<%= f.text_field :occupation %>
+								</td>
+							</tr>
+							<tr>
+								<th><%= f.label :prefecture, '都道府県', {class: 'th'} %></th>
+								<td><%= f.select :prefecture, User.prefectures.keys, :selected => @user.prefecture %></td>
+							</tr>
+							<tr>
+								<th><%= f.label :hometown, 'ホームタウン', {class: 'th'} %></th>
+								<td><%= f.text_field :hometown, placeholder: '例）渋谷、大名' %></td>
+							</tr>
+						</tbody>
+					</table>
+					<p class="buttons b40M">
+						<%= f.submit 'プロフィールを更新する' %>
+					</p>
+					<% end %><!--  /.フォーム１  -->
+
+					<form id="profiletag"><!--  フォーム2  -->
+						<h2>プロフィールタグの設定</h2>
+						<p class="lead b10M">自分の好きなジャンルや作家を登録して、
+							<a href="#">ユーザー検索</a>
+							で同じ趣味の本棚と出会いましょう。
+						</p>
+						<table class="tableType4">
+							<tbody>
+								<tr>
+									<th>パーソナルタグ<br>
+										<span class="ts10 tcgray">
+											<a href="#">ユーザー検索</a>の対象項目
+										</span>
+									</th>
+									<td colspan="2">
+										<textarea type="text", id="profile_tag_1", placeholder="例）女子大生　作家志望"></textarea>
+										<ul class="list1">
+											<li class="li">例）
+											<span id="profileTagList1">
+												<a href="#" class="set-tag">IT系</a>&nbsp;
+												<a href="#" class="set-tag">作家志望</a>&nbsp;
+												<a href="#" class="set-tag">歴女</a>&nbsp;
+												<a href="#" class="set-tag">デザイナー</a>&nbsp;
+												<a href="#" class="set-tag">AB型</a>&nbsp;
+											</span>
+											</li>
+										</ul>
+									</td>
+								</tr>
+								<tr>
+									<th>興味のあるジャンル<br>
+										<span class="ts10 tcgray">
+											<a href="#">ユーザー検索</a>の対象項目
+										</span>
+									</th>
+									<td colspan="2">
+										<textarea type="text", id="profile_tag_2", placeholder="例）ライトノベル　SF　少女漫画"></textarea>
+										<ul class="list1">
+											<li class="li">例）
+											<span id="profileTagList1">
+												<a href="#" class="set-tag">SF</a>&nbsp;
+												<a href="#" class="set-tag">ファンタジー</a>&nbsp;
+												<a href="#" class="set-tag">ミステリー</a>&nbsp;
+												<a href="#" class="set-tag">歴史</a>&nbsp;
+												<a href="#" class="set-tag">絵本</a>&nbsp;
+											</span>
+											</li>
+										</ul>
+									</td>
+								</tr>
+								<tr>
+									<th>好きな作家<br>
+										<span class="ts10 tcgray">
+											<a href="#">ユーザー検索</a>の対象項目
+										</span>
+									</th>
+									<td colspan="2">
+										<textarea type="text", id="profile_tag_3", placeholder="例）伊坂幸太郎　東野圭吾　押井守"></textarea>
+										<ul class="list1">
+											<li class="li">好きな作家・監督・アーティストをスペース区切りで入力してください</li>
+											<li class="li">例）
+											<span id="profileTagList1">
+												<a href="#" class="set-tag">伊坂幸太郎</a>&nbsp;
+												<a href="#" class="set-tag">東野圭吾</a>&nbsp;
+												<a href="#" class="set-tag">押井守</a>&nbsp;
+												<a href="#" class="set-tag">ラーメンズ</a>&nbsp;
+												<a href="#" class="set-tag">東京事変</a>&nbsp;
+											</span>
+											</li>
+											<li class="li">
+												<em>苗字と名前の間にスペースを入れると別々のタグとして登録されてしまいますのでご注意ください</em>
+											</li>
+											<li class="li">
+												例)「村上　春樹」と入力した場合、「村上」「春樹」の2つのタグが登録されます
+											</li>
+										</ul>
+									</td>
+								</tr>
+							</tbody>
+						</table>
+						<p class="buttons b40M">
+							<button type="submit", id="p_tag_btn">プロフィールタグを更新する</button>
+						</p>
+					</form>
+
+					<form id="fav_book"><!--  フォーム2  -->
+						<h2>お気に入りベスト３の設定</h2>
+						<p class="lead b10M">
+							お気に入りベスト3は、あなたの
+							<a href="#">プロフィール</a>
+							と
+							<a href="#">みんなのベスト３</a>
+							ページに表示されます。
+						</p>
+						<table class="tableType4">
+							<tbody>
+								<tr>
+									<th class="best01">1位</th>
+									<td class="fav_value">
+										<div class="inputTitle">
+											<em class="notset">未設定</em>
+										</div>
+										<div class="t10M clearfix">
+											<a href="#" class="item_btn">アイテム変更</a>
+										</div>
+									</td>
+								</tr>
+								<tr>
+									<th class="best02">
+										2位
+									</th>
+									<td class="fav_value">
+										<div class="inputTitle">
+											<em class="notset">未設定</em>
+										</div>
+										<div class="t10M clearfix">
+											<a href="#" class="item_btn">アイテム変更</a>
+										</div>
+									</td>
+								</tr>
+								<tr>
+									<th class="best03">3位</th>
+									<td class="fav_value">
+										<div class="inputTitle">
+											<em class="notset">未設定</em>
+										</div>
+										<div class="t10M clearfix">
+											<a href="#" class="item_btn">アイテム変更</a>
+										</div>
+									</td>
+								</tr>
+							</tbody>
+						</table>
+						<p class="buttons b40M">
+							<button type="submit", id="fav_btn">ベスト3を更新する</button>
+						</p>
+					</form>
+
+				</div><!--  /.#mainArea  -->
+				<div id="page__main--sideArea">
+					<aside class="ad-side-top">
+						<%= image_tag 'ad-side.png' %>
+					</aside>
+					<dl class="sidemenu">
+						<dt class="sidemenu-title">本と出会う</dt>
+						<dd class="sidemenu-list">
+							<p class="sidemenu-subtitle">ランキング</p>
+							<ul>
+								<li class="li">
+									<a href="#">デイリーランキング</a>
+								</li>
+								<li class="li">
+									<a href="#">週間ランキング</a>
+								</li>
+								<li class="li">
+									<a href="#">月間ランキング</a>
+								</li>
+								<li class="li">
+									<a href="#">みんなのベスト3</a>
+								</li>
+								<li class="li">
+									<a href="#">オーディオブック</a>
+								</li>
+							</ul>
+							<div class="sidemenu-toggle toggle toggleOff">
+								<p class="sidemenu-subtitle ranking-annual">
+									年間ランキング
+								</p>
+								<ul style="display: none;">
+									<li class="li">
+										<a href="#">2018年のランキング</a>
+									</li>
+									<li class="li">
+										<a href="#">2017年のランキング</a>
+									</li>
+									<li class="li">
+										<a href="#">2016年のランキング</a>
+									</li>
+									<li class="li">
+										<a href="#">2015年のランキング</a>
+									</li>
+									<li class="li">
+										<a href="#">2014年のランキング</a>
+									</li>
+									<li class="li">
+										<a href="#">2013年のランキング</a>
+									</li>
+									<li class="li">
+										<a href="#">2012年のランキング</a>
+									</li>
+									<li class="li">
+										<a href="#">2011年のランキング</a>
+									</li>
+									<li class="li">
+										<a href="#">2010年のランキング</a>
+									</li>
+									<li class="li">
+										<a href="#">2009年のランキング</a>
+									</li>
+								</ul>
+							</div>
+							<p class="sidemenu-subtitle">新刊情報</p>
+							<ul>
+								<li class="li">
+									<a href="#">新刊ニュース</a>
+								</li>
+								<li class="li">
+									<a href="#">電子書籍 [IT系技術書]</a>
+								</li>
+							</ul>
+							<p class="sidemenu-subtitle">レビュー</p>
+							<ul>
+								<li class="li">
+									<a href="#">新着レビュー</a>
+								</li>
+							</ul>
+							<p class="sidemenu-subtitle">おすすめ</p>
+							<ul>
+								<li class="li">
+									<a href="#">ブクログ ピックアップ</a>
+								</li>
+								<li class="li">
+									<a href="#">ブクログ公式本棚</a>
+								</li>
+								<li class="li">
+									<a href="#">ブクログ公式本棚の新着情報</a>
+								</li>
+								<li class="li">
+									<a href="#">ブクログ特集</a>
+								</li>
+							</ul>
+							<p class="sidemenu-subtitle">本棚を探す</p>
+							<ul>
+								<li class="li">
+									<a href="#">プロフィールから本棚を探す</a>
+								</li>
+								<li class="li">
+									<a href="#">ブクログID 検索</a>
+								</li>
+							</ul>
+						</dd>
+					</dl>
+				</div><!--  sideArea  -->
+			</div><!--  /.#main  -->
+		</div><!--  /.page  -->
