@@ -9,8 +9,10 @@ Rails.application.routes.draw do
 	end
 
 	root 'books#index'
-	get '/logout' => "users#logout", as: :logout
-	get '/profile' => "users#show", as: :profile
+	get '/logout' 				=> "users#logout", as: :logout
+	get '/profile' 				=> "users#show", as: :profile
+	get '/users/:id/edit' => "users#edit"
+	patch 'users/:id' 		=> "users#update"
 
 	resources :users do
 		collection do
