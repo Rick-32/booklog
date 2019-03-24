@@ -101,7 +101,7 @@
 							</tr>
 							<tr>
 								<th><%= f.label :prefecture, '都道府県', {class: 'th'} %></th>
-								<td><%= f.select :prefecture, User.prefectures.keys, :selected => @user.prefecture %></td>
+								<td><%= f.collection_select :prefecture_id, Prefecture.all, :id, :name, :selected => @user.prefecture %></td>
 							</tr>
 							<tr>
 								<th><%= f.label :hometown, 'ホームタウン', {class: 'th'} %></th>
