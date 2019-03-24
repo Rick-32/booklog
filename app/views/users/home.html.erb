@@ -1,802 +1,802 @@
-	<div class="page">
-		<!--  page__breadcrumbs  -->
-		<ul class="breadcrumbs">
-			<li class="breadcrumbs__li" itemscope="itemscope" itemtype="http://data-vocabulary.org/Breadcrumb">
-				<%= link_to root_path itemprop="url" do %>
-					<span class="breadcrumbs__li--a" itemprop="title">ブクログ</span>
-				<% end %>
-			</li>
-			<li class="breadcrumbs__li" itemscope="itemscope" itemtype="http://data-vocabulary.org/Breadcrumb">
-				<span itemprop="title"><%= current_user.name %>さんのホーム</span>
-			</li>
-		</ul><!--  /.page__breadcrumbs  -->
+<div class="page">
+	<!--  page__breadcrumbs  -->
+	<ul class="breadcrumbs">
+		<li class="breadcrumbs__li" itemscope="itemscope" itemtype="http://data-vocabulary.org/Breadcrumb">
+			<%= link_to root_path itemprop="url" do %>
+				<span class="breadcrumbs__li--a" itemprop="title">ブクログ</span>
+			<% end %>
+		</li>
+		<li class="breadcrumbs__li" itemscope="itemscope" itemtype="http://data-vocabulary.org/Breadcrumb">
+			<span itemprop="title"><%= current_user.name %>さんのホーム</span>
+		</li>
+	</ul><!--  /.page__breadcrumbs  -->
 
-		<!--  page__main  -->
-		<div clas="page__main" id="main">
-			<div class="page__main--mainArea">
-				<div class="user b20M">
-					<div class="user__wrapper clearfix">
-						<div class="user__prof">
-							<div class="user__prof--icon">
-								<a href="#">
-									<%= image_tag 'prof_noimage.png', class: 'prof__image' %>
-									<span class="user__prof--icon-edit">編集</span>
-								</a>
-							</div><!--  /.user__prof--icon  -->
-							<div class="user__prof--social">
-								<div class="user-follow-btn">
-									<span class="follow-myself">あなたの本棚</span>
-								</div>
-							</div><!--  /.user__prof--social  -->
-						</div><!--  /.user__prof  -->
+	<!--  page__main  -->
+	<div clas="page__main" id="main">
+		<div class="page__main--mainArea">
+			<div class="user b20M">
+				<div class="user__wrapper clearfix">
+					<div class="user__prof">
+						<div class="user__prof--icon">
+							<a href="#">
+								<%= image_tag 'prof_noimage.png', class: 'prof__image' %>
+								<span class="user__prof--icon-edit">編集</span>
+							</a>
+						</div><!--  /.user__prof--icon  -->
+						<div class="user__prof--social">
+							<div class="user-follow-btn">
+								<span class="follow-myself">あなたの本棚</span>
+							</div>
+						</div><!--  /.user__prof--social  -->
+					</div><!--  /.user__prof  -->
 
-						<div class="user__info">
-							<div class="user__info--shelf">
-								<h1><%= current_user.name %>さんのホーム</h1>
-								<%= link_to profile_users_path, class: 'user-shelf-nickname' do %>
-									<%= current_user.name%>さん
+					<div class="user__info">
+						<div class="user__info--shelf">
+							<h1><%= current_user.name %>さんのホーム</h1>
+							<%= link_to profile_users_path, class: 'user-shelf-nickname' do %>
+								<%= current_user.name%>さん
+							<% end %>
+						</div><!--  /.user__info--shelf  -->
+						<ul class="user__info--activity">
+							<li class="li">
+								<dl>
+									<dt>登録数</dt>
+									<dd>
+										<%= link_to '登録数', root_path %>
+									</dd>
+								</dl>
+							</li>
+							<li class="li">
+								<dl>
+									<dt>レビュー</dt>
+									<dd>
+										<%= link_to 'review数', root_path %>
+									</dd>
+								</dl>
+							</li>
+							<li class="li">
+								<dl>
+									<dt>レビュー率</dt>
+									<dd>◯◯
+										<span class="percent">%</span>
+									</dd>
+								</dl>
+							</li>
+						</ul>
+						<ul class="user__info--follow">
+							<li class="li">
+								<dl>
+									<dt>フォロー</dt>
+									<dd>
+										<a href="#">
+											<span class="following_num">◯◯</span>
+										</a>
+									</dd>
+								</dl>
+							</li>
+							<li class="li">
+								<dl>
+									<dt>フォロワー</dt>
+									<dd>
+										<a href="#">
+											<span class="follower_num">◯◯</span>
+										</a>
+									</dd>
+								</dl>
+							</li>
+						</ul>
+					</div><!--  /.user__info  -->
+
+					<div class="user-navi clearfix">
+						<ul class="user-navi__ul">
+							<li class="user-navi__li li">
+								<%= link_to root_path do %>
+									<%= image_tag "book-shelf.png", class: "book-shelf__image" %><span>本棚（仮）</span>
 								<% end %>
-							</div><!--  /.user__info--shelf  -->
-							<ul class="user__info--activity">
-								<li class="li">
-									<dl>
-										<dt>登録数</dt>
-										<dd>
-											<%= link_to '登録数', root_path %>
-										</dd>
-									</dl>
-								</li>
-								<li class="li">
-									<dl>
-										<dt>レビュー</dt>
-										<dd>
-											<%= link_to 'review数', root_path %>
-										</dd>
-									</dl>
-								</li>
-								<li class="li">
-									<dl>
-										<dt>レビュー率</dt>
-										<dd>◯◯
-											<span class="percent">%</span>
-										</dd>
-									</dl>
-								</li>
-							</ul>
-							<ul class="user__info--follow">
-								<li class="li">
-									<dl>
-										<dt>フォロー</dt>
-										<dd>
-											<a href="#">
-												<span class="following_num">◯◯</span>
-											</a>
-										</dd>
-									</dl>
-								</li>
-								<li class="li">
-									<dl>
-										<dt>フォロワー</dt>
-										<dd>
-											<a href="#">
-												<span class="follower_num">◯◯</span>
-											</a>
-										</dd>
-									</dl>
-								</li>
-							</ul>
-						</div><!--  /.user__info  -->
-
-						<div class="user-navi clearfix">
-							<ul class="user-navi__ul">
-								<li class="user-navi__li li">
-									<%= link_to root_path do %>
-										<%= image_tag "book-shelf.png", class: "book-shelf__image" %><span>本棚（仮）</span>
-									<% end %>
-								</li>
-								<li class="user-navi__li li">
-									<%= link_to profile_users_path(current_user.id) do %>
-										<%= image_tag "profile.png", class: "profile__image" %><span>プロフィール</span>
-									<% end %>
-								</li>
-								<li class="user-navi__li li">
-									<%= link_to root_path do %>
-										<%= image_tag "timeline.png", class: "timeline__image" %><span>タイムライン（仮）</span>
-									<% end %>
-								</li>
-								<li class="user-navi__li li">
-									<%= link_to root_path do %>
-										<%= image_tag "reading-graph.png", class: "reading-graph__image" %><span>読書グラフ（仮）</span>
-									<% end %>
-								</li>
-								<li class="user-navi__li li">
-									<%= link_to root_path do %>
-										<%= image_tag "other.png", class: "other__image" %><span>その他（仮）</span>
-									<% end %>
-								</li>
-							</ul>
-							<div class="user-navi__buttons">
-								<div class="user-setting-btn menu dropdown-menu-click">
-									<p class="dropdown-trigger">
-										<%= image_tag "setting.png", class: "setting__image" %><span>設定</span>
-									</p>
-									<div id="dropdown"class="dropdown">
-										<ul>
-											<li class="bar li">
-												<%= link_to root_path do %>
-													<i class="fa fa-tw fa-th"></i>本棚の設定（仮）
-												<% end %>
-											</li>
-											<li class="bar li">
-												<%= link_to edit_user_path(current_user.id) do %>
-													<i class="far fa-smile"></i>プロフィールの設定
-												<% end %>
-											</li>
-										</ul>
-									</div>
+							</li>
+							<li class="user-navi__li li">
+								<%= link_to profile_users_path(current_user.id) do %>
+									<%= image_tag "profile.png", class: "profile__image" %><span>プロフィール</span>
+								<% end %>
+							</li>
+							<li class="user-navi__li li">
+								<%= link_to root_path do %>
+									<%= image_tag "timeline.png", class: "timeline__image" %><span>タイムライン（仮）</span>
+								<% end %>
+							</li>
+							<li class="user-navi__li li">
+								<%= link_to root_path do %>
+									<%= image_tag "reading-graph.png", class: "reading-graph__image" %><span>読書グラフ（仮）</span>
+								<% end %>
+							</li>
+							<li class="user-navi__li li">
+								<%= link_to root_path do %>
+									<%= image_tag "other.png", class: "other__image" %><span>その他（仮）</span>
+								<% end %>
+							</li>
+						</ul>
+						<div class="user-navi__buttons">
+							<div class="user-setting-btn menu dropdown-menu-click">
+								<p class="dropdown-trigger">
+									<%= image_tag "setting.png", class: "setting__image" %><span>設定</span>
+								</p>
+								<div id="dropdown"class="dropdown">
+									<ul>
+										<li class="bar li">
+											<%= link_to root_path do %>
+												<i class="fa fa-tw fa-th"></i>本棚の設定（仮）
+											<% end %>
+										</li>
+										<li class="bar li">
+											<%= link_to edit_user_path(current_user.id) do %>
+												<i class="far fa-smile"></i>プロフィールの設定
+											<% end %>
+										</li>
+									</ul>
 								</div>
 							</div>
-						</div><!--  /.user__navi  -->
+						</div>
+					</div><!--  /.user__navi  -->
 
-					</div><!--  /.user__wrapper  -->
+				</div><!--  /.user__wrapper  -->
 
-				</div><!--  /.user  -->
-				<p class="lead">
-					<%= current_user.name %>さんの本棚の状態や通知を確認できます。
-				</p>
-				<div class="boxArea">
-					<h3 id="underline">あなたの読了した本からのオススメ</h3>
-					<div class="recommend">
-						<div class="recommend__col-scroll">
-							<div class="recommend__target-book">
-								<div class="recommend__target-book--item-block">
-									<div class="recommend__target-book--item-intro">
-										あなたが読んだ本
-									</div>
-									<div class="recommend__target-book--item-image">
-										<%= link_to image_tag("book0.jpeg", class: "itemImage img_genre1"), root_path %>
-									</div>
-									<div class="shelf-line"></div>
+			</div><!--  /.user  -->
+			<p class="lead">
+				<%= current_user.name %>さんの本棚の状態や通知を確認できます。
+			</p>
+			<div class="boxArea">
+				<h3 id="underline">あなたの読了した本からのオススメ</h3>
+				<div class="recommend">
+					<div class="recommend__col-scroll">
+						<div class="recommend__target-book">
+							<div class="recommend__target-book--item-block">
+								<div class="recommend__target-book--item-intro">
+									あなたが読んだ本
 								</div>
-							</div><!--  /.recommend__target-book  -->
-							<div class="recommend-area">
-								<div class="recommend-area__description">
-									この本を読み終わった人は、次にこの本を読んでいます！
+								<div class="recommend__target-book--item-image">
+									<%= link_to image_tag("book0.jpeg", class: "itemImage img_genre1"), root_path %>
 								</div>
-								<div class="recommend-area__list">
-									<div class="recommend-area__list--item-block">
-										<div class="item__img">
-											<div class="rank">
-												<%= image_tag "ribbon1.png", class: "ribbon" %>
-											</div>
-											<a href="#">
-												<%= image_tag "book17.jpg", class: "itemImage" %>
-											</a>
+								<div class="shelf-line"></div>
+							</div>
+						</div><!--  /.recommend__target-book  -->
+						<div class="recommend-area">
+							<div class="recommend-area__description">
+								この本を読み終わった人は、次にこの本を読んでいます！
+							</div>
+							<div class="recommend-area__list">
+								<div class="recommend-area__list--item-block">
+									<div class="item__img">
+										<div class="rank">
+											<%= image_tag "ribbon1.png", class: "ribbon" %>
 										</div>
-										<div class="item__info">
-											<a href="#" class="item-info__link">
-												<div class="item-title">ひと</div>
-											</a>
-											<div class="item-author">
-												小野寺史宣
-											</div>
+										<a href="#">
+											<%= image_tag "book17.jpg", class: "itemImage" %>
+										</a>
+									</div>
+									<div class="item__info">
+										<a href="#" class="item-info__link">
+											<div class="item-title">ひと</div>
+										</a>
+										<div class="item-author">
+											小野寺史宣
 										</div>
 									</div>
+								</div>
 
-									<div class="recommend-area__list--item-block">
-										<div class="item__img">
-											<div class="rank">
-												<%= image_tag "ribbon2.png", class: "ribbon" %>
-											</div>
-											<a href="#">
-												<%= image_tag "book18.jpg", class: "itemImage" %>
-											</a>
+								<div class="recommend-area__list--item-block">
+									<div class="item__img">
+										<div class="rank">
+											<%= image_tag "ribbon2.png", class: "ribbon" %>
 										</div>
-										<div class="item__info">
-											<a href="#" class="item-info__link">
-												<div class="item-title">ひと</div>
-											</a>
-											<div class="item-author">
-												小野寺史宣
-											</div>
+										<a href="#">
+											<%= image_tag "book18.jpg", class: "itemImage" %>
+										</a>
+									</div>
+									<div class="item__info">
+										<a href="#" class="item-info__link">
+											<div class="item-title">ひと</div>
+										</a>
+										<div class="item-author">
+											小野寺史宣
 										</div>
 									</div>
+								</div>
 
-									<div class="recommend-area__list--item-block">
-										<div class="item__img">
-											<div class="rank">
-												<%= image_tag "ribbon3.png", class: "ribbon" %>
-											</div>
-											<a href="#">
-												<%= image_tag "book19.jpg", class: "itemImage" %>
-											</a>
+								<div class="recommend-area__list--item-block">
+									<div class="item__img">
+										<div class="rank">
+											<%= image_tag "ribbon3.png", class: "ribbon" %>
 										</div>
-										<div class="item__info">
-											<a href="#" class="item-info__link">
-												<div class="item-title">ひと</div>
-											</a>
-											<div class="item-author">
-												小野寺史宣
-											</div>
-										</div><!--  /.item__info  -->
-									</div><!--  /.recommend-area__list--item-block  -->
-								</div><!--  /.recommend-area__list  -->
-							</div><!--  /.recommend-area  -->
-						</div><!--  /.recommrnd-col  -->
-					</div><!-- /.recommend  -->
-				</div><!--  /.boxarea  -->
-
-				<div class="boxArea">
-					<ul id="contentsBnrListHome" class="clearfix">
-					</ul>
-				</div>
-
-				<div class="boxArea">
-					<h3>読書状況</h3>
-					<table class="mybookArea clearfix">
-						<tbody>
-							<tr>
-								<th class="status">
-									<h4><!--  FIXME: リンク先&メソッド  -->
-										<%= link_to root_path, class: "" do %>
-											読みたい[全<span><%= current_user.name.length %></span>件]
-										<% end %>
-									</h4>
-								</th>
-								<th class="status">
-									<h4><!--  FIXME: リンク先&メソッド  -->
-										<%= link_to root_path, class: "" do %>
-											いま読んでる[全<span><%= (current_user.name.length)*2 %></span>件]
-										<% end %>
-									</h4>
-								</th>
-							</tr>
-							<tr>
-								<td class="img">
-									<ul>
-										<li class="li">
-											<%= link_to image_tag("book7.jpeg", class: "itemImage"), root_path %>
-										</li>
-									</ul>
-								</td>
-								<td class="img">
-									<ul>
-										<li class="li">
-											<%= link_to image_tag("book7.jpeg", class: "itemImage"), root_path %>
-										</li>
-										<li class="li">
-											<%= link_to image_tag("book9.jpeg", class: "itemImage"), root_path %>
-										</li>
-										<li class="li">
-											<%= link_to image_tag("book10.jpeg", class: "itemImage"), root_path %>
-										</li>
-										<li class="li">
-											<%= link_to image_tag("book3.jpeg", class: "itemImage"), root_path %>
-										</li>
-									</ul>
-								</td>
-							</tr>
-
-							<tr>
-								<th class="status">
-									<h4><!--  FIXME: リンク先&メソッド  -->
-										<%= link_to root_path, class: "" do %>
-											読み終わった[全<span><%= (current_user.name.length)*16 %></span>件]
-										<% end %>
-									</h4>
-								</th>
-								<th class="status">
-									<h4><!--  FIXME: リンク先&メソッド  -->
-										<%= link_to root_path, class: "" do %>
-											積読[全<span><%= (current_user.name.length)*3 %></span>件]
-										<% end %>
-									</h4>
-								</th>
-							</tr>
-							<tr>
-								<td class="img">
-									<ul>
-										<li class="li">
-											<%= link_to image_tag("book3.jpeg", class: "itemImage"), root_path %>
-										</li>
-									</ul>
-								</td>
-								<td class="img">
-									<ul>
-										<li class="li">
-											<%= link_to image_tag("book6.jpeg", class: "itemImage"), root_path %>
-										</li>
-										<li class="li">
-											<%= link_to image_tag("book8.jpeg", class: "itemImage"), root_path %>
-										</li>
-										<li class="li">
-											<%= link_to image_tag("book11.jpeg", class: "itemImage"), root_path %>
-										</li>
-										<li class="li">
-											<%= link_to image_tag("book13.jpeg", class: "itemImage"), root_path %>
-										</li>
-									</ul>
-								</td>
-							</tr>
-							<tr>
-								<th class="status">
-									<h4><!--  FIXME: リンク先&メソッド  -->
-										<%= link_to root_path, class: "" do %>
-											未設定[全<span><%= current_user.name.length %></span>件]
-										<% end %>
-									</h4>
-								</th>
-								<th class="status">
-									<h4><!--  FIXME: リンク先&メソッド  -->
-										<%= link_to '読書状況まとめて変更', root_path, class: "" %>
-									</h4>
-								</th>
-							</tr>
-						</tbody>
-					</table>
-				</div><!--  /.boxarea  -->
-
-				<div class="boxArea">
-					<div id="timeline">
-						<div class="tab-menu clearfix">
-							<ul>
-								<li class="li">
-									<a href="#tab-interest" class="current">興味グラフ</a>
-								</li>
-								<li class="li">
-									<a href="#tab-follow">友達のタイムライン</a>
-								</li>
-								<li class="li">
-									<a href="#tab-users">あなたのタイムライン</a>
-								</li>
-							</ul>
-							<div id="tab-interest"><!--  興味グラフタブ  -->
-								<ul id="timelineArea">
-									<li id="timeline_1" class="clearfix li">
-										<div class="row clearfix">
-											<div class="icon">
-												<a href="#">
-													<%= image_tag "prof-image-1.jpg", class: 'prof-image-s' %>
-												</a>
-											</div><!--  /.icon  -->
-											<div class="action clearfix">
-												<a href="#" class="txtBlack">ニセ人事課長</a>さんが『
-												<a href="#" class="txtBlue">火車（新潮文庫）</a>』の
-												<a href="#" class="txtBlack">レビュー</a>を書きました。
-												<span class="when">３時間前</span>
-												<div class="itemArea clearfix">
-													<div class="b10M clearfix">
-														<div class="thumb">
-															<a href="#">
-																<%= image_tag "book3.jpg", class: 'book-thumb' %>
-															</a>
-														</div>
-														<h3 class="title">
-															<a href="#">火車</a>
-															<br>
-															<span class="btnUsers">26698人が登録</span>
-															<span class="btnRating">★3.92</span>
-														</h3>
-														<div class="desc t5M">
-															著者:
-															<a href="#">宮部みゆき</a>
-															/ 新潮社
-															/ 本
-															/ 1998年1月30日
-														</div>
-													</div><!--  /.b10M  -->
-													<div class="r-description noneP">
-														<p id="summary_68799143" class="a10P">
-															<%= image_tag "icn_netabare.gif", class: 'netabare' %>
-															<a href="#">ネタバレのレビューを読む</a>
-														</p>
-														<p class="review-info-link">
-															<span class="rating-area r10M">
-																<i class="fas fa-star fa-xs orange"></i>
-																<i class="fas fa-star fa-xs orange"></i>
-																<i class="fas fa-star fa-xs orange"></i>
-																<i class="fas fa-star fa-xs orange"></i>
-																<i class="fas fa-star fa-xs orange"></i>
-															</span>
-															<a href="#" class="more">詳細・コメントする</a>
-														</p>
-													</div><!--  /.description  -->
-													<div class="t10M">
-														<div class="fav-area fav-area-113220578">
-															<div class="fav-button">
-																<a href="#" class="fav-btn fav-add">
-																	<%= image_tag "fav_deactive.png", id: 'deactive' %>
-																</a>
-																<span class="fav-count">0</span>
-															</div><!--  /.fav-button  -->
-														</div><!--  /.fav-area  -->
-													</div><!--  /.t10M  -->
-												</div><!--  /.itemArea  -->
-											</div><!--  /.action  -->
+										<a href="#">
+											<%= image_tag "book19.jpg", class: "itemImage" %>
+										</a>
+									</div>
+									<div class="item__info">
+										<a href="#" class="item-info__link">
+											<div class="item-title">ひと</div>
+										</a>
+										<div class="item-author">
+											小野寺史宣
 										</div>
-									</li>
+									</div><!--  /.item__info  -->
+								</div><!--  /.recommend-area__list--item-block  -->
+							</div><!--  /.recommend-area__list  -->
+						</div><!--  /.recommend-area  -->
+					</div><!--  /.recommrnd-col  -->
+				</div><!-- /.recommend  -->
+			</div><!--  /.boxarea  -->
 
-									<li id="timeline_2" class="clearfix last li">
-										<div class="row clearfix">
-											<div class="icon">
-												<a href="#">
-													<%= image_tag "prof_noimage30.gif", class: 'prof-image-s' %>
-												</a>
-											</div><!--  /.icon  -->
-											<div class="action clearfix">
-												<a href="#" class="txtBlack">naokicccc</a>さんが『
-												<a href="#" class="txtBlue">秘密（文春文庫）</a>』の
-												<a href="#" class="txtBlack">レビュー</a>を書きました。
-												<span class="when">２時間前</span>
-												<div class="itemArea clearfix">
-													<div class="b10M clearfix">
-														<div class="thumb">
-															<a href="#">
-																<%= image_tag "book12.jpg", class: 'book-thumb' %>
-															</a>
-														</div>
-														<h3 class="title">
-															<a href="#">秘密</a>
-															<br>
-															<span class="btnUsers">38662人が登録</span>
-															<span class="btnRating">★3.98</span>
-														</h3>
-														<div class="desc t5M">
-															著者:
-															<a href="#">東野圭吾</a>
-															/ 文藝春秋
-															/ 本
-															/ 2001年5月10日
-														</div>
-													</div><!--  /.b10M  -->
-													<div class="r-description noneP">
-														<p id="summary_68814208" class="a10P">
-															東野圭吾さんの出世作。一人娘の体に入っているのは交通事故で亡くした嫁の魂という一見ありがちな設定とは裏腹に、念密に練られた個人間の描写が見事でした。女子高生になった妻の青春に嫉妬している反面、娘としての成長を見守らなくてはならない主人公の葛藤など、父親、旦那としての立場をとても考えさせられる内容でした。最後の最後で予想を裏切られ、東野圭吾さんの真髄を見た気がします。
-														</p>
-														<p class="review-info-link">
-															<span class="rating-area r10M">
-																<i class="fa fa-star orange"></i>
-																<i class="fa fa-star orange"></i>
-																<i class="fa fa-star orange"></i>
-																<i class="fa fa-star orange"></i>
-																<i class="fa fa-star orange"></i>
-															</span>
-															<a href="#" class="more">詳細・コメントする</a>
-														</p>
-													</div><!--  /.description  -->
-													<div class="t10M">
-														<div class="fav-area fav-area-113220578">
-															<div class="fav-button">
-																<a href="#" class="fav-btn fav-add">
-																	<%= image_tag "fav.png", id: 'active' %>
-																</a>
-																<span class="fav-count">1</span>
-															</div><!--  /.fav-button  -->
-														</div><!--  /.fav-area  -->
-													</div><!--  /.t10M  -->
-												</div><!--  /.itemArea  -->
-											</div><!--  /.action  -->
-										</div>
+			<div class="boxArea">
+				<ul id="contentsBnrListHome" class="clearfix">
+				</ul>
+			</div>
+
+			<div class="boxArea">
+				<h3>読書状況</h3>
+				<table class="mybookArea clearfix">
+					<tbody>
+						<tr>
+							<th class="status">
+								<h4><!--  FIXME: リンク先&メソッド  -->
+									<%= link_to root_path, class: "" do %>
+										読みたい[全<span><%= current_user.name.length %></span>件]
+									<% end %>
+								</h4>
+							</th>
+							<th class="status">
+								<h4><!--  FIXME: リンク先&メソッド  -->
+									<%= link_to root_path, class: "" do %>
+										いま読んでる[全<span><%= (current_user.name.length)*2 %></span>件]
+									<% end %>
+								</h4>
+							</th>
+						</tr>
+						<tr>
+							<td class="img">
+								<ul>
+									<li class="li">
+										<%= link_to image_tag("book7.jpeg", class: "itemImage"), root_path %>
 									</li>
 								</ul>
-								<div class="moreBtnArea">
-									<a href="#" class="m-btnBlue">タイムラインをもっと見る</a>
-								</div>
-							</div><!--  /.興味グラフタブ  -->
+							</td>
+							<td class="img">
+								<ul>
+									<li class="li">
+										<%= link_to image_tag("book7.jpeg", class: "itemImage"), root_path %>
+									</li>
+									<li class="li">
+										<%= link_to image_tag("book9.jpeg", class: "itemImage"), root_path %>
+									</li>
+									<li class="li">
+										<%= link_to image_tag("book10.jpeg", class: "itemImage"), root_path %>
+									</li>
+									<li class="li">
+										<%= link_to image_tag("book3.jpeg", class: "itemImage"), root_path %>
+									</li>
+								</ul>
+							</td>
+						</tr>
 
-							<div id="tab-follow"><!--  友達のタイムラインタブ-->
-								<p class="lead">
-									<%= current_user.name %>さんがフォローしているユーザーの最新の更新情報を表示しています。
-								</p>
-							</div><!--  友達のタイムラインタブ  -->
-							<div id="tab-users"><!--  あなたのタブ  -->
-								<p class="lead">
-									登録したアイテムや書いたレビューなど、<%= current_user.name %>さんの本棚の情報を時系列で表示しています。
-								</p>
-							</div>
-						</div><!--  /.tabmenu  -->
-					</div><!--  /.timeline  -->
-				</div>
+						<tr>
+							<th class="status">
+								<h4><!--  FIXME: リンク先&メソッド  -->
+									<%= link_to root_path, class: "" do %>
+										読み終わった[全<span><%= (current_user.name.length)*16 %></span>件]
+									<% end %>
+								</h4>
+							</th>
+							<th class="status">
+								<h4><!--  FIXME: リンク先&メソッド  -->
+									<%= link_to root_path, class: "" do %>
+										積読[全<span><%= (current_user.name.length)*3 %></span>件]
+									<% end %>
+								</h4>
+							</th>
+						</tr>
+						<tr>
+							<td class="img">
+								<ul>
+									<li class="li">
+										<%= link_to image_tag("book3.jpeg", class: "itemImage"), root_path %>
+									</li>
+								</ul>
+							</td>
+							<td class="img">
+								<ul>
+									<li class="li">
+										<%= link_to image_tag("book6.jpeg", class: "itemImage"), root_path %>
+									</li>
+									<li class="li">
+										<%= link_to image_tag("book8.jpeg", class: "itemImage"), root_path %>
+									</li>
+									<li class="li">
+										<%= link_to image_tag("book11.jpeg", class: "itemImage"), root_path %>
+									</li>
+									<li class="li">
+										<%= link_to image_tag("book13.jpeg", class: "itemImage"), root_path %>
+									</li>
+								</ul>
+							</td>
+						</tr>
+						<tr>
+							<th class="status">
+								<h4><!--  FIXME: リンク先&メソッド  -->
+									<%= link_to root_path, class: "" do %>
+										未設定[全<span><%= current_user.name.length %></span>件]
+									<% end %>
+								</h4>
+							</th>
+							<th class="status">
+								<h4><!--  FIXME: リンク先&メソッド  -->
+									<%= link_to '読書状況まとめて変更', root_path, class: "" %>
+								</h4>
+							</th>
+						</tr>
+					</tbody>
+				</table>
+			</div><!--  /.boxarea  -->
 
-				<div class="boxArea">
-					<h3 class="underline">ブクログ談話室 注目の質問</h3>
-					<ul class="listType01"></ul>
-					<div class="moreBtnArea">
-						<a href="#" class="m-btnBlue">ブクログ談話室をもっと見る</a>
-					</div>
-				</div>
-
-				<div class="boxArea">
-					<h3 class="underline">ブクログからのお知らせ</h3>
-					<ul class="listType01">
-						<li class="ListBgBlue li">
-							<a href="#">【解決済み】Web版のブクログでレビューや読書メモを編集するとエラーが表示される件につきまして</a>
-						</li>
-						<li class="li">
-							<a href="#">【解決済み】通知設定が正常に機能しない件につきまして</a>
-						</li>
-						<li class="ListBgBlue li">
-							<a href="#">年末年始のサポート業務につきまして</a>
-						</li>
-						<li class="li">
-							<a href="#">楽天ブックスへのレビュー提供を開始しました</a>
-						</li>
-						<li class="ListBgBlue li">
-							<a href="#">【解決済み】PC版本棚画面で読書状況が変更できない件につきまして</a>
-						</li>
-					</ul>
-					<div class="moreBtnArea">
-						<a href="#" class="m-btnBlue">お知らせをもっと見る</a>
-					</div>
-				</div>
-			</div><!--  /.page__main--mainArea  -->
-
-			<div id="page__main--sideArea">
-				<div class="recommend-shelf-area">
-					<div class="header">
-						<div class="title">
-							<%= image_tag 'title.png', class: "itemImg" %>
-						</div>
-					</div>
-					<div class="main">
-						<div class="user">
-							<div class="shelf">
-								<div class="book">
-									<a href="#">
-										<%= image_tag 'book3.jpg' %>
-									</a>
-								</div>
-								<div class="book">
-									<a href="#">
-										<%= image_tag 'book9.jpg' %>
-									</a>
-								</div>
-								<div class="book">
-									<a href="#">
-										<%= image_tag 'book1.jpg' %>
-									</a>
-								</div>
-							</div><!--  /.shelf  -->
-							<a href="#">
-								<div class="profile">
-									<div class="account">
-										<div class="icon">
-											<%= image_tag 'prof_noimage.png' %>
-										</div>
-										<div class="nickname">林檎をむいて歩こう</div>
-										<div>さん</div>
-									</div><!--  /.account  -->
-									<div class="infomation">
-										<span class="gender">秘密</span>
-										<span class="age"></span>
-									</div>
-								</div><!--  /.profile  -->
-							</a>
-						</div><!--  /.user  -->
-
-						<div class="user">
-							<div class="shelf">
-								<div class="book">
-									<a href="#">
-										<%= image_tag 'book2.jpg' %>
-									</a>
-								</div>
-								<div class="book">
-									<a href="#">
-										<%= image_tag 'book13.jpg' %>
-									</a>
-								</div>
-								<div class="book">
-									<a href="#">
-										<%= image_tag 'book11.jpg' %>
-									</a>
-								</div>
-							</div><!--  /.shelf  -->
-							<a href="#">
-								<div class="profile">
-									<div class="account">
-										<div class="icon">
-											<%= image_tag 'prof_noimage.png' %>
-										</div>
-										<div class="nickname">すぶりをするそぶり</div>
-										<div>さん</div>
-									</div><!--  /.account  -->
-									<div class="infomation">
-										<span class="gender">女性</span>
-										<span class="age">/10代</span>
-									</div>
-								</div><!--  /.profile  -->
-							</a>
-						</div>
-
-						<div class="user">
-							<div class="shelf">
-								<div class="book">
-									<a href="#">
-										<%= image_tag 'book6.jpg' %>
-									</a>
-								</div>
-								<div class="book">
-									<a href="#">
-										<%= image_tag 'book7.jpg' %>
-									</a>
-								</div>
-								<div class="book">
-									<a href="#">
-										<%= image_tag 'book4.jpg' %>
-									</a>
-								</div>
-							</div><!--  /.shelf  -->
-							<a href="#">
-								<div class="profile">
-									<div class="account">
-										<div class="icon">
-											<%= image_tag 'prof_noimage.png' %>
-										</div>
-										<div class="nickname">大熊猫大好き</div>
-										<div>さん</div>
-									</div><!--  /.account  -->
-									<div class="infomation">
-										<span class="gender">秘密</span>
-										<span class="age">20代</span>
-									</div>
-								</div><!--  /.profile  -->
-							</a>
-						</div>
-					</div>
-
-					<div class="footer">
-						<div class="enquete">
-							<div class="inc-enquete">
-								<div class="fav-area">
-									<div class="fav-button">
-										<div id="deactive-f">
-											<%= image_tag 'fav_deactive.png' %>
-											← この機能がよかったらいいねしてね！
-										</div>
-									</div>
-								</div>
-								<%= image_tag 'enquete-line.png', class: "deactive" %>
-								<div class="enquete-area">
-									<form action name="enquete-form" accept-charset="UTF-8">
-										<div class="before-input">
-											<div class="title">
-												この機能に関してご意見をお聞かせください
-											</div>
-											<div class="choices">
-												<ul>
-													<li class="li">
-														<input type="radio" name="choice" value="good">
-														よい！使いたい
-													</li>
-													<li class="li">
-														<input type="radio" name="choice" value="bad">
-														使わない
-													</li>
-												</ul>
-											</div>
-											<div class="free-text">
-												<textarea name="text" id="" cols="20" rows="6" placeholder="この機能へのご意見、ご要望をお聞かせください。"></textarea>
-											</div>
-											<div class="button">
-												<input type="submit" name="submit" value="意見を送信する">
-											</div>
-										</div><!--  /.before  -->
-									</form>
-								</div>
-							</div>
-						</div>
-						<div class="description">
-							テスト版の機能をお試しいただけます。
-						</div>
-						<div class="note">
-							※この機能は予告なしに終了する場合があります。
-						</div>
-					</div>
-				</div>
-
-				<aside class="ad-side-top">
-					<%= image_tag 'ad-side.png' %>
-				</aside>
-				<dl class="sidemenu">
-					<dt class="sidemenu-title">本と出会う</dt>
-					<dd class="sidemenu-list">
-						<p class="sidemenu-subtitle">ランキング</p>
+			<div class="boxArea">
+				<div id="timeline">
+					<div class="tab-menu clearfix">
 						<ul>
 							<li class="li">
-								<a href="#">デイリーランキング</a>
+								<a href="#tab-interest" class="current">興味グラフ</a>
 							</li>
 							<li class="li">
-								<a href="#">週間ランキング</a>
+								<a href="#tab-follow">友達のタイムライン</a>
 							</li>
 							<li class="li">
-								<a href="#">月間ランキング</a>
-							</li>
-							<li class="li">
-								<a href="#">みんなのベスト3</a>
-							</li>
-							<li class="li">
-								<a href="#">オーディオブック</a>
+								<a href="#tab-users">あなたのタイムライン</a>
 							</li>
 						</ul>
-						<div class="sidemenu-toggle toggle toggleOff">
-							<p class="sidemenu-subtitle ranking-annual">
-								年間ランキング
-							</p>
-							<ul style="display: none;">
-								<li class="li">
-									<a href="#">2018年のランキング</a>
+						<div id="tab-interest"><!--  興味グラフタブ  -->
+							<ul id="timelineArea">
+								<li id="timeline_1" class="clearfix li">
+									<div class="row clearfix">
+										<div class="icon">
+											<a href="#">
+												<%= image_tag "prof-image-1.jpg", class: 'prof-image-s' %>
+											</a>
+										</div><!--  /.icon  -->
+										<div class="action clearfix">
+											<a href="#" class="txtBlack">ニセ人事課長</a>さんが『
+											<a href="#" class="txtBlue">火車（新潮文庫）</a>』の
+											<a href="#" class="txtBlack">レビュー</a>を書きました。
+											<span class="when">３時間前</span>
+											<div class="itemArea clearfix">
+												<div class="b10M clearfix">
+													<div class="thumb">
+														<a href="#">
+															<%= image_tag "book3.jpg", class: 'book-thumb' %>
+														</a>
+													</div>
+													<h3 class="title">
+														<a href="#">火車</a>
+														<br>
+														<span class="btnUsers">26698人が登録</span>
+														<span class="btnRating">★3.92</span>
+													</h3>
+													<div class="desc t5M">
+														著者:
+														<a href="#">宮部みゆき</a>
+														/ 新潮社
+														/ 本
+														/ 1998年1月30日
+													</div>
+												</div><!--  /.b10M  -->
+												<div class="r-description noneP">
+													<p id="summary_68799143" class="a10P">
+														<%= image_tag "icn_netabare.gif", class: 'netabare' %>
+														<a href="#">ネタバレのレビューを読む</a>
+													</p>
+													<p class="review-info-link">
+														<span class="rating-area r10M">
+															<i class="fas fa-star fa-xs orange"></i>
+															<i class="fas fa-star fa-xs orange"></i>
+															<i class="fas fa-star fa-xs orange"></i>
+															<i class="fas fa-star fa-xs orange"></i>
+															<i class="fas fa-star fa-xs orange"></i>
+														</span>
+														<a href="#" class="more">詳細・コメントする</a>
+													</p>
+												</div><!--  /.description  -->
+												<div class="t10M">
+													<div class="fav-area fav-area-113220578">
+														<div class="fav-button">
+															<a href="#" class="fav-btn fav-add">
+																<%= image_tag "fav_deactive.png", id: 'deactive' %>
+															</a>
+															<span class="fav-count">0</span>
+														</div><!--  /.fav-button  -->
+													</div><!--  /.fav-area  -->
+												</div><!--  /.t10M  -->
+											</div><!--  /.itemArea  -->
+										</div><!--  /.action  -->
+									</div>
 								</li>
-								<li class="li">
-									<a href="#">2017年のランキング</a>
-								</li>
-								<li class="li">
-									<a href="#">2016年のランキング</a>
-								</li>
-								<li class="li">
-									<a href="#">2015年のランキング</a>
-								</li>
-								<li class="li">
-									<a href="#">2014年のランキング</a>
-								</li>
-								<li class="li">
-									<a href="#">2013年のランキング</a>
-								</li>
-								<li class="li">
-									<a href="#">2012年のランキング</a>
-								</li>
-								<li class="li">
-									<a href="#">2011年のランキング</a>
-								</li>
-								<li class="li">
-									<a href="#">2010年のランキング</a>
-								</li>
-								<li class="li">
-									<a href="#">2009年のランキング</a>
+
+								<li id="timeline_2" class="clearfix last li">
+									<div class="row clearfix">
+										<div class="icon">
+											<a href="#">
+												<%= image_tag "prof_noimage30.gif", class: 'prof-image-s' %>
+											</a>
+										</div><!--  /.icon  -->
+										<div class="action clearfix">
+											<a href="#" class="txtBlack">naokicccc</a>さんが『
+											<a href="#" class="txtBlue">秘密（文春文庫）</a>』の
+											<a href="#" class="txtBlack">レビュー</a>を書きました。
+											<span class="when">２時間前</span>
+											<div class="itemArea clearfix">
+												<div class="b10M clearfix">
+													<div class="thumb">
+														<a href="#">
+															<%= image_tag "book12.jpg", class: 'book-thumb' %>
+														</a>
+													</div>
+													<h3 class="title">
+														<a href="#">秘密</a>
+														<br>
+														<span class="btnUsers">38662人が登録</span>
+														<span class="btnRating">★3.98</span>
+													</h3>
+													<div class="desc t5M">
+														著者:
+														<a href="#">東野圭吾</a>
+														/ 文藝春秋
+														/ 本
+														/ 2001年5月10日
+													</div>
+												</div><!--  /.b10M  -->
+												<div class="r-description noneP">
+													<p id="summary_68814208" class="a10P">
+														東野圭吾さんの出世作。一人娘の体に入っているのは交通事故で亡くした嫁の魂という一見ありがちな設定とは裏腹に、念密に練られた個人間の描写が見事でした。女子高生になった妻の青春に嫉妬している反面、娘としての成長を見守らなくてはならない主人公の葛藤など、父親、旦那としての立場をとても考えさせられる内容でした。最後の最後で予想を裏切られ、東野圭吾さんの真髄を見た気がします。
+													</p>
+													<p class="review-info-link">
+														<span class="rating-area r10M">
+															<i class="fa fa-star orange"></i>
+															<i class="fa fa-star orange"></i>
+															<i class="fa fa-star orange"></i>
+															<i class="fa fa-star orange"></i>
+															<i class="fa fa-star orange"></i>
+														</span>
+														<a href="#" class="more">詳細・コメントする</a>
+													</p>
+												</div><!--  /.description  -->
+												<div class="t10M">
+													<div class="fav-area fav-area-113220578">
+														<div class="fav-button">
+															<a href="#" class="fav-btn fav-add">
+																<%= image_tag "fav.png", id: 'active' %>
+															</a>
+															<span class="fav-count">1</span>
+														</div><!--  /.fav-button  -->
+													</div><!--  /.fav-area  -->
+												</div><!--  /.t10M  -->
+											</div><!--  /.itemArea  -->
+										</div><!--  /.action  -->
+									</div>
 								</li>
 							</ul>
+							<div class="moreBtnArea">
+								<a href="#" class="m-btnBlue">タイムラインをもっと見る</a>
+							</div>
+						</div><!--  /.興味グラフタブ  -->
+
+						<div id="tab-follow"><!--  友達のタイムラインタブ-->
+							<p class="lead">
+								<%= current_user.name %>さんがフォローしているユーザーの最新の更新情報を表示しています。
+							</p>
+						</div><!--  友達のタイムラインタブ  -->
+						<div id="tab-users"><!--  あなたのタブ  -->
+							<p class="lead">
+								登録したアイテムや書いたレビューなど、<%= current_user.name %>さんの本棚の情報を時系列で表示しています。
+							</p>
 						</div>
-						<p class="sidemenu-subtitle">新刊情報</p>
-						<ul>
+					</div><!--  /.tabmenu  -->
+				</div><!--  /.timeline  -->
+			</div>
+
+			<div class="boxArea">
+				<h3 class="underline">ブクログ談話室 注目の質問</h3>
+				<ul class="listType01"></ul>
+				<div class="moreBtnArea">
+					<a href="#" class="m-btnBlue">ブクログ談話室をもっと見る</a>
+				</div>
+			</div>
+
+			<div class="boxArea">
+				<h3 class="underline">ブクログからのお知らせ</h3>
+				<ul class="listType01">
+					<li class="ListBgBlue li">
+						<a href="#">【解決済み】Web版のブクログでレビューや読書メモを編集するとエラーが表示される件につきまして</a>
+					</li>
+					<li class="li">
+						<a href="#">【解決済み】通知設定が正常に機能しない件につきまして</a>
+					</li>
+					<li class="ListBgBlue li">
+						<a href="#">年末年始のサポート業務につきまして</a>
+					</li>
+					<li class="li">
+						<a href="#">楽天ブックスへのレビュー提供を開始しました</a>
+					</li>
+					<li class="ListBgBlue li">
+						<a href="#">【解決済み】PC版本棚画面で読書状況が変更できない件につきまして</a>
+					</li>
+				</ul>
+				<div class="moreBtnArea">
+					<a href="#" class="m-btnBlue">お知らせをもっと見る</a>
+				</div>
+			</div>
+		</div><!--  /.page__main--mainArea  -->
+
+		<div id="page__main--sideArea">
+			<div class="recommend-shelf-area">
+				<div class="header">
+					<div class="title">
+						<%= image_tag 'title.png', class: "itemImg" %>
+					</div>
+				</div>
+				<div class="main">
+					<div class="user">
+						<div class="shelf">
+							<div class="book">
+								<a href="#">
+									<%= image_tag 'book3.jpg' %>
+								</a>
+							</div>
+							<div class="book">
+								<a href="#">
+									<%= image_tag 'book9.jpg' %>
+								</a>
+							</div>
+							<div class="book">
+								<a href="#">
+									<%= image_tag 'book1.jpg' %>
+								</a>
+							</div>
+						</div><!--  /.shelf  -->
+						<a href="#">
+							<div class="profile">
+								<div class="account">
+									<div class="icon">
+										<%= image_tag 'prof_noimage.png' %>
+									</div>
+									<div class="nickname">林檎をむいて歩こう</div>
+									<div>さん</div>
+								</div><!--  /.account  -->
+								<div class="infomation">
+									<span class="gender">秘密</span>
+									<span class="age"></span>
+								</div>
+							</div><!--  /.profile  -->
+						</a>
+					</div><!--  /.user  -->
+
+					<div class="user">
+						<div class="shelf">
+							<div class="book">
+								<a href="#">
+									<%= image_tag 'book2.jpg' %>
+								</a>
+							</div>
+							<div class="book">
+								<a href="#">
+									<%= image_tag 'book13.jpg' %>
+								</a>
+							</div>
+							<div class="book">
+								<a href="#">
+									<%= image_tag 'book11.jpg' %>
+								</a>
+							</div>
+						</div><!--  /.shelf  -->
+						<a href="#">
+							<div class="profile">
+								<div class="account">
+									<div class="icon">
+										<%= image_tag 'prof_noimage.png' %>
+									</div>
+									<div class="nickname">すぶりをするそぶり</div>
+									<div>さん</div>
+								</div><!--  /.account  -->
+								<div class="infomation">
+									<span class="gender">女性</span>
+									<span class="age">/10代</span>
+								</div>
+							</div><!--  /.profile  -->
+						</a>
+					</div>
+
+					<div class="user">
+						<div class="shelf">
+							<div class="book">
+								<a href="#">
+									<%= image_tag 'book6.jpg' %>
+								</a>
+							</div>
+							<div class="book">
+								<a href="#">
+									<%= image_tag 'book7.jpg' %>
+								</a>
+							</div>
+							<div class="book">
+								<a href="#">
+									<%= image_tag 'book4.jpg' %>
+								</a>
+							</div>
+						</div><!--  /.shelf  -->
+						<a href="#">
+							<div class="profile">
+								<div class="account">
+									<div class="icon">
+										<%= image_tag 'prof_noimage.png' %>
+									</div>
+									<div class="nickname">大熊猫大好き</div>
+									<div>さん</div>
+								</div><!--  /.account  -->
+								<div class="infomation">
+									<span class="gender">秘密</span>
+									<span class="age">20代</span>
+								</div>
+							</div><!--  /.profile  -->
+						</a>
+					</div>
+				</div>
+
+				<div class="footer">
+					<div class="enquete">
+						<div class="inc-enquete">
+							<div class="fav-area">
+								<div class="fav-button">
+									<div id="deactive-f">
+										<%= image_tag 'fav_deactive.png' %>
+										← この機能がよかったらいいねしてね！
+									</div>
+								</div>
+							</div>
+							<%= image_tag 'enquete-line.png', class: "deactive" %>
+							<div class="enquete-area">
+								<form action name="enquete-form" accept-charset="UTF-8">
+									<div class="before-input">
+										<div class="title">
+											この機能に関してご意見をお聞かせください
+										</div>
+										<div class="choices">
+											<ul>
+												<li class="li">
+													<input type="radio" name="choice" value="good">
+													よい！使いたい
+												</li>
+												<li class="li">
+													<input type="radio" name="choice" value="bad">
+													使わない
+												</li>
+											</ul>
+										</div>
+										<div class="free-text">
+											<textarea name="text" id="" cols="20" rows="6" placeholder="この機能へのご意見、ご要望をお聞かせください。"></textarea>
+										</div>
+										<div class="button">
+											<input type="submit" name="submit" value="意見を送信する">
+										</div>
+									</div><!--  /.before  -->
+								</form>
+							</div>
+						</div>
+					</div>
+					<div class="description">
+						テスト版の機能をお試しいただけます。
+					</div>
+					<div class="note">
+						※この機能は予告なしに終了する場合があります。
+					</div>
+				</div>
+			</div>
+
+			<aside class="ad-side-top">
+				<%= image_tag 'ad-side.png' %>
+			</aside>
+			<dl class="sidemenu">
+				<dt class="sidemenu-title">本と出会う</dt>
+				<dd class="sidemenu-list">
+					<p class="sidemenu-subtitle">ランキング</p>
+					<ul>
+						<li class="li">
+							<a href="#">デイリーランキング</a>
+						</li>
+						<li class="li">
+							<a href="#">週間ランキング</a>
+						</li>
+						<li class="li">
+							<a href="#">月間ランキング</a>
+						</li>
+						<li class="li">
+							<a href="#">みんなのベスト3</a>
+						</li>
+						<li class="li">
+							<a href="#">オーディオブック</a>
+						</li>
+					</ul>
+					<div class="sidemenu-toggle toggle toggleOff">
+						<p class="sidemenu-subtitle ranking-annual">
+							年間ランキング
+						</p>
+						<ul style="display: none;">
 							<li class="li">
-								<a href="#">新刊ニュース</a>
+								<a href="#">2018年のランキング</a>
 							</li>
 							<li class="li">
-								<a href="#">電子書籍 [IT系技術書]</a>
+								<a href="#">2017年のランキング</a>
+							</li>
+							<li class="li">
+								<a href="#">2016年のランキング</a>
+							</li>
+							<li class="li">
+								<a href="#">2015年のランキング</a>
+							</li>
+							<li class="li">
+								<a href="#">2014年のランキング</a>
+							</li>
+							<li class="li">
+								<a href="#">2013年のランキング</a>
+							</li>
+							<li class="li">
+								<a href="#">2012年のランキング</a>
+							</li>
+							<li class="li">
+								<a href="#">2011年のランキング</a>
+							</li>
+							<li class="li">
+								<a href="#">2010年のランキング</a>
+							</li>
+							<li class="li">
+								<a href="#">2009年のランキング</a>
 							</li>
 						</ul>
-						<p class="sidemenu-subtitle">レビュー</p>
-						<ul>
-							<li class="li">
-								<a href="#">新着レビュー</a>
-							</li>
-						</ul>
-						<p class="sidemenu-subtitle">おすすめ</p>
-						<ul>
-							<li class="li">
-								<a href="#">ブクログ ピックアップ</a>
-							</li>
-							<li class="li">
-								<a href="#">ブクログ公式本棚</a>
-							</li>
-							<li class="li">
-								<a href="#">ブクログ公式本棚の新着情報</a>
-							</li>
-							<li class="li">
-								<a href="#">ブクログ特集</a>
-							</li>
-						</ul>
-						<p class="sidemenu-subtitle">本棚を探す</p>
-						<ul>
-							<li class="li">
-								<a href="#">プロフィールから本棚を探す</a>
-							</li>
-							<li class="li">
-								<a href="#">ブクログID 検索</a>
-							</li>
-						</ul>
-					</dd>
-				</dl>
-			</div><!--  sideArea  -->
-		</div><!--  /.#main  -->
-	</div><!--  /.#page  -->
+					</div>
+					<p class="sidemenu-subtitle">新刊情報</p>
+					<ul>
+						<li class="li">
+							<a href="#">新刊ニュース</a>
+						</li>
+						<li class="li">
+							<a href="#">電子書籍 [IT系技術書]</a>
+						</li>
+					</ul>
+					<p class="sidemenu-subtitle">レビュー</p>
+					<ul>
+						<li class="li">
+							<a href="#">新着レビュー</a>
+						</li>
+					</ul>
+					<p class="sidemenu-subtitle">おすすめ</p>
+					<ul>
+						<li class="li">
+							<a href="#">ブクログ ピックアップ</a>
+						</li>
+						<li class="li">
+							<a href="#">ブクログ公式本棚</a>
+						</li>
+						<li class="li">
+							<a href="#">ブクログ公式本棚の新着情報</a>
+						</li>
+						<li class="li">
+							<a href="#">ブクログ特集</a>
+						</li>
+					</ul>
+					<p class="sidemenu-subtitle">本棚を探す</p>
+					<ul>
+						<li class="li">
+							<a href="#">プロフィールから本棚を探す</a>
+						</li>
+						<li class="li">
+							<a href="#">ブクログID 検索</a>
+						</li>
+					</ul>
+				</dd>
+			</dl>
+		</div><!--  sideArea  -->
+	</div><!--  /.#main  -->
+</div><!--  /.#page  -->
