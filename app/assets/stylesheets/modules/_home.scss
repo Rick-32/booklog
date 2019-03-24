@@ -253,14 +253,14 @@ body {
 			}
 		}
 	}
+	.user-navi__buttons {
+		display: inline-block;
+		float: right;
+		vertical-align: middle;
+		margin-top: 6px;
+	}
 }
 
-.user-navi__buttons {
-	display: inline-block;
-	float: right;
-	vertical-align: middle;
-	margin-top: 6px;
-}
 .setting__image {
 	width: 16px;
 	height: 16px;
