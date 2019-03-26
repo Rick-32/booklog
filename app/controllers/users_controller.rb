@@ -30,6 +30,6 @@ private
 		@user = current_user
 	end
 	def user_params
-		params.require(:user).permit(:user_id, :name, :gender, :bookshelf_name, :prefecture_id, :hometown, :occupation, :profile, :bookshelf_profile, :birth_y, :birth_m, :birth_d)
+		params.require(:user).permit(:booklog_id, :name, :gender, :bookshelf_name, :prefecture_id, :hometown, :occupation, :profile, :bookshelf_profile, :birth_y, :birth_m, :birth_d)
 	end
 end
