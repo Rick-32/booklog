@@ -8,10 +8,13 @@ Rails.application.routes.draw do
 		get 'confirm_email', to: 'users/registrations#confirm_email'
 	end
 
-	resources :users
 	root 'books#index'
-	get 'users/:id' => "users#show", as: :home
-	get '/logout' => "users#logout", as: :logout
-
-
+	resources :users, only: [:index, :edit, :update, :destroy ] do
+		collection do
+			# get :profile
+			get :home
+			get '/logout' 				=> "users#logout", as: :logout
+			get '/profile' 				=> "users#profile", as: :profile
+		end
+	end
 end
