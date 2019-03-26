@@ -17,4 +17,9 @@ Rails.application.routes.draw do
 			get '/profile' 				=> "users#profile", as: :profile
 		end
 	end
+
+	resources :books, only: [:index, :show] do
+		resources :users, only: :show
+			resources :books, only: [:index, :delete]
+	end
 end
