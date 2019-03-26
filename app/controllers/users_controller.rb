@@ -27,7 +27,7 @@ before_action :set_user, only: [:profile, :edit, :update, :destroy]
 private
 
 	def set_user
-		@user = User.find(current_user.id)
+		@user = current_user
 	end
 	def user_params
 		params.require(:user).permit(:user_id, :name, :gender, :bookshelf_name, :prefecture_id, :hometown, :occupation, :profile, :bookshelf_profile, :birth_y, :birth_m, :birth_d)

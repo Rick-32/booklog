@@ -4,4 +4,5 @@ class Gender < ActiveHash::Base
 		{:id => 1, :name => "女性"},
 		{:id => 2, :name => "秘密"}
 		]
+
 end
