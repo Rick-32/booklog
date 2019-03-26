@@ -9,12 +9,12 @@ Rails.application.routes.draw do
 	end
 
 	root 'books#index'
-	resources :users, only: [:edit, :update, :destroy ] do
+	resources :users, only: [:index, :edit, :update, :destroy ] do
 		collection do
-			get :profile
+			# get :profile
 			get :home
+			get '/logout' 				=> "users#logout", as: :logout
+			get '/profile' 				=> "users#profile", as: :profile
 		end
 	end
-	get '/logout' 				=> "users#logout", as: :logout
-	get '/profile' 				=> "users#show", as: :profile
 end
