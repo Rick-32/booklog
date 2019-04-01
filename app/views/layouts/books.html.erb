@@ -37,21 +37,21 @@
 
 			<!--  search areaフォーム部分の記述  -->
 			<div class="global-navi__search-area">
-				<form action="">
-					<input type="hidden">
-
-					<!--  search area表示部分の記述  -->
-					<div class="search-area">
-						<select required name="index" class="select-genre">
-							<option value="Books">本</option>
-							<option value="KindleStore">Kindle</option>
-							<option value="All">すべて</option>
-						</select>
-						<i class="fa fa-caret-down" aria-hidden="true"></i>
-						<input type="text" class="textbox" name="keyword" value placeholder="本のタイトル、著者名">
-						<button type="submit">
-							<i class="fa fa-search"></i>
-						</button>
+						<%= form_tag('/books/search', method: :get) do %>
+							<!--  search area表示部分の記述  -->
+							<div class="search-area">
+								<select required name="index" class="select-genre">
+									<option value="Books">本</option>
+									<option value="KindleStore">Kindle</option>
+									<option value="All">すべて</option>
+								</select>
+								<i class="fa fa-caret-down" aria-hidden="true"></i>
+								<input type="text" class="textbox" name="keyword" value="" placeholder="本のタイトル、著者名">
+								<%= button_tag do %>
+									<i class="fa fa-search"></i>
+								<% end %>
+							</div><!--  /.search area表示部分の記述  -->
+						<% end %>
 					</div><!--  /.search area表示部分の記述  -->
 				</form>
 			</div><!--  /.search areaフォーム部分の記述  -->

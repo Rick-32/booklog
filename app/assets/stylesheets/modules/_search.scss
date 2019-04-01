@@ -1,0 +1,215 @@
+.page__main--mainArea {
+	float: left;
+	width: 650px;
+	& h1 {
+		margin: 0 0 10px;
+		color: #1e1e1e;
+		font-weight: normal;
+		font-size: 34px;
+		line-height: 38px;
+		word-break: normal;
+	}
+	& p a:link, a:visited {
+		text-decoration: none;
+		color: #4ea6cc;
+	}
+	& .page__main--search-area {
+		display: inline-block;
+		width: 300px;
+		height: 40px;
+		position: relative;
+		& .inputtext {
+			border: solid 1px #dcdcdc;
+			border-radius: 5px;
+			background-color: #fff;
+			box-sizing: border-box;
+			width: 300px;
+			padding: 7px;
+			padding-right: 30px;
+			font-size: 14px;
+			line-height: 1.5em;
+		}
+		& .search-button {
+			position: absolute;
+			left: 270px;
+			height: 34px;
+			line-height: 34px;
+			border: none;
+			background: none;
+			color: #4ea6cc;
+			cursor: pointer;
+			& .fa-search {
+				font-size: 16px;
+				display: inline-block;
+			}
+		}
+	}
+	& .open:link, .open:visited {
+		font-size: 14px;
+		font-weight: bold;
+		color: #4ea6cc;
+	}
+	& .fa-angle-down {
+		margin-left: 4px;
+		margin-top: -3px;
+		vertical-align: middle;
+		font-size: 2em;
+	}
+	& .page__main--result {
+		font-size: 24px;
+		color: #3c3c3c;
+		margin: 0 0 10px;
+		font-weight: bold;
+	}
+	& .page__main--result-area {
+		border: 1px solid #dcdcdc;
+		border-radius: 6px;
+		& .itemListArea:first-child {
+			border-radius: 6px 6px 0 0;
+		}
+		& .itemListArea:last-child {
+			border: none;
+			border-radius: 0 0 6px 6px;
+		}
+		& .itemListArea {
+			padding: 20px;
+			border-bottom: 1px solid #dcdcdc;
+			background: #fff;
+			position: relative;
+			&__itemListImage {
+				float: left;
+				width: 120px;
+				& a:link, a:visited {
+					text-decoration: none;
+					color: #4ea6cc;
+					& img {
+						width: 80px;
+					}
+				}
+			}
+			&__itemListInfo {
+				float: left;
+				width: 350px;
+				& h3 {
+					margin: 0 0 15px;
+					color: #333;
+					font-weight: bold;
+					font-size: 14px;
+				}
+				& .info-users {
+					padding: 0 10px 0 0;
+					font-size: 12px;
+					font-weight: bold;
+					white-space: nowrap;
+					display: inline-block;
+					& img {
+						width: 16px;
+						height: 16px;
+						vertical-align: middle;
+					}
+					& .num {
+						color: #89c600;
+						font-weight: bold;
+						vertical-align: bottom;
+					}
+					& span {
+						color: #1e1e1e;
+						vertical-align: bottom;
+						font-weight: normal;
+					}
+				}
+				& .info-rating {
+					padding: 0 10px 0 0;
+					font-size: 12px;
+					font-weight: bold;
+					white-space: nowrap;
+					display: inline-block;
+					& img {
+						width: 16px;
+						height: 16px;
+						vertical-align: middle;
+					}
+					& .num {
+						color: #f5b629;
+					}
+				}
+				& .info-reviews {
+					padding: 0 10px 0 0;
+					font-size: 12px;
+					font-weight: bold;
+					white-space: nowrap;
+					display: inline-block;
+					& img {
+						width: 16px;
+						height: 16px;
+						vertical-align: middle;
+					}
+					& a:link, a:visited {
+						text-decoration: none;
+						color: #4ea6cc;
+					}
+					& .num {
+						color: #4ea6cc;
+						font-weight: bold;
+					}
+				}
+				&--descMini {
+					color: #333;
+					font-size: 10px;
+					& .itemInfoElmBox {
+						margin-bottom: 18px;
+						&__element {
+							display: inline-block;
+							line-height: 2.0em;
+							&--author {
+								margin-top: 5px;
+							}
+							& a:link, a:visited {
+								vertical-align: middle;
+								text-decoration: none;
+								color: #4ea6cc;
+							}
+						}
+						&__element:after {
+							content: "/";
+						}
+						&__element:last-child:after {
+							content: " ";
+						}
+					}
+				}
+			}
+			&__itemListBtn {
+				display: flex;
+				justify-content: center;
+				align-items: center;
+				flex-direction: column;
+				position: absolute;
+				right: 0;
+				top: 0;
+				bottom: 0;
+				margin-right: 20px;
+				& .item-registered-btn {
+					width: 130px;
+					height: 40px;
+					font-size: 12px;
+					font-weight: normal;
+					background-color: #4ea6cc;
+					border-radius: 5px;
+					display: flex;
+					justify-content: center;
+					align-items: center;
+				}
+				& a:link, a:visited {
+					text-decoration: none;
+					color: #fff;
+					& img {
+						width: 24px;
+						height: 24px;
+						margin-right: 7px;
+					}
+				}
+			}
+		}
+	}
+}
