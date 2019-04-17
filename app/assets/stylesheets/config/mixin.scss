@@ -27,6 +27,9 @@
 }
 
 /*margin-bottom の設定*/
+.b0M {
+	margin-bottom: 0px !important;
+}
 .b10M {
 	margin-bottom: 10px !important;
 }
@@ -76,9 +79,19 @@
 .t25P {
 	padding-top: 25px !important;
 }
+
+.t30P {
+	padding-top: 30px !important;
+}
 /*padding-bottom の設定*/
+.b10P {
+	padding-bottom: 10px !important;
+}
 .b20P {
 	padding-bottom: 20px !important;
+}
+.b40P {
+	padding-bottom: 40px !important;
 }
 
 /*padding-left　の設定*/
@@ -103,6 +116,23 @@
 .ts10 {
 	font-size: 10px !important;
 }
+.ts12 {
+	font-size: 12px !important;
+}
+.ts23 {
+	font-size: 23px !important;
+}
+.ts24 {
+	font-size: 24px !important;
+}
 .tcgray {
 	color: #cdcdcd !important;
+}
+
+/*その他*/
+.disT {
+	display: table !important;
+}
+.posR {
+	position: relative;
 }
