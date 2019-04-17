@@ -1,0 +1,404 @@
+<div class="page">
+	<!--  page__breadcrumbs  -->
+	<ul class="breadcrumbs">
+		<li class="breadcrumbs__li" itemscope="itemscope" itemtype="http://data-vocabulary.org/Breadcrumb">
+			<%= link_to root_path itemprop="url" do %>
+				<span class="breadcrumbs__li--a" itemprop="title">ブクログ</span>
+			<% end %>
+		</li>
+		<li class="breadcrumbs__li" itemscope="itemscope" itemtype="http://data-vocabulary.org/Breadcrumb">
+			<%= link_to root_path itemprop="url" do %>
+				<span class="breadcrumbs__li--a" itemprop="title"><%= @book.author %></span>
+			<% end %>
+		</li>
+		<li class="breadcrumbs__li" itemscope="itemscope" itemtype="http://data-vocabulary.org/Breadcrumb">
+			<span itemprop="title"><%= @book.title %></span>
+		</li>
+	</ul><!--  /.page__breadcrumbs  -->
+
+	<!--  page__main  -->
+	<div class="page__main" id="main">
+		<div class="page__main--mainArea">
+			<div class="mainArea__item-area clearfix">
+				<div class="disT t30P">
+					<div class="item-area__item-image-area">
+						<div class="posR">
+							<%= link_to image_tag("book1.jpg", class: 'book-img'), book_path(@book.id) %>
+						</div>
+						<div class="item-area__item-image-area--add-shelf">
+							<div class="additemBtnArea"><!--  FIXME:ボタン表示確認。あとで命名  -->
+								<%= link_to root_path, class: 'add-item-btn' do %>
+									<%= image_tag "add_item.png" %>
+									<span>本棚に登録</span>
+								<% end %>
+							</div><!--  /.additemBtnArea  -->
+						</div>
+
+						<div class="b15M">
+							<div class="write-review-button"><!--  FIXME: link先/reviewsテーブル作成後  -->
+								<%= link_to root_path do%>
+									<%= image_tag "review.png", class: 'review-image' %>
+									<span>
+									本棚に登録して<br>
+									レビューを書く
+									</span>
+								<% end %>
+							</div><!--/.write-review-button  -->
+						</div><!--  /.b15M  -->
+
+						<ul class="item-area__item-image-area--share-button">
+							<li class="li">
+								<div class="twitter">
+									<%= link_to image_tag("share-twitter.png"), root_path, target: "_blank"%>
+								</div>
+							</li>
+							<li class="li">
+								<div class="facebook">
+									<%= link_to image_tag("share-facebook.png"), root_path, target: "_blank"%>
+								</div>
+							</li>
+							<li class="li">
+								<div class="hatena">
+									<%= link_to image_tag("share-hatena.png"), root_path, target: "_blank"%>
+								</div>
+							</li>
+						</ul>
+					</div><!--  /.item-area__item-image-area  -->
+
+					<div class="item-area__item-info-area">
+						<h1><%= @book.title %></h1>
+						<div class="item-info__author">
+							<div>
+								<span class="ts12">著者 :</span>
+								<%= link_to root_path do%>
+									<%= @book.author %>
+								<% end %>
+							</div>
+						</div>
+						<div class="item-info__description clearfix">
+							<ul>
+								<li class="li">
+									<span><%= @book.publisher%>(<%= @book.published_at.strftime("%Y年%m月%d日").to_s %>発売)</span>
+								</li>
+							</ul>
+						</div><!-- /.item-info__description clearfix -->
+						<div class="aggregate">
+							<div class="aggregate__rating">
+								<%= image_tag "star.png", class: "star_png" %>
+								<%= image_tag "unstar.png", class: "star_png" %>
+								<%= image_tag "unstar.png", class: "star_png" %>
+								<%= image_tag "unstar.png", class: "star_png" %>
+								<%= image_tag "unstar.png", class: "star_png" %>
+								<div class="rating-value">
+									<span class="rating">1.0
+										<i class="fas fa-chevron-circle-down"></i>
+									</span>
+								</div>
+							</div><!--  /.aggregate__rating  -->
+							<div class="aggregate__item-info">
+								<div class="users">
+									<%= image_tag "user.png", class: "r-user_png" %>
+										本棚登録：<span>366</span>人
+								</div>
+								<div class="reviews">
+									<%= image_tag "review.png", class: 'r-review-image' %>
+										レビュー：<span>3</span>件
+								</div>
+							</div><!--  /.aggregate__item-info  -->
+						</div><!--  /.aggregate  -->
+						<div class="item-area__item-buy-area">
+							<div class="item-area__item-buy-area--btn">
+								<%= link_to root_path, class: 'btn-amazon-detail' do %>
+									<i class="fab fa-amazon"></i>
+									Amazon詳細ページへ
+								<% end %>
+								<%= link_to root_path, class: 'btn-amazon-kindle' do %>
+									<i class="fas fa-tablet-alt"></i>kindleのページへ
+								<% end %>
+								<ul class="btn-others">
+									<li class="li">
+										<%= link_to root_path, class: "btn-honto" do %>
+											<%= image_tag "btn_honto_logo.png", class: 'store-btn-wide'%>
+										<% end %>
+									</li>
+									<li class="li">
+										<%= link_to root_path, class: "btn-rakuten" do %>
+											<%= image_tag "btn_rakuten_logo.png", class: 'store-btn-wide'%>
+										<% end %>
+									</li>
+									<li class="li">
+										<%= link_to root_path,class: "btn-bol" do %>
+											<%= image_tag "btn_bol_logo.png", class: 'store-btn-wide'%>
+										<% end %>
+									</li>
+									<li class="li">
+										<%= link_to root_path, class: "btn-calil" do %>
+											<%= image_tag "btn_calil_logo.png", class: 'store-btn-wide'%>
+										<% end %>
+									</li>
+									<li class="li">
+										<%= link_to root_path, class: "other-store" do %>
+											<%= image_tag "shopping_cart.png", class: 'store-btn-square'%>
+											<span>購入ストアへ</span>
+										<% end %>
+									</li>
+								</ul>
+							</div><!--  /.item-area__item-buy-area--btn  -->
+						</div><!--  /.item-area__item-buy-area  -->
+					</div><!--  /.item-area__item-info-area  -->
+				</div><!--  /.disT t30P  -->
+			</div><!--  /.mainArea__item-area  -->
+
+			<div class="b-description b40M">
+				<h2 class="description__area-title">作品紹介・あらすじ</h2>
+				<p class="text">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Sed eos quis sit atque, minima temporibus perferendis fuga dolore quas veniam ipsam ex totam blanditiis? Aliquid ratione unde quidem placeat alias!</p>
+			</div><!--  /.description  -->
+			<div id="reviewLine" class="t20M b0M">
+				<p class="line b30M"></p>
+				<h2 class="area-title">感想・レビュー・書評</h2>
+				<div class="review-sort-area">
+					<div class="sort-item">
+						<div class="item">
+							<span class="label">並び替え</span>
+							<ul>
+								<li class="selected li">いいね順</li>
+								<li class="li"><a href="#">新着順</a></li>
+							</ul>
+						</div>
+						<div class="item">
+							<span class="label">表示形式</span>
+							<ul>
+								<li class="selected li">リスト</li>
+								<li class="li"><a href="#">全文</a></li>
+							</ul>
+						</div>
+					</div><!--  /.sort-item  -->
+					<div class="sort-item">
+						<div class="item">
+							<span class="label">表示件数</span>
+							<ul>
+								<li class="selected li">10件</li>
+								<li class="li"><a href="#">20件</a></li>
+								<li class="li"><a href="#">30件</a></li>
+							</ul>
+						</div>
+					</div>
+					<div class="sort-item">
+						<div class="item">
+							<span class="label">絞り込み</span>
+							<ul>
+								<li class="selected li">すべて</li>
+								<li class="li"><a href="#">評価★5</a></li>
+								<li class="li"><a href="#">評価★4</a></li>
+								<li class="li"><a href="#">評価★3</a></li>
+								<li class="li"><a href="#">評価★2</a></li>
+								<li class="li"><a href="#">評価★1</a></li>
+							</ul>
+						</div>
+					</div>
+				</div><!--  /.review-sort-area  -->
+				<ul class="t30M b30M"><!--  FIXME:レビュー実装後に追加  -->
+					<li class="li review clearfix">
+						<div class="summary">
+							<div class="user-info-area">
+								<div class="usersinfo clearfix">
+									<div class="user-icon-area clearfix">
+										<div class="usersicon">
+											<%= link_to root_path do%>
+												<%= image_tag "prof_noimage.png", class: 'user-icon' %>
+											<% end %>
+										</div>
+									</div><!--  /.user-icon-area  -->
+									<div class="user-name-area">
+										<p>
+											<%= link_to root_path do %>
+												<span class="reviewer">レビューした人</span>さん<% end %>のレビュー
+										</p>
+										<div class="follower-btn">
+											<div class="follow-area">
+												<%= link_to root_path do %>
+													<i class="fas fa-plus"></i>
+													フォロー
+												<% end %>
+											</div>
+										</div>
+										<p></p>
+										<p class="review-date">
+											<%= link_to root_path do %>
+												2019年4月13日
+											<% end %>
+										</p>
+									</div>
+								</div>
+							</div><!--  /.user-info-area  -->
+							<div class="rating-star-area clearfix">
+								<span class="rating-area r10M">
+									<i class="fas fa-star fa-xs orange"></i>
+									<i class="fas fa-star fa-xs orange"></i>
+									<i class="fas fa-star fa-xs orange"></i>
+									<i class="fas fa-star fa-xs orange"></i>
+									<i class="fas fa-star fa-xs orange"></i>
+								</span>
+							</div><!--  /.rating-star-area  -->
+							<div class="accordion-box">
+								<p class="review-text">
+									Lorem ipsum dolor sit amet consectetur, adipisicing elit. Aut aspernatur consequatur excepturi magni, officiis praesentium fugiat laudantium quos, pariatur, obcaecati eum perspiciatis ipsa numquam vero repellendus perferendis nemo? Totam, laboriosam.Doloremque dicta fugiat quibusdam, iste voluptatum facere temporibus ipsum eum dolores, aut est iure illum incidunt nihil praesentium perferendis nisi quae quidem autem animi quo, labore optio explicabo. Facere, aperiam?
+								</p>
+							</div><!--  /.accordion-box  -->
+							<div class="review-sup-area">
+								<div class="fav-area">
+									<div class="fav-button">
+										<%= link_to root_path, class: 'fav-btn fav-add' do %>
+											<%= image_tag 'fav_deactive.png' %>
+										<% end %>
+										<span class="fav-count">0</span>
+									</div>
+								</div>
+								<div class="user-comment">
+									<%= link_to root_path do %>
+										詳細を見る
+									<% end %>
+								</div>
+							</div><!--  /.review-sup-area  -->
+						</div>
+						<div class="comment-area">
+							<div class="comment-title">
+								<%= link_to root_path do %>
+									コメント
+									<span class="comment-num">0</span>
+									件をすべて表示
+								<% end %>
+							</div>
+							<ul class="comment-list">
+							</ul>
+							<div class="line-wrap">
+								<div class="comment-edit-line"></div>
+							</div>
+							<div class="comment-edit clearfix">
+								<div class="comment-start">
+									コメントする…
+								</div>
+								<div class="comment-text-wrap invisible">
+									<div class="comment-image">
+										<%= image_tag 'prof_noimage.png', class: 'user-icon' %>
+									</div>
+									<div class="comment-text-line">
+										<%= text_area_tag(:comment) %>
+										<%= submit_tag("送信する") %>
+									</div>
+								</div>
+							</div>
+						</div><!--  /.comment-area  -->
+					</li>
+				</ul>
+			</div><!--  /.reviewLine  -->
+			<div class="pagerArea"><!--  ページネーションreviews table追加後に実装-->
+				<div class="pagerTxt b40M">
+					全4件中 1-4件を表示
+				</div>
+			</div><!--  /.pagerArea  -->
+			<div class="ruled-line b30M"></div>
+			<h2 class="b30M ts24"><%= @book.title %>のその他の作品</h2>
+			<div class="alt-items ruled-line b30M"></div>
+			<h2 class="b30M ts24"><%= @book.author %>の作品</h2>
+			<div class="carousel-area"></div>
+			<div class="author-link b40P b30M ruled-line"></div>
+			<h2 class="b30M ts23">この本を読んでいる人は、こんな本も本棚に登録しています。</h2>
+			<div class="recommend-area ruled-line"></div>
+			<div class="review-more-read-area">
+				<%= link_to root_path, class: "amazon-read-more" do %>
+					<i class="fab fa-amazon"></i>
+					Amazonでレビューを読む
+				<% end %>
+				<%= link_to root_path, class: "rakuten-read-more" do %>
+					楽天ブックスでレビューを読む
+				<% end %>
+			</div>
+			<div class="itemUnit t20M b40P ruled-line">
+				<h2 class="b30M ts24">外部サイトの商品情報・レビュー</h2>
+				<ul class="clearfix metades">
+					<li class="li b10P">
+						<%= link_to root_path do %>
+							Amazonでレビューを見る
+						<% end %>
+					</li>
+					<li class="li b10P">
+						<%= link_to root_path do %>
+							カーリルで図書館の貸し出し状況を見る
+						<% end %>
+					</li>
+					<li class="li b10P">
+						<%= link_to root_path do %>
+							Webcat Plas(国立情報学研究所)で図書情報を見る
+						<% end %>
+					</li>
+				</ul>
+			</div>
+			<div class="users-status-area t20M">
+				<h2>3ステップでしっかり学ぶ Ruby入門を本棚に登録しているひと</h2>
+				<div id="timeline">
+					<div class="tab-menu clearfix">
+						<ul>
+							<li class="li">
+								<a href="#tab-notset" class="current">登録のみ</a>
+							</li>
+							<li class="li">
+								<a href="#tab-want">読みたい</a>
+							</li>
+							<li class="li">
+								<a href="#tab-reading">いま読んでる</a>
+							</li>
+							<li class="li">
+								<a href="#tab-finish">読み終わった</a>
+							<li class="li">
+								<a href="#tab-giveup">積読</a>
+							</li>
+							</li>
+						</ul>
+						<div id="tab-notset"><!--  登録のみタブ  -->
+							<div class="users-count">
+								<div class="users">
+									<%= image_tag "user.png", class: "r-user_png" %>
+										新しい本棚登録：<span>０</span>人
+								</div>
+							</div>
+						</div><!--  /.登録のみタブ  -->
+
+						<div id="tab-want"><!--  読みたいタブ-->
+							<div class="users-count">
+								<div class="users">
+									<%= image_tag "user.png", class: "r-user_png" %>
+										新しい本棚登録：<span>０</span>人
+								</div>
+							</div>
+						</div><!--  読みたいタブ  -->
+						<div id="tab-reading"><!--  いま読んでるタブ  -->
+							<div class="users-count">
+								<div class="users">
+									<%= image_tag "user.png", class: "r-user_png" %>
+										新しい本棚登録：<span>０</span>人
+								</div>
+							</div>
+						</div>
+						<div id="tab-finish"><!--  読み終わったタブ  -->
+							<div class="users-count">
+								<div class="users">
+									<%= image_tag "user.png", class: "r-user_png" %>
+										新しい本棚登録：<span>０</span>人
+								</div>
+							</div>
+						</div>
+
+						<div id="tab-giveup"><!--  積読タブ  -->
+							<div class="users-count">
+								<div class="users">
+									<%= image_tag "user.png", class: "r-user_png" %>
+										新しい本棚登録：<span>０</span>人
+								</div>
+							</div>
+						</div>					</div><!--  /.tabmenu  -->
+				</div><!--  /.timeline  -->
+			</div>
+		</div><!--  /.#mainArea  -->
+	</div><!--  /.#main  -->
+</div><!--  /.page  -->
