@@ -17,11 +17,9 @@ Rails.application.routes.draw do
 		end
 	end
 
-	resources :books, only: [:index, :show] do
-		collection do
-			get 'search'
-		end
-		resources :users, only: :show
-			resources :books, only: [:index, :new, :delete]
-		end
+	get 'books/search' => "books#search"
+	resources :books, only: :show
+	resources :users, only: :show do
+		resources :books, only: [:index, :create, :new, :destroy]
 	end
+end
