@@ -1,5 +1,5 @@
 @charset "utf-8";
-/* 全てに共通　*/
+/* 全てに共通*/
 html, body {
 	font-size: 16px;
 	font-family: "ヒラギノ角ゴ Pro W3","Hiragino Kaku Gothic Pro","メイリオ",Meiryo,"ＭＳ Ｐゴシック",sans-serif;
@@ -250,12 +250,12 @@ button {
 	left: 155px;
 }
 /*FontAwesomeのアイコン色*/
-.fa-twitter {
-	color: #1dadea;
-}
-.fa-facebook-square {
-	color: #4861a8;
-}
+// .fa-twitter {
+// 	color: #1dadea;
+// }
+// .fa-facebook-square {
+// 	color: #4861a8;
+// }FIXME:アイコン背景に埋没していたので確認
 
 
 .right-menu__dropdown-menu {
