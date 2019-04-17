@@ -55,6 +55,7 @@ ActiveRecord::Schema.define(version: 2019_04_01_060808) do
     t.integer "birth_d"
     t.integer "prefecture_id"
     t.index ["booklog_id"], name: "index_users_on_booklog_id", unique: true
+    t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
 end
