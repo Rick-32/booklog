@@ -7,7 +7,7 @@
 			<% end %>
 		</li>
 		<li class="breadcrumbs__li" itemscope="itemscope" itemtype="http://data-vocabulary.org/Breadcrumb">
-			<%= link_to search_books_path itemprop="url" do %>
+			<%= link_to books_search_path itemprop="url" do %>
 				<span class="breadcrumbs__li--a" itemprop="title">詳細検索</span>
 			<% end %>
 		</li>
@@ -99,6 +99,13 @@
 					</div><!--  /.itemListArea  -->
 				<% end %>
 			</div><!--  /.page__main--result-area  -->
+			<div class="pagerArea t20M">
+				<%= paginate(@books) %>
+				<div class="pagerTxt">
+					全<%= @books.total_count %>件中 <%= @books.offset_value + 1 %> - <%= @books.offset_value + @books.length %>件を表示
+				</div>
+			</div>
+
 		</div><!--  /.#mainArea  -->
 
 		<div id="page__main--sideArea">

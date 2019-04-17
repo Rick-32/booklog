@@ -96,6 +96,10 @@
 					font-weight: bold;
 					font-size: 14px;
 				}
+				& a:link, a:visited {
+					text-decoration: none;
+					color: #4ea6cc;
+				}
 				& .info-users {
 					padding: 0 10px 0 0;
 					font-size: 12px;
@@ -151,6 +155,10 @@
 					& .num {
 						color: #4ea6cc;
 						font-weight: bold;
+					}
+					& span {
+						font-weight: normal;
+						color: #1e1e1e;
 					}
 				}
 				&--descMini {
