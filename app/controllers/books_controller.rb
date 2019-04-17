@@ -10,6 +10,6 @@ layout 'books'
 	end
 
 	def search
-		@books = Book.where('title LIKE(?)', "%#{params[:keyword]}%").limit(10)
+		@books = Book.where('title LIKE(?)', "%#{params[:keyword]}%").page(params[:page]).per(10)
 	end
 end
