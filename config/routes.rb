@@ -15,11 +15,13 @@ Rails.application.routes.draw do
 			get '/logout' 				=> "users#logout", as: :logout
 			get '/profile' 				=> "users#profile", as: :profile
 		end
+		resources :books_users, only: [:index, :show, :create, :edit, :destroy]
 	end
 
 	get 'books/search' => "books#search"
-	resources :books, only: :show
-	resources :users, only: :show do
-		resources :books, only: [:index, :create, :new, :destroy]
+	resources :books, except: :update do
+		member do
+			get 'register'
+		end
 	end
 end
