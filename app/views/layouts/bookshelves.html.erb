@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+	<meta charset="UTF-8">
+	<meta name="description" content="ブクログは、本の感想や評価をチェックしたり、webやアプリで本棚をかんたんに作成し、 感想やレビューを書いたり、読書の管理・記録をすることできます。">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track' => true %>
+	<title>ブクログ</title>
+	<%= csrf_meta_tags %>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+	<%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+	<link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/smoothness/jquery-ui.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+	<link href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" rel="stylesheet">
+</head>
+<body id="mode-users">
+	<div id="body">
+<!--  header  -->
+		<header class="header__global-navi clearfix">
+			<div class="global-navi__container">
+				<div class="global-navi__inner">
+					<!--  ブクログ logo  -->
+					<div class="global-navi__logo">
+						<%= link_to image_tag("booklog_logo_s.png", class: "global-navi__logo--image"), root_path %>
+					</div><!--  /.ブクログ logo  -->
+					<!--  グローバルナビ左側  -->
+					<div class="left-menu__container clearfix">
+						<div class="left-menu__inner">
+							<ul class="ul left-menu__list--ul">
+								<li class="li"><a class="nav" href="#">ランキング</a></li>
+								<li class="li"><a class="nav" href="#">新刊情報</a></li>
+								<li class="li"><a class="nav" href="#">談話室</a></li>
+								<li class="li"><a class="nav" href="#">まとめ</a></li>
+							</ul>
+						</div>
+					</div><!--  /.グローバルナビ左側  -->
+
+					<!--  search areaフォーム部分の記述  -->
+					<div class="global-navi__search-area">
+						<%= form_tag('/books/search', method: :get) do %>
+							<!--  search area表示部分の記述  -->
+							<div class="search-area">
+								<select required name="index" class="select-genre">
+									<option value="Books">本</option>
+									<option value="KindleStore">Kindle</option>
+									<option value="All">すべて</option>
+								</select>
+								<i class="fa fa-caret-down" aria-hidden="true"></i>
+								<input type="text" class="textbox" name="keyword" value="" placeholder="本のタイトル、著者名">
+								<%= button_tag do %>
+									<i class="fa fa-search"></i>
+								<% end %>
+							</div><!--  /.search area表示部分の記述  -->
+						<% end %>
+					</div><!--  /.search areaフォーム部分の記述  -->
+
+					<!--  グローバルナビ右側  -->
+					<div class="right-menu__container clearfix">
+						<!--  menu area  -->
+						<div class="right-menu__inner">
+							<!--  ログイン済み  -->
+							<% if user_signed_in? %>
+							<div class="right-menu__box">
+								<!--  ログアウトは本来別の位置だが開発中は便宜的にここに実装  -->
+								<%= link_to 'ログアウト', destroy_user_session_path, method: :delete, class: "btn__logout" %>
+							</div>
+							<div class="right-menu__box">
+								<!--  dropdown-menu  -->
+								<div class="menu right-menu__dropdown-menu">
+									<div href="#" class="right-menu__button dropdown-trigger"></div>
+									<!--%= image_tag "humburger.png", class: "button-image" %>
+									<!--  dropdown__list  -->
+									<div class="dropdown none">
+										<ul>
+											<li class="li">
+												<%= link_to home_users_path do %>
+													<i class="fas fa-home fa-fw"></i>HOME
+												<% end %>
+
+											</li>
+											<li class="li">
+												<%= link_to profile_users_path do %>
+													<i class="fas fa-user fa-fw"></i>プロフィール
+												<% end %>
+											</li>
+											<li class="bar li">
+												<%= link_to user_books_users_path(current_user.id) do%>
+													<i class="fas fa-book fa-fw"></i>
+													本棚
+												<% end %>
+											</li>
+											<li class="li">
+												<a href="#">
+													<i class="fa fa-heart fa-fw"></i>
+													ブクログ公式本棚
+												</a>
+											</li>
+
+											<li class="bar li">
+												<a href="#">
+													<i class="far fa-gem fa-fw"></i>
+													ブクログ特集
+												</a>
+											</li>
+
+											<li class="li">
+												<a href="#">
+													<i class="fas fa-mobile-alt fa-fw"></i>
+													ブクログのアプリ
+												</a>
+											</li>
+
+											<li class="bar li">
+												<a href="#">
+													<i class="far fa-check-square fa-fw"></i>
+													チュートリアル
+												</a>
+											</li>
+
+											<li class="li">
+												<a href="#">
+													<i class="fa fa-info-circle fa-fw"></i>
+													お知らせブログ
+												</a>
+											</li>
+
+											<li class="bar li">
+												<a href="#">
+													<i class="fa fa-question-circle fa-fw"></i>
+													ヘルプ
+												</a>
+											</li>
+
+											<li class="li">
+												<a href="#">
+													<i class="fab fa-twitter fa-fw"></i>
+													Twitterをフォロー
+												</a>
+											</li>
+
+											<li class="li">
+												<a href="#">
+													<i class="fab fa-facebook-square fa-fw"></i>
+													Facebookページ
+												</a>
+											</li>
+										</ul>
+									</div><!--  /.dropdown__list  -->
+								</div><!--  /.dropdown-menu  -->
+							</div><!--  /.right-menu__box  -->
+						</div><!--  /.menu area  -->
+					</div><!--  グローバルナビ右側  -->
+
+							<% else %>
+							<!--  未ログイン  -->
+							<div class="right-menu__box">
+								<%= link_to "新規登録", new_user_registration_path, class: 'nav signup' %>
+							</div>
+							<div class="right-menu__box">
+								<%= link_to "ログイン", new_user_session_path, class: 'nav login' %>
+							</div>
+							<!--  dropdown-menu  -->
+							<div class="right-menu__dropdown-menu">
+								<div href="#" class="right-menu__button dropdown-trigger"></div>
+								<!--%= image_tag "humburger.png", class: "button-image" %>
+								<--  dropdown__list  -->
+								<div class="dropdown none">
+									<ul>
+										<li class="li">
+											<a href="#">
+												<i class="fa fa-heart fa-fw"></i>
+												ブクログ公式本棚
+											</a>
+										</li>
+
+										<li class="bar li">
+											<a href="#">
+												<i class="far fa-gem fa-fw"></i>
+												ブクログ特集
+											</a>
+										</li>
+
+										<li class="li">
+											<a href="#">
+												<i class="fa fa-book fa-fw"></i>
+												ブクログとは
+											</a>
+										</li>
+
+										<li class="li">
+											<a href="#">
+												<i class="fa fa-info-circle fa-fw"></i>
+												お知らせブログ
+											</a>
+										</li>
+
+										<li class="li">
+											<a href="#">
+												<i class="fa fa-question-circle fa-fw"></i>
+												ヘルプ
+											</a>
+										</li>
+
+										<li class="bar li">
+											<a href="#">
+												<i class="fa fa-shopping-cart fa-fw"></i>
+												ブクログ公式グッズ
+											</a>
+										</li>
+
+										<li class="app-banner li">
+											<%= link_to image_tag("global_menu_bnr_app.png", class: "global_menu_bnr--image"), root_path %>
+										</li>
+									</ul>
+								</div><!--  /.dropdown__list  -->
+							</div><!--  /.dropdown-menu  -->
+						</div><!--  /.menu area  -->
+					</div><!--  グローバルナビ右側  -->
+					<% end %>
+				</div><!--  /.global-navi__inner -->
+			</div><!--  /.global-navi__container  -->
+		</header><!--  /.header  -->
+
+
+		<%= yield %>
+
+
+	</div><!--  /.div#body  -->
+</body>
+</html>
