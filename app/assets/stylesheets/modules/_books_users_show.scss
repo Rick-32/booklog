@@ -1,0 +1,224 @@
+.page {
+  position: relative;
+  margin: 20px auto 0;
+  padding: 0;
+  width: 980px;
+  background: none;
+  .edit__item-area {
+    position: relative;
+    margin: 0 0 20px;
+    background: #f0f0f0;
+    padding: 20px;
+    border-top: 5px #333 solid;
+    height: 165px;
+    &--image {
+      float: left;
+      margin-right: 30px;
+      img {
+        margin: 0 0 5px;
+        border: none;
+        vertical-align: middle;
+        width: 50px;
+      }
+      .taC a {
+        text-decoration: underline;
+      }
+    }
+    &--info {
+      float: left;
+      width: 530px;
+      h2 {
+        font-size: 14px;
+        color: #1e1e1e;
+        margin: 0 0 10px;
+        padding: 0;
+        font-weight: bold;
+        .titleLink {
+          text-decoration: none;
+          color: #1e1e1e;
+        }
+      }
+      .item-info-btn {
+        margin: 10px 0 0 !important;
+        li {
+          float: left;
+          padding-right: 10px;
+          .btnRed:link, .btnRed:visited {
+            margin: 0;
+            padding: 10px 20px;
+            border: none;
+            display: inline-block;
+            color: #fff;
+            font-size: 12px;
+            font-weight: normal;
+            font-family: "ヒラギノ角ゴ Pro W3","Hiragino Kaku Gothic Pro","メイリオ",Meiryo,"ＭＳ Ｐゴシック",sans-serif;
+            line-height: 1.6em;
+            cursor: pointer;
+            border-radius: 5px;
+            background: #da4740 !important;
+          }
+          .btnRed:hover {
+            background: #1e1e1e !important;
+          }
+          .btnOrange:link, .btnOrange:visited {
+            margin: 0;
+            padding: 10px 20px;
+            border: none;
+            display: inline-block;
+            color: #fff;
+            font-size: 12px;
+            font-weight: normal;
+            font-family: "ヒラギノ角ゴ Pro W3","Hiragino Kaku Gothic Pro","メイリオ",Meiryo,"ＭＳ Ｐゴシック",sans-serif;
+            line-height: 1.6em;
+            cursor: pointer;
+            border-radius: 5px;
+            background: #f5b629 !important;
+          }
+          .btnOrange:hover {
+            background: #1e1e1e !important;
+          }
+          .btnBlue:link, .btnBlue:visited {
+            margin: 0;
+            padding: 10px 20px;
+            border: none;
+            display: inline-block;
+            color: #fff;
+            font-size: 12px;
+            font-weight: normal;
+            font-family: "ヒラギノ角ゴ Pro W3","Hiragino Kaku Gothic Pro","メイリオ",Meiryo,"ＭＳ Ｐゴシック",sans-serif;
+            line-height: 1.6em;
+            cursor: pointer;
+            border-radius: 5px;
+            background: #4ea6cc !important;
+            height: 40px;
+          }
+          .btnBlue:hover {
+            background: #3887A6 !important;
+          }
+        }
+      }
+    }
+  }
+  .tab-menu {
+    overflow: hidden;
+    margin: 25px 0 20px;
+    width: 100%;
+    height: 35px;
+  }
+  .selected {
+    color: #fff;
+    background: #000;
+  }
+  .edit-status span {
+    display: table-cell;
+    width: auto;
+    margin: 0;
+    padding: 7px 4px;
+    cursor: pointer;
+    text-align: center;
+    vertical-align: middle;
+    border: 1px solid #1e1e1e;
+    border-right: 0;
+    line-height: 1.2em;
+  }
+  span.last {
+    border-right: 1px solid #1e1e1e;
+    border-radius: 0 3px 3px 0;
+  }
+  .edit-rating {
+    cursor: pointer;
+    width: 220px;
+    img.raty-cancel {
+      margin: 0 0 0 5px;
+      width: 80px;
+      height: 32px;
+    }
+    img {
+      width: 20px;
+      height: 19px;
+      border: none;
+      vertical-align: middle;
+    }
+  }
+  .select-area {
+    display: table-cell;
+    vertical-align: middle;
+    width: 250px;
+    .edit-category {
+      width: 230px;
+      white-space: nowrap;
+      font-size: 14px;
+      border: 1px solid #1e1e1e;
+      height: 30px;
+    }
+  }
+  .add-category {
+    display: table-cell;
+    vertical-align: middle;
+    .add-category-button {
+      color: #1e1e1e;
+      text-decoration: underline;
+    }
+  }
+  .edit-review {
+    min-height: 200px;
+    max-height: 400px;
+    padding: 7px;
+    font-size: 14px;
+    line-height: 1.4em;
+    border: 1px solid #1e1e1e;
+    width: 378px;
+    border-radius: 3px;
+  }
+  .netabare {
+    margin: 10px 0 0;
+    width: 100%;
+  }
+  input.edit-netabare {
+    border: none;
+    margin: 5px 3px 5px 0;
+    box-sizing: border-box;
+    padding: 0;
+  }
+  .ui-label {
+    width: 120px;
+  }
+  .list11 {
+    margin: 8px 0 0 20px;
+    li {
+      list-style: circle;
+      font-size: 10px;
+      color: silver;
+      margin-bottom: 3px;
+    }
+  }
+  input.inputtext.mini {
+    padding: 4px 7px;
+    font-size: 12px;
+  }
+  input.inputtext {
+    border: 1px solid #1e1e1e;
+    line-height: 1.5em;
+    border-radius: 3px;
+  }
+  .w60px {
+    width: 60px !important;
+  }
+  .w40px {
+    width: 40px !important;
+  }
+  textarea.memo {
+    min-height: 200px;
+    max-height: 400px;
+    padding: 7px;
+    font-size: 14px;
+    line-height: 1.4em;
+    border: 1px solid #1e1e1e;
+    width: 378px;
+    border-radius: 3px;
+  }
+  .moreBtnArea {
+    text-align: center;
+    margin: 0 0 40px;
+  }
+}
