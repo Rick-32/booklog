@@ -41,4 +41,8 @@ class User < ApplicationRecord
 	def email_changed?
 		false
 	end
+	# FIXME:もしかしたらいらんデータも道連れに消去してしまうかも
+	has_many :booksUsers, dependent: :destroy
+	has_many :books, through: :booksUsers
+
 end
