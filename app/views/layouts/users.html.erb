@@ -8,7 +8,7 @@
 	<%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track' => true %>
 	<title>ブクログ</title>
 	<%= csrf_meta_tags %>
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
 	<%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
 	<link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/smoothness/jquery-ui.css">
 <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
@@ -65,30 +65,31 @@
 								<!--  ログアウトは本来別の位置だが開発中は便宜的にここに実装  -->
 								<%= link_to 'ログアウト', destroy_user_session_path, method: :delete, class: "btn__logout" %>
 							</div>
+
 							<div class="right-menu__box">
 								<!--  dropdown-menu  -->
 								<div class="menu right-menu__dropdown-menu">
 									<div href="#" class="right-menu__button dropdown-trigger"></div>
 									<!--%= image_tag "humburger.png", class: "button-image" %>
-									<!--  dropdown__list  -->
+									<--  dropdown__list  -->
 									<div class="dropdown none">
 										<ul>
 											<li class="li">
 												<%= link_to home_users_path do %>
 													<i class="fas fa-home fa-fw"></i>HOME
 												<% end %>
-
 											</li>
+
 											<li class="li">
 												<%= link_to profile_users_path do %>
 													<i class="fas fa-user fa-fw"></i>プロフィール
 												<% end %>
 											</li>
 											<li class="bar li">
-												<a href="#">
+												<%= link_to user_books_users_path(current_user.id) do%>
 													<i class="fas fa-book fa-fw"></i>
 													本棚
-												</a>
+												<% end %>
 											</li>
 											<li class="li">
 												<a href="#">
