@@ -1,0 +1,234 @@
+<div class="page">
+
+    <!--  page__main  -->
+  <div clas="page__main" id="main">
+
+    <div class="users-header">
+      <div class="users-header__profile--wrapper">
+        <div class="users-header__profile">
+          <div class="breadcrumbs-wrapper">
+            <!--  page__breadcrumbs  -->
+            <ul class="breadcrumbs">
+              <li class="breadcrumbs__li" itemscope="itemscope" itemtype="http://data-vocabulary.org/Breadcrumb">
+                <%= link_to root_path itemprop="url" do %>
+                  <span class="breadcrumbs__li--a" itemprop="title">ブクログ</span>
+                <% end %>
+              </li>
+              <li class="breadcrumbs__li" itemscope="itemscope" itemtype="http://data-vocabulary.org/Breadcrumb">
+                <span itemprop="title"><%= current_user.name %>さんの本棚</span>
+              </li>
+            </ul><!--  /.page__breadcrumbs  -->
+          </div>
+          <div class="user__wrapper clearfix">
+            <div class="user__prof">
+              <div class="user__prof--icon">
+                <a href="#">
+                  <%= image_tag 'prof_noimage.png', class: 'prof__image' %>
+                  <span class="user__prof--icon-edit">編集</span>
+                </a>
+              </div><!--  /.user__prof--icon  -->
+              <div class="user__prof--social">
+                <div class="user-follow-btn">
+                  <span class="follow-myself">あなたの本棚</span>
+                </div>
+              </div><!--  /.user__prof--social  -->
+            </div><!--  /.user__prof  -->
+
+            <div class="user__info">
+              <div class="user__info--shelf">
+                <h1><%= current_user.bookshelf_name %>の本棚</h1>
+                <%= link_to profile_users_path, class: 'user-shelf-nickname' do %>
+                  <%= current_user.name %>さん
+                <% end %>
+                <p><%= current_user.bookshelf_profile %></p>
+              </div><!--  /.user__info--shelf  -->
+              <ul class="user__info--activity">
+                <li class="li">
+                  <dl>
+                    <dt>登録数</dt>
+                    <dd>
+                      <%= link_to root_path do %>
+                        <%= @booklist.length %>
+                      <% end %>
+                    </dd>
+                  </dl>
+                </li>
+                <li class="li">
+                  <dl>
+                    <dt>レビュー</dt>
+                    <dd>
+                      <%= link_to 'rev.no', root_path %>
+                    </dd>
+                  </dl>
+                </li>
+                <li class="li">
+                  <dl>
+                    <dt>レビュー率</dt>
+                    <dd>◯◯
+                      <span class="percent">%</span>
+                    </dd>
+                  </dl>
+                </li>
+              </ul>
+              <ul class="user__info--follow">
+                <li class="li">
+                  <dl>
+                    <dt>フォロー</dt>
+                    <dd>
+                      <a href="#">
+                        <span class="following_num">◯◯</span>
+                      </a>
+                    </dd>
+                  </dl>
+                </li>
+                <li class="li">
+                  <dl>
+                    <dt>フォロワー</dt>
+                    <dd>
+                      <a href="#">
+                        <span class="follower_num">◯◯</span>
+                      </a>
+                    </dd>
+                  </dl>
+                </li>
+              </ul>
+            </div><!--  /.user__info  -->
+
+            <div class="user-navi clearfix">
+              <ul class="user-navi__ul">
+                <li class="user-navi__li li">
+                  <%= link_to user_books_users_path(current_user.id) do %>
+                    <%= image_tag "book-shelf.png", class: "book-shelf__image" %><span>本棚</span>
+                  <% end %>
+                </li>
+                <li class="user-navi__li li">
+                  <%= link_to profile_users_path(current_user.id) do %>
+                    <%= image_tag "profile.png", class: "profile__image" %><span>プロフィール</span>
+                  <% end %>
+                </li>
+                <li class="user-navi__li li">
+                  <%= link_to root_path do %>
+                    <%= image_tag "timeline.png", class: "timeline__image" %><span>タイムライン（仮）</span>
+                  <% end %>
+                </li>
+                <li class="user-navi__li li">
+                  <%= link_to root_path do %>
+                    <%= image_tag "reading-graph.png", class: "reading-graph__image" %><span>読書グラフ（仮）</span>
+                  <% end %>
+                </li>
+                <li class="user-navi__li li">
+                  <%= link_to root_path do %>
+                    <%= image_tag "other.png", class: "other__image" %><span>その他（仮）</span>
+                  <% end %>
+                </li>
+              </ul>
+              <div class="user-navi__buttons">
+                <div class="user-setting-btn menu dropdown-menu-click">
+                  <p class="dropdown-trigger">
+                    <%= image_tag "setting.png", class: "setting__image" %><span>設定</span>
+                  </p>
+                  <div id="dropdown"class="dropdown">
+                    <ul>
+                      <li class="bar li">
+                        <%= link_to root_path do %>
+                          <i class="fa fa-tw fa-th"></i>本棚の設定（仮）
+                        <% end %>
+                      </li>
+                      <li class="bar li">
+                        <%= link_to edit_user_path(current_user.id) do %>
+                          <i class="far fa-smile"></i>プロフィールの設定
+                        <% end %>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div><!--  /.user__navi  -->
+          </div><!--  /.user__wrapper  -->
+        </div><!--  /.users-header__profile  -->
+      </div><!--  users-header__profile--wrapper  -->
+      <div class="users-header__ad">
+        <%= image_tag 'realforce.jpg'%>
+      </div>
+    </div><!--  /.users-header  -->
+
+    <div id="shelf-header">
+      <ul class="shelf-header__menu">
+        <li class="li shelf-header__menu--filter-title">
+          <span>絞り込み</span>
+        </li>
+        <li class="li shelf-header__menu--filter-modal">
+          <%= link_to root_path do %>
+            <%= image_tag 'condition.png', class: "img-condition"%>
+            <span>条件を指定</span>
+          <% end %>
+        </li>
+        <li class="li shelf-header__menu--category-modal">
+          <%= link_to root_path do %>
+            <%= image_tag 'category.png', class: "img-category"%>
+            <span>カテゴリ</span>
+          <% end %>
+        </li>
+        <li class="li shelf-header__menu--tags-modal">
+          <%= link_to root_path do %>
+            <%= image_tag 'tag.png', class: "img-tag"%>
+            <span>タグ</span>
+          <% end %>
+        </li>
+        <li class="li shelf-header__menu--search-modal">
+          <%= link_to root_path do %>
+            <%= image_tag 'search.png', class: "img-search"%>
+            <span>本棚内検索</span>
+          <% end %>
+        </li>
+        <li class="li shelf-header__menu--default">
+          <span>
+            <%= image_tag 'cancel.png', class: "img-cancel"%>
+          </span>
+        </li>
+        <li class="li shelf-header__menu--front">
+        <%= link_to root_path do %>
+          <%= image_tag 'mode-shelf.png', class: "img-mode-shelf"%>
+        <% end %>
+        </li>
+        <li class="li shelf-header__menu--blog">
+          <%= link_to root_path do %>
+            <%= image_tag 'mode-blog.png', class: "img-mode-blog"%>
+          <% end %>
+        </li>
+        <li class="li shelf-header__menu--card">
+          <%= link_to root_path do %>
+            <%= image_tag 'mode-card.png', class: "img-mode-card"%>
+          <% end %>
+        </li>
+        <li class="li shelf-header__menu--setting">
+          <%= link_to root_path do %>
+            <%= image_tag 'setting-icon.png', class: "img-setting-icon"%>
+          <% end %>
+        </li>
+        <li class="li shelf-header__menu--fullscreen">
+          <%= link_to root_path do %>
+            <%= image_tag 'return-top.png', class: "img-top"%>
+          <% end %>
+        </li>
+      </ul>
+    </div><!--  /.shelf-header  -->
+
+    <div class="shelf__wrapper">
+      <div class="shelf__area">
+        <div class="shelf__inner clearfix">
+          <% @booklist.each do |list| %>
+          <div class="item-wrapper">
+            <%= image_tag 'book10.jpg', class: "bookshelf-image"%>
+            <%= link_to user_books_user_path(params[:user_id], list.id) do%><!--  FIXME:  -->
+              <p>
+                <%= list.book.title %>
+              </p>
+            <% end %>
+          </div>
+          <% end %>
+        </div><!--  /.shelf__inner  -->
+      </div><!--  /.shelf__area  -->
+    </div><!--  /.shelf__wrapper  -->
+  </div>
+</div>

@@ -1,0 +1,40 @@
+                   Prefix Verb   URI Pattern                                                                              Controller#Action
+         new_user_session GET    /users/sign_in(.:format)                                                                 users/sessions#new
+             user_session POST   /users/sign_in(.:format)                                                                 users/sessions#create
+     destroy_user_session DELETE /users/sign_out(.:format)                                                                users/sessions#destroy
+        new_user_password GET    /users/password/new(.:format)                                                            devise/passwords#new
+       edit_user_password GET    /users/password/edit(.:format)                                                           devise/passwords#edit
+            user_password PATCH  /users/password(.:format)                                                                devise/passwords#update
+                          PUT    /users/password(.:format)                                                                devise/passwords#update
+                          POST   /users/password(.:format)                                                                devise/passwords#create
+ cancel_user_registration GET    /users/cancel(.:format)                                                                  users/registrations#cancel
+    new_user_registration GET    /users/sign_up(.:format)                                                                 users/registrations#new
+   edit_user_registration GET    /users/edit(.:format)                                                                    users/registrations#edit
+        user_registration PATCH  /users(.:format)                                                                         users/registrations#update
+                          PUT    /users(.:format)                                                                         users/registrations#update
+                          DELETE /users(.:format)                                                                         users/registrations#destroy
+                          POST   /users(.:format)                                                                         users/registrations#create
+    new_user_confirmation GET    /users/confirmation/new(.:format)                                                        devise/confirmations#new
+        user_confirmation GET    /users/confirmation(.:format)                                                            devise/confirmations#show
+                          POST   /users/confirmation(.:format)                                                            devise/confirmations#create
+            confirm_email GET    /confirm_email(.:format)                                                                 users/registrations#confirm_email
+                     root GET    /                                                                                        books#index
+               home_users GET    /users/home(.:format)                                                                    users#home
+             logout_users GET    /users/logout(.:format)                                                                  users#logout
+            profile_users GET    /users/profile(.:format)                                                                 users#profile
+                    users GET    /users(.:format)                                                                         users#index
+                edit_user GET    /users/:id/edit(.:format)                                                                users#edit
+                     user PATCH  /users/:id(.:format)                                                                     users#update
+                          PUT    /users/:id(.:format)                                                                     users#update
+                          DELETE /users/:id(.:format)                                                                     users#destroy
+             search_books GET    /books/search(.:format)                                                                  books#search
+                book_user GET    /books/:book_id/users/:id(.:format)                                                      users#show
+               book_books GET    /books/:book_id/books(.:format)                                                          books#index
+            new_book_book GET    /books/:book_id/books/new(.:format)                                                      books#new
+                    books GET    /books(.:format)                                                                         books#index
+                     book GET    /books/:id(.:format)                                                                     books#show
+       rails_service_blob GET    /rails/active_storage/blobs/:signed_id/*filename(.:format)                               active_storage/blobs#show
+rails_blob_representation GET    /rails/active_storage/representations/:signed_blob_id/:variation_key/*filename(.:format) active_storage/representations#show
+       rails_disk_service GET    /rails/active_storage/disk/:encoded_key/*filename(.:format)                              active_storage/disk#show
+update_rails_disk_service PUT    /rails/active_storage/disk/:encoded_token(.:format)                                      active_storage/disk#update
+     rails_direct_uploads POST   /rails/active_storage/direct_uploads(.:format)                                           active_storage/direct_uploads#create

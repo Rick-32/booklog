@@ -1,0 +1,216 @@
+<div class="page">
+	<!--  page__breadcrumbs  -->
+	<ul class="breadcrumbs">
+		<li class="breadcrumbs__li" itemscope="itemscope" itemtype="http://data-vocabulary.org/Breadcrumb">
+			<%= link_to root_path itemprop="url" do %>
+				<span class="breadcrumbs__li--a" itemprop="title">ブクログ</span>
+			<% end %>
+		</li>
+		<li class="breadcrumbs__li" itemscope="itemscope" itemtype="http://data-vocabulary.org/Breadcrumb">
+			<%= link_to books_search_path itemprop="url" do %>
+				<span class="breadcrumbs__li--a" itemprop="title">詳細検索</span>
+			<% end %>
+		</li>
+		<li class="breadcrumbs__li" itemscope="itemscope" itemtype="http://data-vocabulary.org/Breadcrumb">
+			<span itemprop="title"><%= params[:keyword] %></span>
+		</li>
+	</ul><!--  /.page__breadcrumbs  -->
+
+	<!--  page__main  -->
+	<div clas="page__main" id="main">
+		<div class="page__main--mainArea">
+			<h1>詳細検索</h1>
+			<p class="lead">
+			まずは本のタイトル、著者名、出版社名などを入力して検索してください。<br>
+			例えば…
+			<%= link_to "東野圭吾", '/#' %>や
+			<%= link_to "池井戸潤", '/#' %>や
+			<%= link_to "宮下奈都", '/#' %>など。
+			</p>
+			<%= form_with url:'/books/search', method: :get, local: true do |f| %>
+				<div class="page__main--search-area">
+					<%= f.text_field :keyword, class: 'inputtext' %>
+					<%= f.button class: 'search-button' do %>
+						<i class="fa fa-search"></i>
+					<% end %>
+				</div>
+				<a href="#" class="l25M open">
+					<span>条件指定</span>
+					<span class="fas fa-angle-down"></span>
+				</a>
+			<% end %>
+			<h2 class="t30M page__main--result">検索結果</h2>
+			<div class="page__main--result-area">
+				<% @books.each do |book| %>
+					<div class="itemListArea clearfix">
+						<div class="itemListArea__itemListImage"><!--  FIXME:画像指定、リンク先はあとで  -->
+							<%= link_to image_tag("book1.jpg", class: 'hoge'), root_path %>
+						</div>
+						<div class="itemListArea__itemListInfo">
+							<h3 class="b10M itemListArea__itemListInfo--title">
+								<%= link_to book_path(book.id) do %>
+									<%= book.title %>
+								<% end %>
+							</h3>
+							<div class="itemListArea__itemListInfo--aggregate b15M">
+								<div class="info-users"><!--  FIXME:aタグはreviewの実装でlonk_toへ  -->
+									<%= image_tag "user.png", class: "user_png" %>
+									<span class="num">366</span>
+									<span>人</span>
+								</div>
+								<div class="info-rating">
+									<%= image_tag "star.png", class: "user_png l5M" %>
+									<span class="num">3.80</span>
+								</div>
+								<div class="info-reviews">
+									<%= image_tag "review-count.png", class: "user_png l5M" %>
+									<a href="#">
+										<span class="num">1</span>
+										<span>件</span>
+									</a>
+								</div>
+							</div><!--  /.itemListArea__itemListInfo--aggregate  -->
+							<div class="itemListArea__itemListInfo--descMini">
+								<div class="itemInfoElmBox">
+									<span class="itemInfoElmBox__element">
+										<a href="#" class="itemInfoElmBox__element--author"><%= book.author %></a>
+									</span>
+									<span class="itemInfoElmBox__element">
+										本
+									</span>
+									<span class="itemInfoElmBox__element">
+										<%= book.published_at.strftime('%Y年%m月%d日') %>
+									</span>
+									<span class="itemInfoElmBox__element">
+										<%= image_tag "icon_store_1.gif", class: "user_png" %>
+										<a href="#">Amazon.co.jp</a>
+									</span>
+								</div><!--  /.itemInfoElmBox  -->
+							</div><!--  /.itemListArea__itemListInfo--descMini  -->
+						</div>
+						<div class="itemListArea__itemListBtn">
+							<div id="toYourBookEdit"><!--  FIXME:リンク先は本の詳細画面実装後  -->
+								<%= link_to root_path, class: 'item-registered-btn' do %>
+									<%= image_tag "add_item.png" %>
+									<span>本棚に登録</span>
+								<% end %>
+							</div><!--  /.toYourBookEdit  -->
+						</div>
+					</div><!--  /.itemListArea  -->
+				<% end %>
+			</div><!--  /.page__main--result-area  -->
+			<div class="pagerArea t20M">
+				<%= paginate(@books) %>
+				<div class="pagerTxt">
+					全<%= @books.total_count %>件中 <%= @books.offset_value + 1 %> - <%= @books.offset_value + @books.length %>件を表示
+				</div>
+			</div>
+
+		</div><!--  /.#mainArea  -->
+
+		<div id="page__main--sideArea">
+			<aside class="ad-side-top">
+				<%= image_tag 'ad-side.png' %>
+			</aside>
+			<dl class="sidemenu">
+				<dt class="sidemenu-title">本と出会う</dt>
+				<dd class="sidemenu-list">
+					<p class="sidemenu-subtitle">ランキング</p>
+					<ul>
+						<li class="li">
+							<a href="#">デイリーランキング</a>
+						</li>
+						<li class="li">
+							<a href="#">週間ランキング</a>
+						</li>
+						<li class="li">
+							<a href="#">月間ランキング</a>
+						</li>
+						<li class="li">
+							<a href="#">みんなのベスト3</a>
+						</li>
+						<li class="li">
+							<a href="#">オーディオブック</a>
+						</li>
+					</ul>
+					<div class="sidemenu-toggle toggle toggleOff">
+						<p class="sidemenu-subtitle ranking-annual">
+							年間ランキング
+						</p>
+						<ul style="display: none;">
+							<li class="li">
+								<a href="#">2018年のランキング</a>
+							</li>
+							<li class="li">
+								<a href="#">2017年のランキング</a>
+							</li>
+							<li class="li">
+								<a href="#">2016年のランキング</a>
+							</li>
+							<li class="li">
+								<a href="#">2015年のランキング</a>
+							</li>
+							<li class="li">
+								<a href="#">2014年のランキング</a>
+							</li>
+							<li class="li">
+								<a href="#">2013年のランキング</a>
+							</li>
+							<li class="li">
+								<a href="#">2012年のランキング</a>
+							</li>
+							<li class="li">
+								<a href="#">2011年のランキング</a>
+							</li>
+							<li class="li">
+								<a href="#">2010年のランキング</a>
+							</li>
+							<li class="li">
+								<a href="#">2009年のランキング</a>
+							</li>
+						</ul>
+					</div>
+					<p class="sidemenu-subtitle">新刊情報</p>
+					<ul>
+						<li class="li">
+							<a href="#">新刊ニュース</a>
+						</li>
+						<li class="li">
+							<a href="#">電子書籍 [IT系技術書]</a>
+						</li>
+					</ul>
+					<p class="sidemenu-subtitle">レビュー</p>
+					<ul>
+						<li class="li">
+							<a href="#">新着レビュー</a>
+						</li>
+					</ul>
+					<p class="sidemenu-subtitle">おすすめ</p>
+					<ul>
+						<li class="li">
+							<a href="#">ブクログ ピックアップ</a>
+						</li>
+						<li class="li">
+							<a href="#">ブクログ公式本棚</a>
+						</li>
+						<li class="li">
+							<a href="#">ブクログ公式本棚の新着情報</a>
+						</li>
+						<li class="li">
+							<a href="#">ブクログ特集</a>
+						</li>
+					</ul>
+					<p class="sidemenu-subtitle">本棚を探す</p>
+					<ul>
+						<li class="li">
+							<a href="#">プロフィールから本棚を探す</a>
+						</li>
+						<li class="li">
+							<a href="#">ブクログID 検索</a>
+						</li>
+					</ul>
+				</dd>
+			</dl>
+		</div><!--  sideArea  -->
+	</div><!--  /.#main  -->
+</div><!--  /.page  -->

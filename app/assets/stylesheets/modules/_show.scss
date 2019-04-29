@@ -1,0 +1,639 @@
+// reviewボタンアイコン
+.review-image {
+  width: 24px;
+  height: 24px;
+  margin-right: 7px;
+}
+.twitter, .facebook, .hatena img {
+  width: 30px;
+  height: 30px;
+  }
+.store-btn-wide {
+  width: 90px;
+  height: 17px;
+}
+.store-btn-square {
+  width: 24px;
+  height: 24px;
+}
+
+i.orange {
+    color: #f5b629;
+  }
+
+/*---------------------------------------------------------*/
+/*FIXME:BEMのネーミングと&の記法でうまく当たらないためそのまま書く。完成後のリファクタリングで可能であれば対応*/
+.page {
+  position: relative;
+  margin: 20px auto 0;
+  padding: 0;
+  width: 980px;
+  background: none;
+  &__main{
+    margin: 0 auto;
+    padding: 0;
+    text-align: left;
+    border: none;
+    position: relative;
+    width: 100%;
+    .page__main--mainArea {
+      float: left;
+      width: 650px;
+      .mainArea__item-area {
+        margin: 0 0 40px;
+        padding: 0 0 15px;
+        background: #fff;
+        border: solid 1px #dcdcdc;
+        border-radius: 6px;
+        .item-area__item-image-area {
+          margin: 0 10px 0 20px;
+          padding: 0 0 0 20px;
+          position: relative;
+          display: table-cell;
+          text-align: center;
+          .book-img {
+            width: 169px;
+            box-shadow: 0 1px 7px 0 #a1a1a1;
+            cursor: pointer;
+            border: none;
+            vertical-align: middle;
+          }
+          .book-img:hover {
+            box-shadow: 0 1px 7px 0 #000;
+          }
+          .item-area__item-image-area--add-shelf {
+            margin-top: 38px;
+            .add-item-btn {
+              width: 170px;
+              height: 60px;
+              border-radius: 5px;
+              font-size: 14px;
+              display: flex;
+              justify-content: center;
+              align-items: center;
+              background-color: #4ea6cc;
+              img {
+                width: 24px;
+                height: 24px;
+                margin-right: 7px;
+                border: none;
+                vertical-align: middle;
+              }
+              span {
+                color: #fff;
+              }
+            }
+            .add-item-btn:hover {
+              background: #3887A6
+            }
+          }
+          .write-review-button {
+            width: 170px;
+            height: 40px;
+            border-radius: 5px;
+            background-color: #e5f1f5;
+            border: solid 1px #4ea6cc;
+            margin-top: 10px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            img {
+              margin-right: 2px;
+              vertical-align: middle;
+              border: none;
+            }
+            span {
+              color: #4ea6cc;
+              display: inline-block;
+              vertical-align: middle;
+              line-height: 1.14;
+              letter-spacing: 0.2px;
+            }
+          }
+          .item-area__item-image-area--share-button {
+            display: inline-block;
+            float: right;
+            margin-top: 0 !important;
+            text-align: center;
+            li {
+              display: inline-block;
+              height: 30px;
+              width: 30px;
+              padding: 0 5px;
+            }
+          }
+        }
+        .item-area__item-info-area {
+          display: table-cell;
+          vertical-align: top;
+          padding: 0 20px 0 30px;
+          h1 {
+            margin: 0 0 10px;
+            color: #1e1e1e;
+            font-weight: normal;
+            font-size: 34px;
+            line-height: 38px;
+            word-break: normal;
+          }
+          .item-info__author {
+            font-size: 14px;
+            a {
+              text-decoration: underline;
+            }
+          }
+          .item-info__description {
+            margin: 10px 0;
+            li {
+              margin: 0;
+            }
+          }
+          .aggregate__rating img {
+            width: 24px;
+            height: 24px;
+          }
+          .rating-value {
+            display: inline-block;
+            padding-left: 5px;
+            font-size: 20px;
+            font-weight: bold;
+            vertical-align: top;
+            color: #f5b629;
+            i {
+              padding-left: 5px;
+              color: #4ea6cc;
+              cursor: pointer;
+            }
+          }
+          .aggregate__item-info {
+            margin: 10px 0 15px;
+            display: flex;
+            .users {
+              font-size: 12px;
+              img {
+                vertical-align: text-bottom;
+                border: none;
+                width: 14px;
+                height: 16px;
+              }
+              span {
+                color: #89c600;
+                font-weight: 600;
+                font-size: 15px;
+              }
+            }
+            .reviews {
+              margin-left: 15px;
+              font-size: 12px;
+              img {
+                vertical-align: text-bottom;
+                border: none;
+                width: 16px;
+                height: 16px;
+
+              }
+              span {
+                color: #4ea6cc;
+                font-weight: 600;
+                font-size: 15px;
+              }
+            }
+          }
+          .item-area__item-buy-area--btn {
+            margin: 20px 0 0;
+            position: relative;
+            font-size: 0;
+            .btn-amazon-detail {
+              display: inline-block;
+              width: 230px;
+              height: 40px;
+              line-height: 40px;
+              text-align: center;
+              text-decoration: none;
+              color: #1e1e1e;
+              font-size: 12px;
+              font-weight: bold;
+              border-radius: 5px;
+              background-color: #fff1c9;
+              border: solid 1px #dab35b;
+              i {
+                font-size: 1.8em;
+                line-height: 0.75em;
+                vertical-align: -15%;
+                margin-right: 5px;
+              }
+            }
+            .btn-amazon-detail:hover {
+              background-color: #f4d885;
+            }
+            .btn-amazon-kindle {
+              display: inline-block;
+              width: 160px;
+              height: 40px;
+              line-height: 40px;
+              margin-left: 10px;
+              border-radius: 5px;
+              background-color: #f5f5f5;
+              border: solid 1px silver;
+              text-align: center;
+              text-decoration: none;
+              font-size: 12px;
+              color: #1e1e1e;
+              font-weight: 600;
+              i {
+                font-size: 1.8em;
+                line-height: 0.75em;
+                vertical-align: text-bottom;
+                margin-right: 5px;
+              }
+            }
+            .btn-others {
+              margin: 20px 0 0;
+              width: 400px;
+              position: relative;
+              font-size: 0;
+              background-color: #f2f7f9;
+              padding: 0 10px 10px 10px;
+              li {
+                display: inline-block;
+                padding: 10px 10px 0 0;
+                .store-btn-wide {
+                  width: 90px;
+                  height: 17px;
+                }
+                .other-store {
+                  display: block;
+                  padding: 7px 9px;
+                  border:  1px solid #4ea6cc;
+                  background: #fff;
+                  border-radius: 5px;
+                  font-weight: 600;
+                }
+                .btn-honto, .btn-rakuten, .btn-bol, .btn-calil {
+                  display: block;
+                  padding: 10px 14px;
+                  border: 1px solid #4ea6cc;
+                  background: #fff;
+                  border-radius: 5px;
+                }
+                .store-btn-square {
+                  width: 24px;
+                  height: 24px;
+                  img {
+                    width: 24px;
+                    height: 24px;
+                    border: none;
+                    vertical-align: middle;
+                  }
+                }
+                span {
+                  vertical-align: middle;
+                  font-weight: 600;
+                  font-size: 12px;
+                }
+              }
+            }
+          }
+        }
+      }
+      .description__area-title {
+        font-size: 24px;
+        color: #3c3c3c;
+        margin-bottom: 30px;
+        margin: 0 0 10px;
+        background: none;
+        font-weight: bold;
+      }
+      .text {
+        font-size: 14px;
+        line-height: 24px;
+      }
+      .line {
+        height: 1px;
+        background-color: #dcdcdc;
+      }
+      .area-title {
+        font-size: 24px;
+        color: #3c3c3c;
+        margin-bottom: 30px;
+        margin: 0 0 10px;
+        background: none;
+        font-weight: bold;
+      }
+      .sort-item {
+        display: flex;
+        margin-bottom: 20px;
+        .item {
+          display: flex;
+          justify-content: center;
+          .label {
+            display: inline-block;
+            line-height: 30px;
+            font-size: 14px;
+            font-weight: 600;
+            color: #1e1e1e;
+          }
+          ul {
+            display: flex;
+            justify-content: center;
+            li.selected {
+              background-color: #4ea6cc;
+              border: solid 1px #4ea6cc;
+            }
+            li {
+              display: inline-block;
+              margin-left: 10px;
+              width: 86px;
+              height: 30px;
+              line-height: 30px;
+              text-align: center;
+              border-radius: 16px;
+              background-color: #fff;
+              border: solid 1px #cdcdcd;
+              color: #fff;
+            }
+            a {
+              display: inline-block;
+              width: 100%;
+              height: 100%;
+              color: #1e1e1e;
+              text-decoration: none;
+            }
+          }
+        }
+        .item:nth-child(2) {
+          margin-left: 140px;
+        }
+      }
+      .review {
+        margin: 0 0 20px;
+        border: 1px solid #dcdcdc;
+        border-radius: 6px;
+        background-color: #fff;
+        .summary {
+          background: #fff;
+          line-height: 150%;
+          box-sizing: border-box;
+          position: relative;
+          float: left;
+          width: 100%;
+          margin: 0;
+          color: #333;
+          border-radius: 5px 5px 0 0;
+          .user-info-area {
+            padding: 0 20px;
+            color: #777;
+            border-top-left-radius: 4px;
+            border-top-right-radius: 4px;
+            .usersinfo {
+              position: relative;
+              padding: 9px 0;
+              .user-icon-area {
+                float: left;
+                width: 36px;
+                .usersicon img {
+                  margin-top: 10px;
+                  width: 36px;
+                  height: 36px;
+                  object-fit: cover;
+                  border-radius: 50%;
+                  border: none;
+                  vertical-align: middle;
+                }
+              }
+              .user-name-area {
+                margin: 10px 0 0 60px;
+                display: block;
+                p {
+                  display: block;
+                  color: #1e1e1e;
+                  font-size: 12px;
+                  a {
+                    font-size: 12px;
+                    color: #1e1e1e;
+                    text-decoration: none;
+                  }
+                }
+                .follower-btn {
+                  position: absolute;
+                  top: 21px;
+                  right: 0;
+                  .follow-area {
+                    display: table-cell;
+                    vertical-align: middle;
+                    a {
+                      display: table-cell;
+                      vertical-align: middle;
+                      padding: 0;
+                      width: 88px;
+                      height: 30px;
+                      color: #4ea6cc;
+                      background: #fff;
+                      border: solid 1px #4ea6cc;
+                      margin: 0;
+                      font-weight: normal;
+                      font-family: "ヒラギノ角ゴ Pro W3","Hiragino Kaku Gothic Pro","メイリオ",Meiryo,"ＭＳ Ｐゴシック",sans-serif;
+                      line-height: 1.6em;
+                      cursor: pointer;
+                      font-size: 12px;
+                      text-align: center;
+                      border-radius: 16px;
+                    }
+                  }
+                }
+                p {
+                  display: block;
+                  color: #1e1e1e;
+                  font-size: 12px;
+                }
+                .review-date {
+                  margin-top: 3px;
+                  a {
+                    color: #a1a1a1;
+                  }
+                }
+              }
+            }
+          }
+          .rating-star-area {
+            padding: 20px 20px 0 43px;
+            i {
+              margin: 0 1px 0 0;
+              font-size: 16px;
+              display: inline-block;
+              text-rendering: auto;
+              -webkit-font-smoothing: antialiased;
+            }
+          }
+          .accordion-box {
+            position: relative;
+            .review-text {
+              margin: 0 0 10px;
+              font-size: 1rem;
+              line-height: 1.2rem;
+              text-align: justify;
+              padding: 20px 43px 20px 43px;
+            }
+          }
+          .review-sup-area {
+            display: table;
+            width: 100%;
+            margin: 0 0 20px;
+            .fav-area {
+              padding: 0 0 0 43px;
+              display: inline-block;
+              height: 25px;
+              .fav-btn {
+                display: inline-block;
+                vertical-align: middle;
+                text-decoration: none;
+                img {
+                  display: inline-block;
+                  border: none;
+                  width: 24px;
+                  height: 24px;
+                }
+              }
+            }
+            .user-comment {
+              display: table-cell;
+              width: 100px;
+              padding: 7px 43px 0 0;
+              text-align: right;
+              vertical-align: middle;
+              a {
+                font-size: 14px;
+                color: #a1a1a1;
+                text-decoration: none;
+              }
+            }
+          }
+        }
+        .comment-area {
+          clear: both;
+          .comment-title {
+            display: none;
+            padding: 10px 43px;
+            text-align-last: left;
+            font-size: 14px;
+            a {
+              text-decoration: none;
+              color: #a1a1a1;
+            }
+          }
+          .comment-list {
+            margin-bottom: 14px;
+          }
+          .comment-edit-line {
+            margin: 0 43px;
+            border-bottom: 1px solid #ededed;
+          }
+          .comment-edit {
+            border-radius: 0 0 6px 6px;
+            .comment-start {
+              padding: 12px 43px;
+              font-size: 14px;
+              cursor: pointer;
+              color: #a1a1a1;
+            }
+            .comment-text-wrap.invisible {
+              display: none;
+            }
+          }
+        }
+      }
+      .pagerArea {
+        text-align: center;
+        position: relative;
+        overflow: hidden;
+        font-family: arial, sans-serif;
+        .pagerTxt {
+          text-align: center;
+          padding: 15px 0 0;
+          font-size: 12px;
+          color: #333;
+        }
+      }
+      .ruled-line {
+        border-bottom: 1px solid #dcdcdc;
+      }
+      h2 {
+        margin: 0 0 10px;
+        background: none;
+        color: #333;
+        font-weight: bold;
+      }
+      .review-more-read-area {
+        display: flex;
+        justify-content: center;
+        .amazon-read-more {
+          display: inline-block;
+          width: 300px;
+          height: 40px;
+          line-height: 40px;
+          text-align: center;
+          text-decoration: none;
+          color: #1e1e1e;
+          font-size: 12px;
+          font-weight: bold;
+          border-radius: 5px;
+          background-color: #fff1c9;
+          border: solid 1px #dab35b;
+          box-sizing: border-box;
+          margin: 0 15px;
+          i {
+            font-size: 1.8em;
+            line-height: 0.75em;
+            vertical-align: -15%;
+            margin-right: 5px;
+          }
+        }
+        .rakuten-read-more {
+          display: inline-block;
+          width: 300px;
+          height: 40px;
+          line-height: 40px;
+          text-align: center;
+          text-decoration: none;
+          color: #1e1e1e;
+          font-size: 12px;
+          font-weight: bold;
+          border-radius: 5px;
+          background-color: #ffe8eb;
+          border: solid 1px #fa5d5d;
+          box-sizing: border-box;
+          margin: 0 15px;
+        }
+      }
+      .itemUnit {
+        margin: 0 0 20px;
+        position: relative !important;
+        .metades {
+          background-color: #fff;
+          padding: 20px;
+          border: solid 1px #dcdcdc;
+          border-radius: 3px;
+          li {
+            display: flex;
+            align-items: center;
+          }
+        }
+      }
+      h2 {
+        font-size: 16px;
+      }
+      .r-user_png {
+        width: 14px;
+        height: 14px;
+      }
+      .users-count {
+        text-align: center;
+        color: #cdcdcd;
+        span {
+          color: #89c600;
+          font-weight: bold;
+          font-size: 1.2em;
+        }
+      }
+    }
+  }
+}

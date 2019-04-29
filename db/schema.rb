@@ -10,7 +10,25 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_03_26_115553) do
+ActiveRecord::Schema.define(version: 2019_04_19_023207) do
+
+  create_table "books", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.integer "isbn", null: false
+    t.string "title", null: false
+    t.integer "price"
+    t.string "publisher"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.datetime "published_at"
+    t.string "author"
+  end
+
+  create_table "books_users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.integer "book_id", null: false
+    t.integer "user_id", null: false
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "email", default: "", null: false
@@ -37,6 +55,7 @@ ActiveRecord::Schema.define(version: 2019_03_26_115553) do
     t.integer "birth_d"
     t.integer "prefecture_id"
     t.index ["booklog_id"], name: "index_users_on_booklog_id", unique: true
+    t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
 end

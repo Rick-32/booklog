@@ -1,0 +1,53 @@
+{
+  "workbench.colorTheme": "Dracula",
+  "editor.tabCompletion": "on",
+  "editor.roundedSelection": true, // 選択範囲の角を丸める
+  "files.associations": {"*.erb": "erb"},
+  "emmet.includeLanguages": {"erb": "html"},
+  "workbench.iconTheme": "material-icon-theme",
+  "breadcrumbs.enabled": true,
+  "diffEditor.renderSideBySide": false, // Git の差分を行内に表示
+  "editor.colorDecorators": false, // カラーデコレーターを非表示    "editor.formatOnSave": true, // ファイル保存時に自動でフォーマット
+  "editor.minimap.renderCharacters": false, // ミニマップの表示文字をブロックに変更
+  "editor.minimap.showSlider": "always", // 表示領域をミニマップで常にハイライト
+  "editor.multiCursorModifier": "ctrlCmd", // マウスでの複数選択時の修飾キーを変更
+  "editor.renderControlCharacters": true, // 制御文字を表示
+  "editor.renderLineHighlight": "all", // 選択行を行番号含めすべてハイライト
+  "editor.renderWhitespace": "all", // 半角スペースを常に表示
+  "editor.snippetSuggestions": "top", // Emmet などのスニペット候補を優先して表示
+  "editor.tabSize": 2, // タブのサイズ変更
+  "editor.wordWrap": "on", // エディターの幅で折り返し
+  "emmet.showAbbreviationSuggestions": false,
+  "emmet.showSuggestionsAsSnippets": true, // Emmet の候補を表示
+  "emmet.triggerExpansionOnTab": true, // TAB キーで Emmet を展開できるようにする
+  "emmet.variables": { // Emmet で展開される HTML の言語を変更
+      "lang": "ja"
+  },
+  "explorer.confirmDelete": false, // ファイル削除時の確認を表示しない
+   // 拡張機能関連
+  "extensions.ignoreRecommendations": false, // 推奨事項の通知をOFF
+  "files.exclude": { // エクスプローラーから非表示にするファイル
+      "**/*.map": true,
+      "**/node_modules": true
+  },
+  "files.insertFinalNewline": true, // ファイルの保存時に末尾を改行
+  "files.trimFinalNewlines": true, // ファイルの保存時に最終行以降をトリミング
+  "files.trimTrailingWhitespace": true, // ファイルの保存時に行末の空白をトリミング
+  "liveServer.settings.CustomBrowser": "chrome",
+  "liveServer.settings.proxy": {
+      "enable": true,
+      "baseUri": "/",
+      "proxyUri": "http://localhost:3000"
+  },
+  "[markdown]": {
+      "files.trimTrailingWhitespace": false // Markdown のファイルは行末の空白をトリミングしない
+  },
+  "search.exclude": { // 検索対象外にするファイル設定（ files.exclude のファイルも含む）
+      "**/tmp": true
+  },
+  "window.title": "${activeEditorMedium}${separator}${rootName}", // ウインドウ上部に表示する文字列の設定
+  "workbench.editor.labelFormat": "short", // タブに表示する文字列の設定
+  "workbench.editor.tabSizing": "shrink",
+"liveServer.settings.useWebExt": true,
+"files.autoSave": "onFocusChange" // タブの表示設定
+}

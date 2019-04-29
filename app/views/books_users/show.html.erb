@@ -1,0 +1,486 @@
+<div class="page">
+  <ul class="breadcrumbs">
+		<li class="breadcrumbs__li" itemscope="itemscope" itemtype="http://data-vocabulary.org/Breadcrumb">
+			<%= link_to root_path itemprop="url" do %>
+				<span class="breadcrumbs__li--a" itemprop="title">ブクログ</span>
+			<% end %>
+		</li>
+		<li class="breadcrumbs__li" itemscope="itemscope" itemtype="http://data-vocabulary.org/Breadcrumb">
+			<%= link_to root_path itemprop="url" do %>
+				<span class="breadcrumbs__li--a" itemprop="title"><%= @book.author %></span>
+			<% end %>
+		</li>
+		<li class="breadcrumbs__li" itemscope="itemscope" itemtype="http://data-vocabulary.org/Breadcrumb">
+      <%= link_to root_path itemprop="url" do %>
+        <span class="breadcrumbs__li--a" itemprop="title"><%= @book.title %></span>
+      <% end %>
+		</li>
+    <li class="breadcrumbs__li" itemscope="itemscope" itemtype="http://data-vocabulary.org/Breadcrumb">
+			<%= link_to root_path itemprop="url" do %>
+        <span class="breadcrumbs__li--a" itemprop="title"><%= current_user.name %>さんのレビュー</span>
+      <% end %>
+		</li>
+		<li class="breadcrumbs__li" itemscope="itemscope" itemtype="http://data-vocabulary.org/Breadcrumb">
+			<span itemprop="title">登録情報の編集・削除</span>
+		</li>
+  </ul>
+
+  <div class="page__main" id="main">
+    <div class="page__main--mainArea">
+      <h1 class="edit">登録情報の編集・削除</h1>
+      <div class="edit__item-area cleafix">
+        <div class="edit__item-area--image">
+          <%= link_to root_path do %>
+            <%= image_tag 'book3.jpg' %>
+          <% end %>
+          <div class="taC t15M">
+            <%= link_to edit_user_books_user_path(params[:id]), class: "tcblack" do %>
+              再取得
+            <% end %>
+          </div>
+        </div><!--  /.edit__item-area--image  -->
+        <div class="edit__item-area--info">
+          <h2>
+            <%= link_to root_path, class: "titleLink" do %>
+              <%= @book.title %>
+            <% end %>
+          </h2>
+          <div class="item-info-author">
+            <%= @book.author %>
+          </div>
+          <ul class="item-info-btn">
+						<li class="li">
+              <a href="#" class="btnRed">みんなのレビュー[0件]</a>
+            </li>
+						<li class="li">
+              <a href="#" class="btnOrange">Amazon.co.jpで詳細を見る</a>
+            </li>
+						<li class="li">
+              <a href="#" class="btnBlue">ブログで紹介</a>
+            </li>
+					</ul><!--  /.item-info-btn  -->
+        </div><!--  /.edit__item-area--info  -->
+      </div><!--  /.edit-item-area -->
+      <p class="tB taR posA r0 t5">
+        <%= link_to 'あなたのレビューをみる', root_path %>
+      </p>
+
+      <div id="timeline">
+        <ul>
+          <li class="li">
+            <a href="#tab-review" class="current">レビュー</a>
+          </li>
+          <li class="li">
+            <a href="#tab-phrase">フレーズ</a>
+          </li>
+          <li class="li">
+            <a href="#tab-delete">削除</a>
+          </li>
+        </ul>
+        <div id="tab-review"><!--  レビュータブ  -->
+          <table class="tableType4 noneB t0M">
+            <tbody>
+              <tr>
+                <th>読書状況</th>
+                <td id="status">
+                  <div class="edit-status-area">
+                    <p class="edit-status">
+                      <span class="selected">未設定</span>
+                      <span>読みたい</span>
+                      <span>今読んでる</span>
+                      <span>読み終わった</span>
+                      <span class="last">積読</span>
+                    </p>
+                  </div>
+                </td>
+              </tr>
+              <tr>
+                <th>評価</th>
+                <td>
+                  <div class="edit-rating-area">
+                    <div class="edit-rating">
+                      <%= image_tag 'star-off.png' %>
+                      <%= image_tag 'star-off.png' %>
+                      <%= image_tag 'star-off.png' %>
+                      <%= image_tag 'star-off.png' %>
+                      <%= image_tag 'star-off.png' %>
+                      <%= image_tag 'star-clear-hover.png', class: "raty-cancel"%>
+                    </div>
+                  </div>
+                </td>
+              </tr>
+              <tr>
+                <th>カテゴリ</th>
+                <td>
+                  <div class="edit-category-area">
+                  <p class="select-area">
+                    <span class="ui-select-area">
+                      <select name="" id="" class="edit-category">
+                        <option value="0">未設定</option>
+                      </select>
+                    </span>
+                  </p>
+                  <p class="add-category">
+                    <a href="#" class="add-category-button">
+                      <i class="fa fa-plus-circle ts14 r3M"></i>
+                      新規追加
+                    </a>
+                  </p>
+                  </div>
+                </td>
+              </tr>
+              <tr>
+                <th>レビュー・感想</th>
+                <td>
+                  <div class="edit-review-area">
+                    <textarea name="" id="" cols="30" rows="10" class="edit-review ui-inputarea edit-review-blank" placeholder="レビューや感想を書く"></textarea>
+                    <div class="netabare">
+                      <input type="checkbox" class="edit-netabare ui-checkbox-netabare">
+                      <label for="" class="ui-label">ネタバレの内容を含む</label>
+                    </div>
+                  </div>
+                  <ul class="list11">
+                    <li class="li">HTMLタグ使用不可</li>
+                  </ul>
+                </td>
+              </tr>
+              <tr>
+                <th>登録日時</th>
+                <td>
+                  <input type="text" value="2019" maxlength="4" class="inputtext mini w60px">年
+                  <input type="text" value="04" maxlength="2" class="inputtext mini w40px">月
+                  <input type="text" value="13" maxlength="2" class="inputtext mini w40px">日
+                  &nbsp;
+                  <input type="text" value="17" maxlength="2" class="inputtext mini w40px">時
+                  <input type="text" value="13" maxlength="2" class="inputtext mini w40px">分
+                  <input type="text" value="17" maxlength="2" class="inputtext mini w40px">秒
+                  <div class="t10M">
+                    <input type="checkbox">
+                    <label for="">現在の時刻に更新する</label>
+                  </div>
+                </td>
+              </tr>
+              <tr>
+                <th>読書メモ（非公開）</th>
+                <td>
+                  <textarea name="" id="" cols="30" rows="10" class="inputarea memo" placeholder="自分用のメモを入力。例) 山下書店で買った、高橋さんにおすすめされた、図書館にあった など"></textarea>
+                  <ul class="list11">
+                    <li class="li">HTMLタグ使用不可 / あなた以外は見ることができません</li>
+                  </ul>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+          <p class="moreBtnArea">
+            <a href="#" class="m-btnBlue">登録情報を更新する</a>
+          </p>
+        </div><!--  /.レビュータブ  -->
+
+        <div id="tab-phrase"><!--  フレーズタブ  -->
+          <table class="tableType4 noneB t0M">
+            <tbody>
+              <tr>
+                <th>フレーズ</th>
+                <td>
+                  <div class="edit-review-area">
+                    <textarea name="" id="" cols="30" rows="10" class="edit-review ui-inputarea edit-review-blank" placeholder="フレーズ内容の改変、作品全文の転載は行わないでください。"></textarea>
+                  </div>
+                  <ul class="list11">
+                    <li class="li">250文字以内 / HTMLタグ使用不可</li>
+                  </ul>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+          <div class="moreBtnArea">
+            <a href="#" class="m-btnBlue">フレーズを登録する</a>
+          </div>
+        </div><!--  /.フレーズタブ  -->
+        <div id="tab-delete"><!--  削除タブ  -->
+          <p class="lead">
+            このアイテムを本棚から削除します。あなたのレビューも削除されますが、フレーズは別途削除が必要です。
+          </p>
+          <div class="moreBtnArea">
+            <%= link_to user_books_user_path(params[:id]), method: :delete, class: "m-btnBlue" do%>
+              本棚から削除する
+            <% end %>
+          </div>
+        </div><!--  /.削除タブ  -->
+      </div><!--  /.timeline  -->
+
+    </div><!--  /.page__main--mainArea  -->
+    <div id="page__main--sideArea">
+			<aside class="ad-side-top">
+				<%= image_tag 'ad-side.png' %>
+			</aside>
+			<dl class="sidemenu">
+				<dt class="sidemenu-title">本と出会う</dt>
+				<dd class="sidemenu-list">
+					<p class="sidemenu-subtitle">ランキング</p>
+					<ul>
+						<li class="li">
+							<a href="#">デイリーランキング</a>
+						</li>
+						<li class="li">
+							<a href="#">週間ランキング</a>
+						</li>
+						<li class="li">
+							<a href="#">月間ランキング</a>
+						</li>
+						<li class="li">
+							<a href="#">みんなのベスト3</a>
+						</li>
+						<li class="li">
+							<a href="#">オーディオブック</a>
+						</li>
+					</ul>
+					<div class="sidemenu-toggle toggle toggleOff">
+						<p class="sidemenu-subtitle ranking-annual">
+							年間ランキング
+						</p>
+						<ul style="display: none;">
+							<li class="li">
+								<a href="#">2018年のランキング</a>
+							</li>
+							<li class="li">
+								<a href="#">2017年のランキング</a>
+							</li>
+							<li class="li">
+								<a href="#">2016年のランキング</a>
+							</li>
+							<li class="li">
+								<a href="#">2015年のランキング</a>
+							</li>
+							<li class="li">
+								<a href="#">2014年のランキング</a>
+							</li>
+							<li class="li">
+								<a href="#">2013年のランキング</a>
+							</li>
+							<li class="li">
+								<a href="#">2012年のランキング</a>
+							</li>
+							<li class="li">
+								<a href="#">2011年のランキング</a>
+							</li>
+							<li class="li">
+								<a href="#">2010年のランキング</a>
+							</li>
+							<li class="li">
+								<a href="#">2009年のランキング</a>
+							</li>
+						</ul>
+					</div>
+					<p class="sidemenu-subtitle">新刊情報</p>
+					<ul>
+						<li class="li">
+							<a href="#">新刊ニュース</a>
+						</li>
+						<li class="li">
+							<a href="#">電子書籍 [IT系技術書]</a>
+						</li>
+					</ul>
+					<p class="sidemenu-subtitle">レビュー</p>
+					<ul>
+						<li class="li">
+							<a href="#">新着レビュー</a>
+						</li>
+					</ul>
+					<p class="sidemenu-subtitle">おすすめ</p>
+					<ul>
+						<li class="li">
+							<a href="#">ブクログ ピックアップ</a>
+						</li>
+						<li class="li">
+							<a href="#">ブクログ公式本棚</a>
+						</li>
+						<li class="li">
+							<a href="#">ブクログ公式本棚の新着情報</a>
+						</li>
+						<li class="li">
+							<a href="#">ブクログ特集</a>
+						</li>
+					</ul>
+					<p class="sidemenu-subtitle">本棚を探す</p>
+					<ul>
+						<li class="li">
+							<a href="#">プロフィールから本棚を探す</a>
+						</li>
+						<li class="li">
+							<a href="#">ブクログID 検索</a>
+						</li>
+					</ul>
+				</dd>
+			</dl>
+		</div><!--  sideArea  -->
+  </div><!--  /.page_main  -->
+</div><!--  /.page  -->
+<!--  footer  -->
+<footer id="footer">
+  <div class="footer__container clearfix">
+    <div class="footer__container--inner clearfix">
+      <!--  area1  -->
+      <div class="area1">
+        <h3>本と出会う</h3>
+        <ul>
+          <li class="li">
+            <a href="#">ランキング</a>
+          </li>
+          <li class="li">
+            <a href="#">新刊情報</a>
+          </li>
+          <li class="li">
+            <a href="#">新着レビュー</a>
+          </li>
+          <li class="li">
+            <a href="#">ブクログ談話室</a>
+          </li>
+          <li class="li">
+            <a href="#">ブクログまとめ</a>
+          </li>
+          <li class="li">
+            <a href="#">ブクログ特集</a>
+          </li>
+          <li class="li">
+            <a href="#">ブクログ大賞</a>
+          </li>
+          <li class="li">
+            <a href="#">ブクログ通信</a>
+          </li>
+          <li class="li">
+            <a href="#">読書のすすめ</a>
+          </li>
+        </ul>
+      </div><!--  /.area1  -->
+      <!--  area2  -->
+      <div class="area2">
+        <h3>本を探す</h3>
+        <ul>
+          <li class="li">
+            <a href="#">キーワードで検索</a>
+          </li>
+          <li class="li">
+            <a href="#">タグから検索</a>
+          </li>
+        </ul>
+        <h3>本棚を探す</h3>
+        <ul>
+          <li class="li">
+            <a href="#">プロフィールから本棚を探す</a>
+          </li>
+          <li class="li">
+            <a href="#">ブクログID検索</a>
+          </li>
+        </ul>
+        <h3>ブクログ</h3>
+        <ul>
+          <li class="li">
+            <a href="#">iPhoneアプリ</a>
+          </li>
+          <li class="li">
+            <a href="#">その他のブクログアプリ</a>
+          </li>
+        </ul>
+      </div><!--  /.area2  -->
+      <!--  area3  -->
+      <div class="area3">
+        <h3>公式本棚</h3>
+        <ul>
+          <li class="li">
+            <a href="#">ブクログスタッフの本棚</a>
+          </li>
+          <li class="li">
+            <a href="#">芥川賞の本棚</a>
+          </li>
+          <li class="li">
+            <a href="#">直木賞の本棚</a>
+          </li>
+          <li class="li">
+            <a href="#">TVドラマ原作本棚</a>
+          </li>
+          <li class="li">
+            <a href="#">映画の原作本棚</a>
+          </li>
+          <li class="border li">
+            <a href="#">アニメの原作本棚</a>
+          </li>
+          <li class="li">
+            <a href="#">ブクログ公式本棚一覧</a>
+          </li>
+          <li class="li">
+            <a href="#">公式本棚の新着情報</a>
+          </li>
+        </ul>
+        <h3>ようこそブクログへ</h3>
+        <ul>
+          <li class="li">
+          <a href="#">ブクログについて</a>
+          </li>
+          <li class="li">
+            <a href="#">はじめての方へ</a>
+          </li>
+          <li class="li">
+            <a href="#">チュートリアル</a>
+          </li>
+        </ul>
+      </div><!--  /.area3  -->
+      <!--  area4  -->
+      <div class="area4">
+        <h3>サポート</h3>
+        <ul>
+          <li class="li">
+            <a href="#">お知らせブログ</a>
+          </li>
+          <li class="li">
+            <a href="#">ヘルプ</a>
+          </li>
+          <li class="border li">
+            <a href="#">お問い合わせ</a>
+          </li>
+          <li class="li">
+            <a href="#">広告掲載について</a>
+          </li>
+          <li class="border li">
+            <a href="#">メディア掲載情報</a>
+          </li>
+          <li class="li">
+            <a href="#">公式Twitter</a>
+          </li>
+          <li class="li">
+            <a href="#">Facebookページ</a>
+          </li>
+          <li class="li">
+            <a href="#">ブクログ公式グッズ</a>
+          </li>
+        </ul>
+      </div><!--  /.area4  -->
+    </div><!--  /.footer__container--inner  -->
+  </div><!--  /.footer__container  -->
+  <!--  footer-navi  -->
+  <div class="footer-navi clearfix">
+    <div class="footer-navi__container ">
+      <ul>
+        <li class="li">
+          <a href="#">利用規約</a>
+          |
+        </li>
+        <li class="li">
+          <a href="#">Cookieの使用について</a>
+          |
+        </li>
+        <li class="li">
+          <a href="#">会社概要</a>
+          |
+        </li>
+        <li class="li">
+          <a href="#">プライバシーポリシー</a>
+        </li>
+      </ul>
+      <address>
+        Copyright ©︎2019
+        <a href="#" target="_blank">Booklog,Inc.</a>
+        All Rights Reserved.
+      </address>
+    </div>
+  </div><!--  /.footer-navi  -->
+</footer><!--  /.footer  -->

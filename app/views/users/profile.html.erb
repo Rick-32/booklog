@@ -47,7 +47,8 @@
 								<dl>
 									<dt>登録数</dt>
 									<dd>
-										<%= link_to '登録数', root_path %>
+										<%= link_to root_path  %>
+                      <%= @booklist.length %>
 									</dd>
 								</dl>
 							</li>
@@ -95,8 +96,8 @@
 					<div class="user-navi clearfix">
 						<ul class="user-navi__ul">
 							<li class="user-navi__li li">
-								<%= link_to root_path do %>
-									<%= image_tag "book-shelf.png", class: "book-shelf__image" %><span>本棚（仮）</span>
+								<%= link_to user_books_user_path(current_user.id) do %>
+									<%= image_tag "book-shelf.png", class: "book-shelf__image" %><span>本棚</span>
 								<% end %>
 							</li>
 							<li class="user-navi__li li current-select">

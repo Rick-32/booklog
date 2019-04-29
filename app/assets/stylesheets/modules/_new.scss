@@ -219,15 +219,15 @@ label {
 .honto {
 	background: #007bcd;
 }
-.honto::before {
-	position: absolute;
-	content: " ";
-	width: 20px;
-	height: 20px;
-	left: 30px;
-	background-image: url(honto-logo-mini.png);
-	background-size: cover;
-}
+// .honto::before {
+// 	position: absolute;
+// 	content: " ";
+// 	width: 20px;
+// 	height: 20px;
+// 	left: 30px;
+// 	background-image: url(honto-logo-mini.png);
+// 	background-size: cover;
+// }FIXME:不要の可能性あり確認
 
 
 #footer-mini ul {

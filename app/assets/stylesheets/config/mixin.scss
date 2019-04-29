@@ -27,8 +27,14 @@
 }
 
 /*margin-bottom の設定*/
+.b0M {
+	margin-bottom: 0px !important;
+}
 .b10M {
 	margin-bottom: 10px !important;
+}
+.b15M {
+	margin-bottom: 15px !important;
 }
 .b20M {
 	margin-bottom: 20px !important;
@@ -46,6 +52,9 @@
 }
 .l10M {
 	margin-left: 10px !important;
+}
+.l25M {
+	margin-left: 25px !important;
 }
 /*margin-right の設定*/
 .r10M {
@@ -70,9 +79,19 @@
 .t25P {
 	padding-top: 25px !important;
 }
+
+.t30P {
+	padding-top: 30px !important;
+}
 /*padding-bottom の設定*/
+.b10P {
+	padding-bottom: 10px !important;
+}
 .b20P {
 	padding-bottom: 20px !important;
+}
+.b40P {
+	padding-bottom: 40px !important;
 }
 
 /*padding-left　の設定*/
@@ -87,9 +106,18 @@
 .taC {
 	text-align: center !important;
 }
+.taR {
+	text-align: right !important;
+}
 /*t,r,ts*/
+.tB {
+	font-weight: bold;
+}
 .t10 {
 	top: 10px !important;
+}
+.t5 {
+	top: 5px !important;
 }
 .r0 {
 	right: 0 !important;
@@ -97,6 +125,26 @@
 .ts10 {
 	font-size: 10px !important;
 }
+.ts12 {
+	font-size: 12px !important;
+}
+.ts23 {
+	font-size: 23px !important;
+}
+.ts24 {
+	font-size: 24px !important;
+}
 .tcgray {
 	color: #cdcdcd !important;
+}
+.tcblack {
+	color: #1e1e1e !important;
+}
+
+/*その他*/
+.disT {
+	display: table !important;
+}
+.posR {
+	position: relative;
 }

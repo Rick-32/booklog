@@ -11,10 +11,10 @@
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
 	<%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
 	<link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/smoothness/jquery-ui.css">
-<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
 	<link href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" rel="stylesheet">
 </head>
-<body>
+<body id="mode-users">
 	<div id="body">
 <!--  header  -->
 		<header class="header__global-navi clearfix">
@@ -65,21 +65,20 @@
 								<!--  ログアウトは本来別の位置だが開発中は便宜的にここに実装  -->
 								<%= link_to 'ログアウト', destroy_user_session_path, method: :delete, class: "btn__logout" %>
 							</div>
-
 							<div class="right-menu__box">
 								<!--  dropdown-menu  -->
 								<div class="menu right-menu__dropdown-menu">
 									<div href="#" class="right-menu__button dropdown-trigger"></div>
 									<!--%= image_tag "humburger.png", class: "button-image" %>
-									<--  dropdown__list  -->
+									<!--  dropdown__list  -->
 									<div class="dropdown none">
 										<ul>
 											<li class="li">
 												<%= link_to home_users_path do %>
 													<i class="fas fa-home fa-fw"></i>HOME
 												<% end %>
-											</li>
 
+											</li>
 											<li class="li">
 												<%= link_to profile_users_path do %>
 													<i class="fas fa-user fa-fw"></i>プロフィール
@@ -165,7 +164,7 @@
 							<div class="right-menu__dropdown-menu">
 								<div href="#" class="right-menu__button dropdown-trigger"></div>
 								<!--%= image_tag "humburger.png", class: "button-image" %>
-								<!--  dropdown__list  -->
+								<--  dropdown__list  -->
 								<div class="dropdown none">
 									<ul>
 										<li class="li">
@@ -224,177 +223,9 @@
 		</header><!--  /.header  -->
 
 
-	<%= yield %>
+		<%= yield %>
 
-	<!--  footer  -->
-		<footer id="footer">
-			<div class="footer__container clearfix">
-				<div class="footer__container--inner clearfix">
-					<!--  area1  -->
-					<div class="area1">
-						<h3>本と出会う</h3>
-						<ul>
-							<li class="li">
-								<a href="#">ランキング</a>
-							</li>
-							<li class="li">
-								<a href="#">新刊情報</a>
-							</li>
-							<li class="li">
-								<a href="#">新着レビュー</a>
-							</li>
-							<li class="li">
-								<a href="#">ブクログ談話室</a>
-							</li>
-							<li class="li">
-								<a href="#">ブクログまとめ</a>
-							</li>
-							<li class="li">
-								<a href="#">ブクログ特集</a>
-							</li>
-							<li class="li">
-								<a href="#">ブクログ大賞</a>
-							</li>
-							<li class="li">
-								<a href="#">ブクログ通信</a>
-							</li>
-							<li class="li">
-								<a href="#">読書のすすめ</a>
-							</li>
-						</ul>
-					</div><!--  /.area1  -->
-					<!--  area2  -->
-					<div class="area2">
-						<h3>本を探す</h3>
-						<ul>
-							<li class="li">
-								<a href="#">キーワードで検索</a>
-							</li>
-							<li class="li">
-								<a href="#">タグから検索</a>
-							</li>
-						</ul>
-						<h3>本棚を探す</h3>
-						<ul>
-							<li class="li">
-								<a href="#">プロフィールから本棚を探す</a>
-							</li>
-							<li class="li">
-								<a href="#">ブクログID検索</a>
-							</li>
-						</ul>
-						<h3>ブクログ</h3>
-						<ul>
-							<li class="li">
-								<a href="#">iPhoneアプリ</a>
-							</li>
-							<li class="li">
-								<a href="#">その他のブクログアプリ</a>
-							</li>
-						</ul>
-					</div><!--  /.area2  -->
-					<!--  area3  -->
-					<div class="area3">
-						<h3>公式本棚</h3>
-						<ul>
-							<li class="li">
-								<a href="#">ブクログスタッフの本棚</a>
-							</li>
-							<li class="li">
-								<a href="#">芥川賞の本棚</a>
-							</li>
-							<li class="li">
-								<a href="#">直木賞の本棚</a>
-							</li>
-							<li class="li">
-								<a href="#">TVドラマ原作本棚</a>
-							</li>
-							<li class="li">
-								<a href="#">映画の原作本棚</a>
-							</li>
-							<li class="border li">
-								<a href="#">アニメの原作本棚</a>
-							</li>
-							<li class="li">
-								<a href="#">ブクログ公式本棚一覧</a>
-							</li>
-							<li class="li">
-								<a href="#">公式本棚の新着情報</a>
-							</li>
-						</ul>
-						<h3>ようこそブクログへ</h3>
-						<ul>
-							<li class="li">
-							<a href="#">ブクログについて</a>
-							</li>
-							<li class="li">
-								<a href="#">はじめての方へ</a>
-							</li>
-							<li class="li">
-								<a href="#">チュートリアル</a>
-							</li>
-						</ul>
-					</div><!--  /.area3  -->
-					<!--  area4  -->
-					<div class="area4">
-						<h3>サポート</h3>
-						<ul>
-							<li class="li">
-								<a href="#">お知らせブログ</a>
-							</li>
-							<li class="li">
-								<a href="#">ヘルプ</a>
-							</li>
-							<li class="border li">
-								<a href="#">お問い合わせ</a>
-							</li>
-							<li class="li">
-								<a href="#">広告掲載について</a>
-							</li>
-							<li class="border li">
-								<a href="#">メディア掲載情報</a>
-							</li>
-							<li class="li">
-								<a href="#">公式Twitter</a>
-							</li>
-							<li class="li">
-								<a href="#">Facebookページ</a>
-							</li>
-							<li class="li">
-								<a href="#">ブクログ公式グッズ</a>
-							</li>
-						</ul>
-					</div><!--  /.area4  -->
-				</div><!--  /.footer__container--inner  -->
-			</div><!--  /.footer__container  -->
-			<!--  footer-navi  -->
-			<div class="footer-navi clearfix">
-				<div class="footer-navi__container ">
-					<ul>
-						<li class="li">
-							<a href="#">利用規約</a>
-							|
-						</li>
-						<li class="li">
-							<a href="#">Cookieの使用について</a>
-							|
-						</li>
-						<li class="li">
-							<a href="#">会社概要</a>
-							|
-						</li>
-						<li class="li">
-							<a href="#">プライバシーポリシー</a>
-						</li>
-					</ul>
-					<address>
-						Copyright ©︎2019
-						<a href="#" target="_blank">Booklog,Inc.</a>
-						All Rights Reserved.
-					</address>
-				</div>
-			</div><!--  /.footer-navi  -->
-		</footer><!--  /.footer  -->
+
 	</div><!--  /.div#body  -->
 </body>
 </html>
