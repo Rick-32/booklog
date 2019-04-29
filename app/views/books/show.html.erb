@@ -27,7 +27,7 @@
 						</div>
 						<div class="item-area__item-image-area--add-shelf">
 							<div class="additemBtnArea"><!--  FIXME:ボタン表示確認。あとで命名  -->
-								<%= link_to root_path, class: 'add-item-btn' do %>
+								<%= link_to register_book_path(@book), class: 'add-item-btn' do %>
 									<%= image_tag "add_item.png" %>
 									<span>本棚に登録</span>
 								<% end %>
