@@ -6,6 +6,7 @@ before_action :set_user, only: [:profile, :edit, :update, :destroy]
 	end
 
 	def profile
+		@booklist = BooksUser.where(user_id: current_user.id)
 	end
 
 	def edit
