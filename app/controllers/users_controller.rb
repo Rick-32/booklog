@@ -3,6 +3,7 @@ layout 'users'
 before_action :set_user, only: [:profile, :edit, :update, :destroy]
 
 	def home
+		@booklist = BooksUser.where(user_id: current_user.id)
 	end
 
 	def profile
