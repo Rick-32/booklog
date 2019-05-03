@@ -47,8 +47,9 @@
 								<dl>
 									<dt>登録数</dt>
 									<dd>
-										<%= link_to root_path  %>
+										<%= link_to root_path do %>
                       <%= @booklist.length %>
+										<% end %>
 									</dd>
 								</dl>
 							</li>
