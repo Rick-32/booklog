@@ -1,3 +1,3 @@
-// $(document).on('turbolinks:load', function() {
-// 	$("#timeline").tabs();
-// });
+$(document).on('turbolinks:load', function() {
+	$("#timeline").tabs();
+});
