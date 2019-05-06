@@ -1,0 +1,5 @@
+class ChangeNameToUser < ActiveRecord::Migration[5.2]
+  def change
+    change_column :users, :name, :string, null: false, default: "名前はまだない"
+  end
+end
