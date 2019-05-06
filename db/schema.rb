@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_05_06_065449) do
+ActiveRecord::Schema.define(version: 2019_05_06_070836) do
 
   create_table "books", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.integer "isbn", null: false
@@ -44,8 +44,8 @@ ActiveRecord::Schema.define(version: 2019_05_06_065449) do
     t.datetime "confirmation_sent_at"
     t.string "unconfirmed_email"
     t.string "name", default: "名前はまだない", null: false
-    t.integer "gender", null: false
-    t.string "bookshelf_name", null: false
+    t.integer "gender", default: 0, null: false
+    t.string "bookshelf_name", default: "題名のない本棚", null: false
     t.string "hometown"
     t.string "occupation"
     t.text "profile"
